@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{19e9df39-e469-4c58-9020-59f17779e248}">
+        <property name="name">
+            <value>ChickenAmount</value>
+        </property>
+        <relationship name="folder">
+            <destination>{ea493409-2f8b-4c4e-a268-4db0b1afd977}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{5fefca21-1fd8-49ff-be9a-166fb694054e}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{5fefca21-1fd8-49ff-be9a-166fb694054e}">
+        <property name="maximum">
+            <value>10</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
