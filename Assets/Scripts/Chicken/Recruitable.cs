@@ -35,13 +35,13 @@ namespace ChickenCoup
             if(g != this.gameObject){return;}
             switch (state)
             {
-                case Visibility.Hidden:
-                    spawnedPrompt.Deactivate();
-                    Activated = false;
-                    break;
                 case Visibility.Visible:
                     spawnedPrompt.Activate();
                     Activated = true;
+                    break;
+                case Visibility.Hidden:
+                    spawnedPrompt.Deactivate();
+                    Activated = false;
                     break;
             }
         }

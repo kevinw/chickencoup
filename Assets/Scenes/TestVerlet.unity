@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 973046471}
   - component: {fileID: 973046472}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: testRecruitableChicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd482cbc42164bb08b29edb6b2aa4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RecruitmentPrompt: {fileID: 0}
+  RecruitmentPromptPrefab: {fileID: 1483533240636098, guid: 4deda09a1af8b4376bcdd0e40b2bfe6a,
+    type: 2}
 --- !u!1 &1089444276
 GameObject:
   m_ObjectHideFlags: 0
