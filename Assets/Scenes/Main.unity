@@ -542,6 +542,21 @@ Prefab:
       propertyPath: WalkingSoundEvent
       value: event:/SFX/PLAYER_CHICKEN/Footsteps
       objectReference: {fileID: 0}
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: RedSquakSound
+      value: event:/SFX/UI/Chicken_Recruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: BlueSquakSound
+      value: event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: YellowSquakSound
+      value: event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
   m_IsPrefabParent: 0
