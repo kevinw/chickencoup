@@ -39,7 +39,7 @@ namespace ChickenCoup
 
 		bool IsPlayerControlled {
 			get {
-				return !string.IsNullOrEmpty(HorizontalAxisName) && !string.IsNullOrEmpty(VerticalAxisName);
+				return PlayerControlled;
 			}
 		}
 
@@ -51,9 +51,9 @@ namespace ChickenCoup
 			}
 		}
 
+		public bool PlayerControlled = true;
+		public ControllerInput.JoystickSide joystickSide;
 
-		public string HorizontalAxisName = "Horizontal";
-		public string VerticalAxisName = "Vertical";
 
 		internal bool CPUMovement = false;
 		internal Vector3 CPUMoveVector;
@@ -72,8 +72,10 @@ namespace ChickenCoup
 			//grab the first half step vel
 			if (CPUMovement)
 				movementVector = CPUMoveVector;
-			else
-				movementVector = new Vector3(Input.GetAxis(HorizontalAxisName), yVal/Time.deltaTime, Input.GetAxis(VerticalAxisName));
+			else {
+				var stick = ControllerInput.Instance.GetStick(joystickSide);
+				movementVector = new Vector3(stick.x, yVal/Time.deltaTime, stick.y);
+			}
 			if(jumping){movementVector.y += jumpAmount;}
 			Vector3 accleration = GetAccleration(velocityVector);
 			if(accleration.y > 10.0f){accleration.y = 10.0f;}
