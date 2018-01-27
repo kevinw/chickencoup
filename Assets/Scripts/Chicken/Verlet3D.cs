@@ -37,18 +37,32 @@ namespace ChickenCoup
 			Events.Input.ButtonPressed += OnButtonPressed;
 		}
 
+		bool IsPlayerControlled {
+			get {
+				return !string.IsNullOrEmpty(HorizontalAxisName) && !string.IsNullOrEmpty(VerticalAxisName);
+			}
+		}
+
 		public void OnButtonPressed(ControllerButton b)
 		{
-			if(b == ControllerButton.A)
+			if(IsPlayerControlled && b == ControllerButton.A)
 			{
 				jumping = true;
 			}
 		}
 
 
+		public string HorizontalAxisName = "Horizontal";
+		public string VerticalAxisName = "Vertical";
+
+		internal bool CPUMovement = false;
+		internal Vector3 CPUMoveVector;
 
 		void FixedUpdate()
 		{
+			if (!IsPlayerControlled && !CPUMovement)
+				return;
+
 			//init any movement from the player
 			movementVector = Vector3.zero;
 			lastPosition = transform.position;
@@ -56,7 +70,10 @@ namespace ChickenCoup
 
 			// set the movement to the inputed keys
 			//grab the first half step vel
-			movementVector = new Vector3(Input.GetAxis("Horizontal"), yVal/Time.deltaTime, Input.GetAxis("Vertical"));
+			if (CPUMovement)
+				movementVector = CPUMoveVector;
+			else
+				movementVector = new Vector3(Input.GetAxis(HorizontalAxisName), yVal/Time.deltaTime, Input.GetAxis(VerticalAxisName));
 			if(jumping){movementVector.y += jumpAmount;}
 			Vector3 accleration = GetAccleration(velocityVector);
 			if(accleration.y > 10.0f){accleration.y = 10.0f;}
@@ -99,7 +116,9 @@ namespace ChickenCoup
 
 		void OnDrawGizmos()
 		{
-
+			Gizmos.color = Color.magenta;
+			if (CPUMovement)
+				Gizmos.DrawRay(new Ray(transform.position, CPUMoveVector));
 		}
 
 	}
