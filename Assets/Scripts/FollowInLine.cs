@@ -21,7 +21,7 @@ namespace ChickenCoup
 
 		void OnDrawGizmos() {
 			Gizmos.color = Color.red;
-			Gizmos.DrawSphere(targetPos, 0.2f);
+			//Gizmos.DrawSphere(targetPos, 0.2f);
 		}
 
 		Vector3 GetTargetPos()
