@@ -74,6 +74,8 @@
      <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
      <Compile Include="Assets\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Scripts\Chicken\ChickenAnimator.cs" />
+     <Compile Include="Assets\Scripts\Chicken\ChickenProperties.cs" />
+     <Compile Include="Assets\Scripts\Chicken\ChickenSpawner.cs" />
      <Compile Include="Assets\Scripts\Chicken\CoreChicken.cs" />
      <Compile Include="Assets\Scripts\Chicken\Recruitable.cs" />
      <Compile Include="Assets\Scripts\Chicken\RecruitmentPrompt.cs" />

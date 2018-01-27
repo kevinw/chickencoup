@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using FMOD.Studio;
 
 namespace ChickenCoup
 {
@@ -11,6 +12,16 @@ namespace ChickenCoup
         public GameObject YellowSquak;
         public GameObject RedSquak;
         public bool TouchingChicken;
+
+        [FMODUnity.EventRef]
+        public string RedSquakSound;
+        [FMODUnity.EventRef]
+        public string BlueSquakSound;
+        [FMODUnity.EventRef]
+        public string YellowSquakSound;
+        [FMODUnity.EventRef]
+        public string WalkingSoundEvent;
+        FMOD.Studio.EventInstance walkingSound;
 
         enum SquakType
         {
@@ -28,6 +39,13 @@ namespace ChickenCoup
 
             //sub to buttons 
             Events.Input.ButtonPressed += OnButtonPressed;
+
+            //link sounds
+            walkingSound = FMODUnity.RuntimeManager.CreateInstance(WalkingSoundEvent);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+            walkingSound.start();
+            // RedSquakInstance = FMODUnity.RuntimeManager.CreateInstance(SquakEvent);
+            // RedSquakInstance.start();
         }
 
         public void OnButtonPressed(ControllerButton b)
@@ -60,12 +78,15 @@ namespace ChickenCoup
             {
                 case SquakType.Blue:
                     BlueSquak.SetActive(true);
+                    FMODUnity.RuntimeManager.PlayOneShot(BlueSquakSound, transform.position);
                     break;
                 case SquakType.Yellow:
                     YellowSquak.SetActive(true);
+                    FMODUnity.RuntimeManager.PlayOneShot(YellowSquakSound, transform.position);
                     break;
                 case SquakType.Red:
                     RedSquak.SetActive(true);
+                    FMODUnity.RuntimeManager.PlayOneShot(RedSquakSound, transform.position);
                     break;
             }
         }
