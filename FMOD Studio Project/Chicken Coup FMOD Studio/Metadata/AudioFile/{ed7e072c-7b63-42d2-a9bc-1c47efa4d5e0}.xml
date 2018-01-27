@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ed7e072c-7b63-42d2-a9bc-1c47efa4d5e0}">
+        <property name="assetPath">
+            <value>Voice_Chicken_Chatter_Mattia_High.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.4653333333333334</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d7dceae4-6327-4b1e-9600-76c13fdad18d}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ec6f9981-a848-42e5-84b1-8ea36d781295}">
+        <property name="assetPath">
+            <value>Voice_Chicken_Chatter_Craig_Low_2.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.31431249999999999</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d7dceae4-6327-4b1e-9600-76c13fdad18d}</destination>
+        </relationship>
+    </object>
+</objects>

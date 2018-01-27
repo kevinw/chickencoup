@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{957745f7-29ad-45d5-b13e-0070c94ba318}">
+        <property name="assetPath">
+            <value>Clock_Loop_Urgent.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.4136041666666668</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d7dceae4-6327-4b1e-9600-76c13fdad18d}</destination>
+        </relationship>
+    </object>
+</objects>
