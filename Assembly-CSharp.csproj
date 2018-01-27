@@ -68,7 +68,12 @@
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\SetAudioLevels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\ShowPanels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\StartOptions.cs" />
+     <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudio.cs" />
+     <Compile Include="Assets\GoogleVR\Scripts\Audio\FmodGvrAudioRoom.cs" />
+     <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudio.cs" />
+     <Compile Include="Assets\ResonanceAudio\Scripts\FmodResonanceAudioRoom.cs" />
      <Compile Include="Assets\Scripts\CameraLook.cs" />
+     <Compile Include="Assets\Scripts\Chicken\ChickenAnimator.cs" />
      <Compile Include="Assets\Scripts\Chicken\CoreChicken.cs" />
      <Compile Include="Assets\Scripts\Chicken\Recruitable.cs" />
      <Compile Include="Assets\Scripts\Chicken\RecruitmentPrompt.cs" />
