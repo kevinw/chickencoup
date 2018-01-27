@@ -2,6 +2,8 @@
 [Tt]emp/
 [Oo]bj/
 fmod_editor.log
+fmod.log
+Assets/FMODStudioCache.asset
 Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
