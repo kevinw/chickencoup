@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FMOD.Studio;
 
 namespace ChickenCoup
 {	
 	public class Verlet3D : MonoBehaviour
 	{
+
+        [FMODUnity.EventRef]
+        FMOD.Studio.EventInstance PlayerFootsteps;
+
 		//accleration per update from player movement
 		public float accleration = 200.0f;
 		//amount of friction on the ground
@@ -26,7 +31,8 @@ namespace ChickenCoup
 		bool jumping = false;
 
 		void Start()
-		{
+		{            
+
 			//we start out with no movement
 			velocityVector = Vector3.zero;
 
@@ -60,7 +66,7 @@ namespace ChickenCoup
 
 		void FixedUpdate()
 		{
-			if (!IsPlayerControlled && !CPUMovement)
+            if (!IsPlayerControlled && !CPUMovement)
 				return;
 
 			//init any movement from the player
@@ -79,6 +85,9 @@ namespace ChickenCoup
 			if(jumping){movementVector.y += jumpAmount;}
 			Vector3 accleration = GetAccleration(velocityVector);
 			if(accleration.y > 10.0f){accleration.y = 10.0f;}
+
+           
+
 			Vector3 halfStepVel = new Vector3 (velocityVector.x + 0.5f * Time.deltaTime * accleration.x, 
 											velocityVector.y + 0.5f * Time.deltaTime * accleration.y, 
 											velocityVector.z + 0.5f * Time.deltaTime * accleration.z);
