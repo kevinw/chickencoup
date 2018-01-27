@@ -33,6 +33,10 @@ namespace ChickenCoup
 				return GetRightStick();
 		}
 
+		// Y YELLOW
+// X Blue    // B RED
+		// A green
+
 		public Vector2 GetLeftStick()
 		{
 			return new Vector2(

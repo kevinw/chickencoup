@@ -79,8 +79,11 @@ namespace ChickenCoup
 			if (CPUMovement)
 				movementVector = CPUMoveVector;
 			else {
-				var stick = ControllerInput.Instance.GetStick(joystickSide);
-				movementVector = new Vector3(stick.x, yVal/Time.deltaTime, stick.y);
+				if (ControllerInput.Instance)
+				{
+					var stick = ControllerInput.Instance.GetStick(joystickSide);
+					movementVector = new Vector3(stick.x, yVal/Time.deltaTime, stick.y);
+				}
 			}
 			if(jumping){movementVector.y += jumpAmount;}
 			Vector3 accleration = GetAccleration(velocityVector);
