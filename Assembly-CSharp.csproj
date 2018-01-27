@@ -67,9 +67,12 @@
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\SetAudioLevels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\ShowPanels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\StartOptions.cs" />
+     <Compile Include="Assets\Scripts\CameraLook.cs" />
+     <Compile Include="Assets\Scripts\Chicken\Spring.cs" />
      <Compile Include="Assets\Scripts\Chicken\Verlet3D.cs" />
      <Compile Include="Assets\Scripts\ChickenLine.cs" />
      <Compile Include="Assets\Scripts\Controller\ControllerInput.cs" />
+     <Compile Include="Assets\Scripts\Events.cs" />
      <Compile Include="Assets\Scripts\FollowInLine.cs" />
      <Compile Include="Assets\Scripts\LookingDirection.cs" />
      <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
