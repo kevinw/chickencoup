@@ -2,36 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChickenLine : MonoBehaviour {
+namespace ChickenCoup
+{
+	public class ChickenLine : MonoBehaviour {
 
-	public void AttachSpringJoints()
-	{
-		for (var i = 0; i < transform.childCount; ++i)
+		public void AttachSpringJoints()
 		{
-			var child = transform.GetChild(i);
-			if (i + 1 < transform.childCount)
+			for (var i = 0; i < transform.childCount; ++i)
 			{
-				var springJoint = child.gameObject.AddComponent<SpringJoint>();
-				var nextRigidBody = transform.GetChild(i + 1).GetComponent<Rigidbody>();
-				springJoint.connectedBody = nextRigidBody;
+				var child = transform.GetChild(i);
+				if (i + 1 < transform.childCount)
+				{
+					var springJoint = child.gameObject.AddComponent<SpringJoint>();
+					var nextRigidBody = transform.GetChild(i + 1).GetComponent<Rigidbody>();
+					springJoint.connectedBody = nextRigidBody;
+				}
 			}
 		}
-	}
 
-	void SetupFollowing()
-	{
-		// each chicken follows the next in line in the hiearchy window
-		for (var i = 0; i < transform.childCount; ++i)
+		void SetupFollowing()
 		{
-			var child = transform.GetChild(i);
-			var soldier = child.GetComponent<FollowInLine>();
-			if (soldier && i - 1 > -1)
-				soldier.following = transform.GetChild(i - 1);
+			// each chicken follows the next in line in the hiearchy window
+			for (var i = 0; i < transform.childCount; ++i)
+			{
+				var child = transform.GetChild(i);
+				var soldier = child.GetComponent<FollowInLine>();
+				if (soldier && i - 1 > -1)
+					soldier.following = transform.GetChild(i - 1);
+			}
 		}
-	}
 
-	void Start () {
-		// AttachSpringJoints();
-		SetupFollowing();
+		void Start () {
+			// AttachSpringJoints();
+			SetupFollowing();
+		}
 	}
 }

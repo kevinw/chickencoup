@@ -1,9 +1,12 @@
 using System;
 
-public static class Events
+namespace ChickenCoup
 {
-    public class Input
+    public static class Events
     {
-        public static Action<ControllerButton> ButtonPressed;
+        public class Input
+        {
+            public static Action<ControllerButton> ButtonPressed;
+        }
     }
 }
