@@ -118,6 +118,28 @@ GameObject:
   m_PrefabParentObject: {fileID: 1366557476518208, guid: b4f5722bac85148aa9f748dfb571329a,
     type: 2}
   m_PrefabInternal: {fileID: 1964203882}
+--- !u!114 &34696268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 34696260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SFX/PLAYER_CHICKEN/Footsteps
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &57192899
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +755,7 @@ GameObject:
   - component: {fileID: 969984919}
   - component: {fileID: 969984918}
   - component: {fileID: 969984922}
+  - component: {fileID: 969984923}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -815,6 +838,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 34696260}
+--- !u!114 &969984923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969984917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &973046466
 GameObject:
   m_ObjectHideFlags: 0
