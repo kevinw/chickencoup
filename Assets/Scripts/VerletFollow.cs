@@ -32,5 +32,13 @@ public class VerletFollow : MonoBehaviour
 		verlet.CPUMovement = true;
 		verlet.CPUMoveVector = delta.magnitude > deadZone ? delta.normalized : Vector3.zero;
 	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+		if (Follow)
+			Gizmos.DrawSphere(targetPos, 0.3f);
+
+	}
 }
 }

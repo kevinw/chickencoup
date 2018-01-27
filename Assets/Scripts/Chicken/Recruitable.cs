@@ -12,9 +12,18 @@ namespace ChickenCoup
         ControllerButton beginrecruitmentButton;
         //assigned recruitment prompt
         GameObject recruitPrompt;
+        ChickenAnimator chickenAnimator;
+
+        public void Squawk()
+        {
+            if (chickenAnimator)
+                chickenAnimator.Squawk();
+        }
 
         void Start()
         {
+            chickenAnimator = GetComponentInChildren<ChickenAnimator>();
+
             //spawn a new recruitment prefab
             Assert.IsNotNull(RecruitmentPromptPrefab);
             spawnedPrompt = Instantiate(RecruitmentPromptPrefab, this.transform.position, Quaternion.identity, this.transform).GetComponent<RecruitmentPrompt>();

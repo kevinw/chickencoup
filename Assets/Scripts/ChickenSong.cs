@@ -15,7 +15,7 @@ public class Note
 public class Song
 {
 	public List<Note> notes = new List<Note>();
-	public float seconds = 4f;
+	public float seconds = 1f;
 }
 
 [ExecuteInEditMode]
@@ -34,7 +34,7 @@ public class ChickenSong : MonoBehaviour {
 	public void GenerateAndPlaySong(Recruitable recruitable)
 	{
 		this.recruitable = recruitable;
-		var song = GenerateSong(6);
+		var song = GenerateSong(1);
 		PlaceEggs(song);
 		coro = StartCoroutine(PlaySong(song));
 	}
@@ -48,8 +48,6 @@ public class ChickenSong : MonoBehaviour {
 			StopCoroutine(coro);
 		}
 	}
-
-	public ChickenAnimator opponent;
 
 	public float DEBUG_TIME;
 
@@ -71,10 +69,10 @@ public class ChickenSong : MonoBehaviour {
 			{
 				if (!finished)
 				{
-					var pos = opponent ? opponent.transform.position : transform.position;
+					var pos = recruitable.transform.position;
 					FMODUnity.RuntimeManager.PlayOneShot(SquawkSoundForNote(nextNote.button), pos);
-					if (opponent)
-						opponent.Squawk();
+					if (recruitable)
+						recruitable.Squawk();
 					if (practice)
 						PulseEgg(lastNote);
 					else

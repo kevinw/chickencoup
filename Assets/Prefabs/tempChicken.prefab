@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 114414354640698138}
   - component: {fileID: 114409866250487136}
   - component: {fileID: 114642154118351376}
+  - component: {fileID: 114006506733678280}
   m_Layer: 0
   m_Name: tempChicken
   m_TagString: Untagged
@@ -789,6 +790,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114006506733678280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366557476518208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13b853c43e8e2e4e869d105ff0dd008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114409866250487136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -817,6 +829,7 @@ MonoBehaviour:
   mass: 1.7
   stopVelocity: 0.5
   jumpAmount: 2.67
+  InMotion: 0
   PlayerControlled: 1
   joystickSide: 0
 --- !u!114 &114642154118351376
@@ -838,6 +851,7 @@ MonoBehaviour:
   RedSquakSound: 
   BlueSquakSound: 
   YellowSquakSound: 
+  GreenSquakSound: 
   WalkingSoundEvent: 
 --- !u!137 &137192684065455732
 SkinnedMeshRenderer:

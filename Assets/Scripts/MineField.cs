@@ -31,8 +31,12 @@ public class MineField : MonoBehaviour {
 				bounds.extents.x * (Random.value - 0.5f * 2.0f),
 				0,
 				bounds.extents.z * (Random.value - 0.5f * 2.0f));
-			var mine = Instantiate(MinePrefab, pt, Quaternion.identity);
-			mine.transform.parent = transform;
+			if (MinePrefab)
+			{
+				var mine = Instantiate(MinePrefab, pt, Quaternion.identity);
+				mine.transform.parent = transform;
+			}
+
 		}
 	}
 }

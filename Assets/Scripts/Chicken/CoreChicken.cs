@@ -39,7 +39,9 @@ namespace ChickenCoup
             Yellow
         }
 
-        void Start()
+        public bool AllStartFollowingCheat = false;
+
+        IEnumerator Start()
         {
             Assert.IsNotNull(BlueSquak);
             Assert.IsNotNull(YellowSquak);
@@ -48,14 +50,24 @@ namespace ChickenCoup
 
             MovementScript = GetComponent<Verlet3D>();
 
-            //sub to buttons 
+            //sub to events
             Events.Input.ButtonPressed += OnButtonPressed;
-
             Events.Recruitment.BeginRecruitment += StartSong;
+            Events.Recruitment.RecruitmentResult += OnRecruitmentResult;
 
             //link sounds
             walkingSound = FMODUnity.RuntimeManager.CreateInstance(WalkingSoundEvent);
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+
+            yield return null;
+
+            if (AllStartFollowingCheat)
+            {
+                foreach (var r in FindObjectsOfType<Recruitable>())
+                    GetComponent<ChickenLine>().AddFollowingChicken(r);
+
+            }
         }
 
         void Update()
@@ -66,7 +78,6 @@ namespace ChickenCoup
             {
                 if(walkingState != PLAYBACK_STATE.PLAYING)
                 {
-                   Debug.Log("started walking sound");
                     walkingSound.start();
                 }
             } 
@@ -105,14 +116,26 @@ namespace ChickenCoup
 
         public void StartSong(Recruitable recruitable)
         {
-            var songObj = Instantiate(songPrefab, Vector3.zero + new Vector3(0, 1, 0), Quaternion.identity);
-            var song = songObj.GetComponent<ChickenSong>();
-            song.GenerateAndPlaySong(recruitable);
-            Events.Recruitment.RecruitmentResult += (r, res) => {
+            songObj = Instantiate(songPrefab, Vector3.zero + new Vector3(0, 1, 0), Quaternion.identity);
+            songObj.GetComponent<ChickenSong>().GenerateAndPlaySong(recruitable);
+        }
+
+        GameObject songObj;
+
+        void OnRecruitmentResult(Recruitable recruitable, bool result)
+        {
+            Debug.Log("OnRecruitmentResult " + recruitable + " " + result);
+            if (songObj)
                 LeanTween.scale(songObj, Vector3.zero, 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(() => {
                     Destroy(songObj);
+                    songObj = null;
                 });
-            };
+
+            if (result)
+            {
+                GetComponent<ChickenLine>().AddFollowingChicken(recruitable);
+            }
+
         }
 
         void PlaySoundHere(string soundID)

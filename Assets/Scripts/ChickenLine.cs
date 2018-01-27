@@ -26,20 +26,28 @@ namespace ChickenCoup
 		Vector3 startPos;
 		Vector3 endPos;
 
-		public Transform otherChickens;
+		[System.NonSerialized]
+		internal List<Recruitable> chickensFollowingYou = new List<Recruitable>();
+
+		public void AddFollowingChicken(Recruitable recruitable)
+		{
+			chickensFollowingYou.Add(recruitable);
+		}
 
 		void Update()
 		{
 			var playerChicken = GameObject.FindGameObjectWithTag("Player");
-			var lastChicken = GameObject.FindGameObjectWithTag("LastChicken");
+			var lastChicken = chickensFollowingYou.Count > 0 ? chickensFollowingYou[chickensFollowingYou.Count - 1] : null;
 			if (!lastChicken)
 				return;
 			
 			startPos = playerChicken.transform.position;
 			endPos = lastChicken.transform.position;
 
-			var numChickens = otherChickens.childCount;
-			var delta = (endPos - startPos) / ((float)numChickens + 1.0f);
+			var toLastChicken = endPos - startPos;
+
+			var numChickens = chickensFollowingYou.Count;
+			var delta = toLastChicken / ((float)numChickens + 1.0f);
 
 			for (var i = 0; i < numChickens; ++i)
 			{
@@ -49,18 +57,30 @@ namespace ChickenCoup
 				//var right = Vector3.Cross(forward, Vector3.up);
 
 				//var random = Mathf.PerlinNoise((int)(Time.time * 2.0f + i * 1.0f/(float)numChickens), i);
-				//randomVec = right.normalized * random;
+				//var randomVec = right.normalized * random;
 				//p += randomVec;
 
-				var otherChicken = otherChickens.GetChild(i);
+				var otherChicken = chickensFollowingYou[i];
 				var follow = otherChicken.GetComponent<VerletFollow>();
 				if (!follow)
 					follow = otherChicken.gameObject.AddComponent<VerletFollow>();
-				follow.FollowPos(p);
+
+				var v = otherChicken.GetComponent<Verlet3D>();
+
+				if (i == numChickens - 1)
+				{
+					follow.Follow = false;
+					v.CPUMovement = false;
+					v.PlayerControlled = true;
+					v.joystickSide = ControllerInput.JoystickSide.Right;
+				}
+				else
+				{
+					v.PlayerControlled = false;
+					follow.FollowPos(p);
+				}
 			}
 			
 		}
-
-		public Vector3 randomVec;
 	}
 }
