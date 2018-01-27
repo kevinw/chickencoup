@@ -24,12 +24,15 @@ namespace ChickenCoup
         [FMODUnity.EventRef]
         public string YellowSquakSound;
         [FMODUnity.EventRef]
+        public string GreenSquakSound;
+        [FMODUnity.EventRef]
         public string WalkingSoundEvent;
         FMOD.Studio.EventInstance walkingSound;
 #endregion
 
         enum SquakType
         {
+            Green,
             Red,
             Blue,
             Yellow
@@ -86,6 +89,9 @@ namespace ChickenCoup
                     case ControllerButton.X:
                         Squak(SquakType.Blue);
                         break;
+                    case ControllerButton.A:
+                        Squak(SquakType.Green);
+                        break;
                 }
             }
             if(TouchingChicken)
@@ -110,6 +116,11 @@ namespace ChickenCoup
                     RedSquak.SetActive(true);
                     FMODUnity.RuntimeManager.PlayOneShot(RedSquakSound, transform.position);
                     break;
+                case SquakType.Green:
+                    //jumps
+                    FMODUnity.RuntimeManager.PlayOneShot(GreenSquakSound, transform.position);
+                    break;
+                    
             }
         }
 
