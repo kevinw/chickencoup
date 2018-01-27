@@ -566,6 +566,10 @@ Prefab:
       propertyPath: GreenSquakSound
       value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1366557476518208, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
   m_IsPrefabParent: 0
