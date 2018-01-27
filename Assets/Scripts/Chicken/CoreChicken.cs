@@ -10,6 +10,7 @@ namespace ChickenCoup
         public GameObject BlueSquak;
         public GameObject YellowSquak;
         public GameObject RedSquak;
+        public bool TouchingChicken;
 
         enum SquakType
         {
@@ -23,6 +24,7 @@ namespace ChickenCoup
             Assert.IsNotNull(BlueSquak);
             Assert.IsNotNull(YellowSquak);
             Assert.IsNotNull(RedSquak);
+            DisableAllSquaks();
 
             //sub to buttons 
             Events.Input.ButtonPressed += OnButtonPressed;
@@ -30,26 +32,63 @@ namespace ChickenCoup
 
         public void OnButtonPressed(ControllerButton b)
         {
-            switch (b)
+            if(!TouchingChicken)
             {
-                case ControllerButton.B:
-                    Squak(SquakType.Red);
-                    break;
-                case ControllerButton.Y:
-                    Squak(SquakType.Yellow);
-                    break;
-                case ControllerButton.X:
-                    Squak(SquakType.Blue);
-                    break;
+                //let people squak all the time
+                switch (b)
+                {
+                    case ControllerButton.B:
+                        Squak(SquakType.Red);
+                        break;
+                    case ControllerButton.Y:
+                        Squak(SquakType.Yellow);
+                        break;
+                    case ControllerButton.X:
+                        Squak(SquakType.Blue);
+                        break;
+                }
+            }
+            if(TouchingChicken)
+            {
+                if(Events.Recruitment.TryBeginRecruitment != null){Events.Recruitment.TryBeginRecruitment(b);}                
             }
         }
 
         void Squak(SquakType t)
         {
-
+            switch (t)
+            {
+                case SquakType.Blue:
+                    BlueSquak.SetActive(true);
+                    break;
+                case SquakType.Yellow:
+                    YellowSquak.SetActive(true);
+                    break;
+                case SquakType.Red:
+                    RedSquak.SetActive(true);
+                    break;
+            }
         }
 
-        void Update () {
+        void DisableAllSquaks()
+        {
+            BlueSquak.SetActive(false);
+            YellowSquak.SetActive(false);
+            RedSquak.SetActive(false);
+        }
+
+        void OnTriggerEnter(Collider other) {
+            //prompt to recruit (random squak to consent)
+            GameObject c = other.gameObject;
+            if(Events.Recruitment.ToggleRecruitmentPrompt != null){Events.Recruitment.ToggleRecruitmentPrompt(c, Visibility.Visible);}
+            TouchingChicken = true;
+        }
+
+        void OnTriggerExit(Collider other)
+        {
+            GameObject c = other.gameObject;
+            if(Events.Recruitment.ToggleRecruitmentPrompt != null){Events.Recruitment.ToggleRecruitmentPrompt(c, Visibility.Visible);}
+            TouchingChicken = false;
         }
     }
 }

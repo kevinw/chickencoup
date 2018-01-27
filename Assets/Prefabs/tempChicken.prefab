@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 65135632428082902}
   - component: {fileID: 114414354640698138}
   - component: {fileID: 114409866250487136}
+  - component: {fileID: 114642154118351376}
   m_Layer: 0
   m_Name: tempChicken
   m_TagString: Untagged
@@ -816,6 +817,20 @@ MonoBehaviour:
   mass: 1.7
   stopVelocity: 0.5
   jumpAmount: 2.67
+--- !u!114 &114642154118351376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366557476518208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ba0ffb3f0c848f48084a1ab033c2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlueSquak: {fileID: 1317879486405518}
+  YellowSquak: {fileID: 1777292089461554}
+  RedSquak: {fileID: 1912726561252100}
 --- !u!137 &137192684065455732
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
