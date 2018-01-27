@@ -95,6 +95,9 @@
         <property name="length">
             <value>4.75</value>
         </property>
+        <property name="maxVoices">
+            <value>1</value>
+        </property>
         <relationship name="audioFile">
             <destination>{f82b66b6-8d16-4e5e-b014-c4778160fe65}</destination>
         </relationship>
