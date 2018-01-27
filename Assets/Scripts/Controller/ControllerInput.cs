@@ -43,18 +43,24 @@ namespace ChickenCoup
 
 		public Vector2 GetRightStick()
 		{
+			Vector2 axes = new Vector2(
+				Input.GetAxis("Horizontal2"), // j, l
+				Input.GetAxis("Vertical2") // i, k
+			);
+
 			#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
 			// right stick is different on OSX
-			return new Vector2(
+			axes += new Vector2(
 				Input.GetAxis("Axis3"),
 				-Input.GetAxis("Axis4")
 			);
 			#else
-			return new Vector2(
+			axes += new Vector2(
 				Input.GetAxis("Axis4"),
 				-Input.GetAxis("Axis5")
 			);
 			#endif
+			return axes;
 		}
 
 		// Update is called once per frame
