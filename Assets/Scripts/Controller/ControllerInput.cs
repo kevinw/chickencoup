@@ -74,15 +74,15 @@ namespace ChickenCoup
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.A);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.H))
+			if(Input.GetKeyDown(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.H))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.B);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.F))
+			if(Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.F))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.X);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.G))
+			if(Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.G))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.Y);}
 			}
