@@ -87,7 +87,7 @@ namespace ChickenCoup
         void OnTriggerExit(Collider other)
         {
             GameObject c = other.gameObject;
-            if(Events.Recruitment.ToggleRecruitmentPrompt != null){Events.Recruitment.ToggleRecruitmentPrompt(c, Visibility.Visible);}
+            if(Events.Recruitment.ToggleRecruitmentPrompt != null){Events.Recruitment.ToggleRecruitmentPrompt(c, Visibility.Hidden);}
             TouchingChicken = false;
         }
     }

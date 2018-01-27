@@ -19,22 +19,25 @@ namespace ChickenCoup
 		// Update is called once per frame
 		void Update () {
 			//may need to update these for different plats, these are osx bindings for xbox
-			if(Input.GetKeyDown(KeyCode.JoystickButton1))
+			if(Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.H))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.A);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton2))
+			if(Input.GetKey(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.J))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.B);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton3))
+			if(Input.GetKey(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.K))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.X);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton4))
+			if(Input.GetKey(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.L))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.Y);}
 			}
+
+
+			
 
 			// Debug.Log("0" + Input.GetKey(KeyCode.JoystickButton0));
 			// Debug.Log("1" + Input.GetKey(KeyCode.JoystickButton1));

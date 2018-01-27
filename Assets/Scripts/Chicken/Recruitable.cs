@@ -6,17 +6,24 @@ using UnityEngine.Assertions;
 namespace ChickenCoup
 {
     public class Recruitable : MonoBehaviour {
-        public GameObject RecruitmentPrompt;
+        public GameObject RecruitmentPromptPrefab;
+        RecruitmentPrompt spawnedPrompt;
         bool Activated;
         ControllerButton beginrecruitmentButton;
+        //assigned recruitment prompt
+        GameObject recruitPrompt;
 
         void Start()
         {
-            Assert.IsNotNull(RecruitmentPrompt);
-            Activated = false;
+            //spawn a new recruitment prefab
+            Assert.IsNotNull(RecruitmentPromptPrefab);
+            spawnedPrompt = Instantiate(RecruitmentPromptPrefab, this.transform.position, Quaternion.identity, this.transform).GetComponent<RecruitmentPrompt>();
             //figure out how to smartly being recruitment
             //otherwise just assign to a button
             beginrecruitmentButton = ControllerButton.B;
+            spawnedPrompt.Setup(ControllerButton.B);
+
+            Activated = false;
             // RecruitmentPrompt.Setup(beginrecruitmentButton);
 
             Events.Recruitment.ToggleRecruitmentPrompt += ToggleRecruitmentPrompt;
@@ -29,11 +36,11 @@ namespace ChickenCoup
             switch (state)
             {
                 case Visibility.Hidden:
-                    RecruitmentPrompt.SetActive(false);
+                    spawnedPrompt.Deactivate();
                     Activated = false;
                     break;
                 case Visibility.Visible:
-                    RecruitmentPrompt.SetActive(true);
+                    spawnedPrompt.Activate();
                     Activated = true;
                     break;
             }
@@ -42,6 +49,7 @@ namespace ChickenCoup
         void OnRecruitmentAttempted(ControllerButton b)
         {
             if(Activated != true && beginrecruitmentButton != b){return;}
+            Debug.Log("ACTIVATED RECRUITMENT");
             //activate recruitment
                     
         }

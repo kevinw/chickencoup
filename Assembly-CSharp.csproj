@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Scripts\Chicken\CoreChicken.cs" />
      <Compile Include="Assets\Scripts\Chicken\Recruitable.cs" />
+     <Compile Include="Assets\Scripts\Chicken\RecruitmentPrompt.cs" />
      <Compile Include="Assets\Scripts\Chicken\Spring.cs" />
      <Compile Include="Assets\Scripts\Chicken\Verlet3D.cs" />
      <Compile Include="Assets\Scripts\ChickenLine.cs" />
