@@ -12,9 +12,9 @@ public class VerletMovement : MonoBehaviour
     //near-zero point at which any velocity is set to zero
     public float stopVelocity = 0.1f;
     // Object's velocity in units per second. Derived from acceleration.
-    Vector2 velocityVector;
+    Vector3 velocityVector;
     // User-intended acceleration
-    Vector2 movementVector;
+    Vector3 movementVector;
     //our last position
     Vector3 lastPosition;
 

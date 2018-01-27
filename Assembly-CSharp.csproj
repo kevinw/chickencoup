@@ -68,6 +68,7 @@
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\ShowPanels.cs" />
      <Compile Include="Assets\Game Jam Template\Scripts\Menu\StartOptions.cs" />
      <Compile Include="Assets\Scripts\Chicken\Verlet3D.cs" />
+     <Compile Include="Assets\Scripts\Controller\ControllerInput.cs" />
      <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
      <None Include="Assets\Game Jam Template\README.txt" />
