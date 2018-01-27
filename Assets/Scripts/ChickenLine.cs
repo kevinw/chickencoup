@@ -6,20 +6,6 @@ namespace ChickenCoup
 {
 	public class ChickenLine : MonoBehaviour {
 
-		public void AttachSpringJoints()
-		{
-			for (var i = 0; i < transform.childCount; ++i)
-			{
-				var child = transform.GetChild(i);
-				if (i + 1 < transform.childCount)
-				{
-					var springJoint = child.gameObject.AddComponent<SpringJoint>();
-					var nextRigidBody = transform.GetChild(i + 1).GetComponent<Rigidbody>();
-					springJoint.connectedBody = nextRigidBody;
-				}
-			}
-		}
-
 		void SetupFollowing()
 		{
 			// each chicken follows the next in line in the hiearchy window
@@ -34,7 +20,47 @@ namespace ChickenCoup
 
 		void Start () {
 			// AttachSpringJoints();
-			SetupFollowing();
+			//SetupFollowing();
 		}
+
+		Vector3 startPos;
+		Vector3 endPos;
+
+		public Transform otherChickens;
+
+		void Update()
+		{
+			var playerChicken = GameObject.FindGameObjectWithTag("Player");
+			var lastChicken = GameObject.FindGameObjectWithTag("LastChicken");
+			if (!lastChicken)
+				return;
+			
+			startPos = playerChicken.transform.position;
+			endPos = lastChicken.transform.position;
+
+			var numChickens = otherChickens.childCount;
+			var delta = (endPos - startPos) / ((float)numChickens + 1.0f);
+
+			for (var i = 0; i < numChickens; ++i)
+			{
+				var forward = delta * ((float)i + 1f);
+				var p = startPos + forward;
+
+				var right = Vector3.Cross(forward, Vector3.up);
+
+				//var random = Mathf.PerlinNoise((int)(Time.time * 2.0f + i * 1.0f/(float)numChickens), i);
+				//randomVec = right.normalized * random;
+				//p += randomVec;
+
+				var otherChicken = otherChickens.GetChild(i);
+				var follow = otherChicken.GetComponent<VerletFollow>();
+				if (!follow)
+					follow = otherChicken.gameObject.AddComponent<VerletFollow>();
+				follow.FollowPos(p);
+			}
+			
+		}
+
+		public Vector3 randomVec;
 	}
 }

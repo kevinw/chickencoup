@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\Events.cs" />
      <Compile Include="Assets\Scripts\FollowInLine.cs" />
      <Compile Include="Assets\Scripts\LookingDirection.cs" />
+     <Compile Include="Assets\Scripts\VerletFollow.cs" />
      <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
      <None Include="Assets\Game Jam Template\README.txt" />
