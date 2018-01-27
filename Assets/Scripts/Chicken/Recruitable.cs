@@ -48,10 +48,10 @@ namespace ChickenCoup
 
         void OnRecruitmentAttempted(ControllerButton b)
         {
-            if(Activated != true && beginrecruitmentButton != b){return;}
-            Debug.Log("ACTIVATED RECRUITMENT");
-            //activate recruitment
-                    
+            if(Activated && beginrecruitmentButton == b)
+            {
+                Debug.Log("ACTIVATED RECRUITMENT");
+            }
         }
     }
 }
