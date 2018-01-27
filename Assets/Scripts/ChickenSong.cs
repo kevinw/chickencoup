@@ -31,6 +31,8 @@ public class ChickenSong : MonoBehaviour {
 
 	void Start()
 	{
+		squawkA = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit");
+
 		if (Application.isPlaying)
 		{
 			var song = GenerateSong(6);
@@ -59,10 +61,7 @@ public class ChickenSong : MonoBehaviour {
 			if (currentTimeNormalized > nextNote.time)
 			{
 				Debug.Log("note " + nextNote.button + " at time " + nextNote.time);
-
-				//
-				// PLAY A SQUAK HERE
-				//
+				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit");
 
 				opponent.Squawk();
 				lastNote++;
@@ -75,6 +74,11 @@ public class ChickenSong : MonoBehaviour {
 			yield return null;
 		}
 	}
+
+	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkA;
+	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkB;
+	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkX;
+	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkY;
 
 	public void SetTime(float t)
 	{
