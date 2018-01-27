@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 114262439153266102}
   MasterBankRef: {fileID: 114037713319465672}
   StringsBankRef: {fileID: 114229438245719574}
-  stringsBankWriteTime: 636526625710000000
+  stringsBankWriteTime: 636526637380000000
   cacheVersion: 2
 --- !u!114 &114037713319465672
 MonoBehaviour:
@@ -33,7 +33,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: /Users/craig/Desktop/Chicken Coup/FMOD Studio Project/Chicken Coup FMOD Studio/Build/Desktop/Master
     Bank.bank
-  lastModified: 636526625710000000
+  lastModified: 636526637380000000
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMOD Studio Project/Chicken Coup FMOD Studio/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636526625710000000
+  lastModified: 636526637380000000
   LoadResult: 0
   FileSizes:
   - Name: 
