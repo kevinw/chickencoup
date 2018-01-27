@@ -546,9 +546,25 @@ Prefab:
       propertyPath: WalkingSoundEvent
       value: event:/SFX/PLAYER_CHICKEN/Footsteps
       objectReference: {fileID: 0}
-    - target: {fileID: 1366557476518208, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
-      propertyPath: m_TagString
-      value: Player
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: RedSquakSound
+      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: BlueSquakSound
+      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: YellowSquakSound
+      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: GreenSquakSound
+      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}

@@ -14,6 +14,10 @@ namespace ChickenCoup
         public GameObject RedSquak;
         public bool TouchingChicken;
 
+        Verlet3D MovementScript;
+
+#region  SOUND
+
         [FMODUnity.EventRef]
         public string RedSquakSound;
         [FMODUnity.EventRef]
@@ -21,11 +25,15 @@ namespace ChickenCoup
         [FMODUnity.EventRef]
         public string YellowSquakSound;
         [FMODUnity.EventRef]
+        public string GreenSquakSound;
+        [FMODUnity.EventRef]
         public string WalkingSoundEvent;
         FMOD.Studio.EventInstance walkingSound;
+#endregion
 
         enum SquakType
         {
+            Green,
             Red,
             Blue,
             Yellow
@@ -38,6 +46,8 @@ namespace ChickenCoup
             Assert.IsNotNull(RedSquak);
             DisableAllSquaks();
 
+            MovementScript = GetComponent<Verlet3D>();
+
             //sub to buttons 
             Events.Input.ButtonPressed += OnButtonPressed;
 
@@ -46,9 +56,24 @@ namespace ChickenCoup
             //link sounds
             walkingSound = FMODUnity.RuntimeManager.CreateInstance(WalkingSoundEvent);
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-            walkingSound.start();
-            // RedSquakInstance = FMODUnity.RuntimeManager.CreateInstance(SquakEvent);
-            // RedSquakInstance.start();
+        }
+
+        void Update()
+        {
+            PLAYBACK_STATE walkingState;
+            walkingSound.getPlaybackState(out walkingState);
+            if(MovementScript.InMotion)
+            {
+                if(walkingState != PLAYBACK_STATE.PLAYING)
+                {
+                   Debug.Log("started walking sound");
+                    walkingSound.start();
+                }
+            } 
+            else
+            {
+                walkingSound.stop(STOP_MODE.IMMEDIATE);
+            }
         }
 
         public void OnButtonPressed(ControllerButton b)
@@ -66,6 +91,9 @@ namespace ChickenCoup
                         break;
                     case ControllerButton.X:
                         Squak(SquakType.Blue);
+                        break;
+                    case ControllerButton.A:
+                        Squak(SquakType.Green);
                         break;
                 }
             }
@@ -109,6 +137,11 @@ namespace ChickenCoup
                     RedSquak.SetActive(true);
                     PlaySoundHere(RedSquakSound);
                     break;
+                case SquakType.Green:
+                    //jumps
+                    FMODUnity.RuntimeManager.PlayOneShot(GreenSquakSound, transform.position);
+                    break;
+                    
             }
         }
 

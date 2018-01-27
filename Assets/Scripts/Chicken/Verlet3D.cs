@@ -29,6 +29,7 @@ namespace ChickenCoup
 
 		private Transform cam; // A reference to the main camera in the scenes transform
 		bool jumping = false;
+		public bool InMotion;		
 
 		void Start()
 		{            
@@ -41,6 +42,9 @@ namespace ChickenCoup
 			
 			//sub to button events
 			Events.Input.ButtonPressed += OnButtonPressed;
+
+			//init move state
+			InMotion = false;
 		}
 
 		bool IsPlayerControlled {
@@ -64,6 +68,7 @@ namespace ChickenCoup
 		internal bool CPUMovement = false;
 		internal Vector3 CPUMoveVector;
 
+
 		void FixedUpdate()
 		{
             if (!IsPlayerControlled && !CPUMovement)
@@ -85,6 +90,9 @@ namespace ChickenCoup
 					movementVector = new Vector3(stick.x, yVal/Time.deltaTime, stick.y);
 				}
 			}
+			
+			InMotion = false;
+			if(Vector3.Magnitude(movementVector) > 0.1){InMotion = true;}
 			if(jumping){movementVector.y += jumpAmount;}
 			Vector3 accleration = GetAccleration(velocityVector);
 			if(accleration.y > 10.0f){accleration.y = 10.0f;}
