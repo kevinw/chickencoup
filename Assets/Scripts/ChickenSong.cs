@@ -37,48 +37,75 @@ public class ChickenSong : MonoBehaviour {
 		{
 			var song = GenerateSong(6);
 			PlaceEggs(song);
-			StartCoroutine(PlaySongPractice(song));
+			coro = StartCoroutine(PlaySongPractice(song));
 		}
 
+	}
+
+	Coroutine coro;
+
+	void OnDisable()
+	{
+		if (coro != null)
+		{
+			StopCoroutine(coro);
+		}
 	}
 
 	public ChickenAnimator opponent;
 
 	public float DEBUG_TIME;
 
-	IEnumerator PlaySongPractice(Song song)
+	IEnumerator PlaySongPractice(Song song, bool practice=true)
 	{
 		var currentTime = 0f;
 		var lastNote = 0;
 		var nextNote = song.notes[lastNote];
 		yield return null;
-		while (true)
+		bool finished = false;
+		float currentTimeNormalized = 0f;
+		while (currentTimeNormalized <= 1f)
 		{
 			currentTime += Time.deltaTime;
-			var currentTimeNormalized = currentTime / song.seconds;
+			currentTimeNormalized = currentTime / song.seconds;
 			DEBUG_TIME = currentTimeNormalized;
 			SetTime(currentTimeNormalized);
 			if (currentTimeNormalized > nextNote.time)
 			{
-				Debug.Log("note " + nextNote.button + " at time " + nextNote.time);
-				FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit");
+				if (!finished)
+				{
+					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit");
+					opponent.Squawk();
+					PulseEgg(lastNote);
+					lastNote++;
+				}
 
-				opponent.Squawk();
-				lastNote++;
 				if (lastNote < song.notes.Count)
 				{
 					nextNote = song.notes[lastNote];
+				}
+				else
+				{
+					finished = true;
 				}
 			}
 
 			yield return null;
 		}
+
+		coro = null;
 	}
 
 	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkA;
 	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkB;
 	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkX;
 	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkY;
+
+	public void PulseEgg(int noteIndex)
+	{
+		var egg = eggParent.GetChild(noteIndex);
+		LeanTween.scale(egg.gameObject, Vector3.one * 0.001f, 0.5f);
+	}
 
 	public void SetTime(float t)
 	{
@@ -123,7 +150,6 @@ public class ChickenSong : MonoBehaviour {
 			eggObj.transform.SetParent(eggParent, false);
 			var eggSprite = eggObj.GetComponent<SpriteRenderer>();
 			eggSprite.color = ColorForButton(note.button);
-
 		}
 	}
 
