@@ -7,6 +7,16 @@ public class LookingDirection : MonoBehaviour {
 	public Vector3 direction;
 
 	void Update () {
-		direction = Vector3.ProjectOnPlane(transform.position - lastPosition.normalized, Vector3.one);
+		var delta = (transform.position - lastPosition);
+		if (delta.magnitude > 0.001f)
+		{
+			direction = Vector3.ProjectOnPlane(delta.normalized, Vector3.up);
+		}
+		lastPosition = transform.position;
 	}
+
+    void OnDrawGizmos() {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(new Ray(transform.position, direction));
+    }
 }
