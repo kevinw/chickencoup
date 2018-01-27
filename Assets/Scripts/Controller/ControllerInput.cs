@@ -11,11 +11,52 @@ namespace ChickenCoup
 		X,
 		Y
 	}
+
 	public class ControllerInput : MonoBehaviour {
+		public static ControllerInput Instance;
+		void Awake()
+		{
+			Instance = this;
+		}
 		void Start()
 		{
 			DontDestroyOnLoad(this);
 		}
+
+		public enum JoystickSide { Left, Right };
+
+		public Vector2 GetStick(JoystickSide side)
+		{
+			if (side == JoystickSide.Left)
+				return GetLeftStick();
+			else
+				return GetRightStick();
+		}
+
+		public Vector2 GetLeftStick()
+		{
+			return new Vector2(
+				Input.GetAxis("Horizontal"),
+				Input.GetAxis("Vertical")
+			);
+		}
+
+		public Vector2 GetRightStick()
+		{
+			#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+			// right stick is different on OSX
+			return new Vector2(
+				Input.GetAxis("Axis3"),
+				-Input.GetAxis("Axis4")
+			);
+			#else
+			return new Vector2(
+				Input.GetAxis("Axis4"),
+				-Input.GetAxis("Axis5")
+			);
+			#endif
+		}
+
 		// Update is called once per frame
 		void Update () {
 			//may need to update these for different plats, these are osx bindings for xbox

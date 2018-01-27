@@ -540,6 +540,11 @@ Prefab:
       propertyPath: VerticalAxisName
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114414354640698138, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: PlayerControlled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
   m_IsPrefabParent: 0
@@ -599,6 +604,11 @@ Prefab:
     - target: {fileID: 1366557476518208, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
       propertyPath: m_TagString
       value: LastChicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414354640698138, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: joystickSide
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
@@ -769,6 +779,11 @@ Prefab:
         type: 2}
       propertyPath: VerticalAxisName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414354640698138, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: PlayerControlled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
@@ -1125,6 +1140,11 @@ Prefab:
         type: 2}
       propertyPath: VerticalAxisName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414354640698138, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: PlayerControlled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
@@ -1770,6 +1790,11 @@ Prefab:
         type: 2}
       propertyPath: VerticalAxisName
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414354640698138, guid: b4f5722bac85148aa9f748dfb571329a,
+        type: 2}
+      propertyPath: PlayerControlled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
