@@ -817,6 +817,8 @@ MonoBehaviour:
   mass: 1.7
   stopVelocity: 0.5
   jumpAmount: 2.67
+  PlayerControlled: 1
+  joystickSide: 0
 --- !u!114 &114642154118351376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -828,9 +830,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ba0ffb3f0c848f48084a1ab033c2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songPrefab: {fileID: 1298456149608856, guid: a62917105ce8f2148911b48aa9113ad2, type: 2}
   BlueSquak: {fileID: 1317879486405518}
   YellowSquak: {fileID: 1777292089461554}
   RedSquak: {fileID: 1912726561252100}
+  TouchingChicken: 0
+  RedSquakSound: 
+  BlueSquakSound: 
+  YellowSquakSound: 
+  WalkingSoundEvent: 
 --- !u!137 &137192684065455732
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

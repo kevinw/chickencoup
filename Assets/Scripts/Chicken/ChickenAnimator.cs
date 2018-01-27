@@ -75,7 +75,7 @@ public class ChickenAnimator : MonoBehaviour {
 
 		// Update springs
 		rootSpring.Update(transform.position + chaosPoint);
-		Vector3 target = rootSpring.position;
+		//Vector3 target = rootSpring.position;
 		for (int i = 0; i < headSprings.Count; i++) {
 			headSprings[i].Update(headJoints[i].transform.position + chaosPoint);
 		}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -197,31 +197,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.22580397
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 5.0495176
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -4.640587
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.2956911
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.028082496
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.008696618
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.9548311
       objectReference: {fileID: 0}
     - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
       propertyPath: m_RootOrder
@@ -232,6 +232,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 34696260}
+    - target: {fileID: 4199899026801864, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 47.392002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d88f0c4a89bd64314885abd9985f4d0d, type: 2}
   m_IsPrefabParent: 0
@@ -381,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 1253380162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10.371843, y: 10.371845, z: 10.371845}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -541,6 +545,10 @@ Prefab:
         type: 2}
       propertyPath: WalkingSoundEvent
       value: event:/SFX/PLAYER_CHICKEN/Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366557476518208, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}

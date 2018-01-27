@@ -48,9 +48,11 @@ namespace ChickenCoup
 
         void OnRecruitmentAttempted(ControllerButton b)
         {
-            if(Activated && beginrecruitmentButton == b)
+            if (Activated && beginrecruitmentButton == b)
             {
-                Debug.Log("ACTIVATED RECRUITMENT");
+                if (Events.Recruitment.BeginRecruitment != null)
+                    Events.Recruitment.BeginRecruitment.Invoke(this);
+                //GameObject.FindWithTag("Player").GetComponent<CoreChicken>().StartSong(this);
             }
         }
     }

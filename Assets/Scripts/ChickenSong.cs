@@ -29,17 +29,14 @@ public class ChickenSong : MonoBehaviour {
 	public Transform eggParent;
 	public LineRenderer timeline;
 
-	void Start()
+	Recruitable recruitable;
+
+	public void GenerateAndPlaySong(Recruitable recruitable)
 	{
-		squawkA = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit");
-
-		if (Application.isPlaying)
-		{
-			var song = GenerateSong(6);
-			PlaceEggs(song);
-			coro = StartCoroutine(PlaySongPractice(song));
-		}
-
+		this.recruitable = recruitable;
+		var song = GenerateSong(6);
+		PlaceEggs(song);
+		coro = StartCoroutine(PlaySong(song));
 	}
 
 	Coroutine coro;
@@ -56,7 +53,7 @@ public class ChickenSong : MonoBehaviour {
 
 	public float DEBUG_TIME;
 
-	IEnumerator PlaySongPractice(Song song, bool practice=true)
+	IEnumerator PlaySong(Song song, bool practice=true)
 	{
 		var currentTime = 0f;
 		var lastNote = 0;
@@ -74,9 +71,16 @@ public class ChickenSong : MonoBehaviour {
 			{
 				if (!finished)
 				{
-					FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit");
-					opponent.Squawk();
-					PulseEgg(lastNote);
+					var pos = opponent ? opponent.transform.position : transform.position;
+					FMODUnity.RuntimeManager.PlayOneShot(SquawkSoundForNote(nextNote.button), pos);
+					if (opponent)
+						opponent.Squawk();
+					if (practice)
+						PulseEgg(lastNote);
+					else
+					{
+
+					}
 					lastNote++;
 				}
 
@@ -94,17 +98,34 @@ public class ChickenSong : MonoBehaviour {
 		}
 
 		coro = null;
+		if (practice)
+			StartCoroutine(PlaySong(song, false));
+		else
+		{
+			if (Events.Recruitment.RecruitmentResult != null)
+			{
+				var success = true;
+				Events.Recruitment.RecruitmentResult.Invoke(recruitable, success);
+			}
+
+		}
 	}
 
-	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkA;
-	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkB;
-	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkX;
-	[FMODUnity.EventRef] FMOD.Studio.EventInstance squawkY;
+	[FMODUnity.EventRef] public string squawkA;
+	[FMODUnity.EventRef] public string squawkB;
+	[FMODUnity.EventRef] public string squawkX;
+	[FMODUnity.EventRef] public string squawkY;
 
 	public void PulseEgg(int noteIndex)
 	{
-		var egg = eggParent.GetChild(noteIndex);
-		LeanTween.scale(egg.gameObject, Vector3.one * 0.001f, 0.5f);
+		if (eggParent && noteIndex < eggParent.childCount)
+		{
+			var egg = eggParent.GetChild(noteIndex);
+			var obj = egg.gameObject;
+			var s = egg.localScale;
+			LeanTween.scale(obj, s * 1.4f, 0.08f);
+			LeanTween.scale(obj, s, 0.1f).setDelay(0.08f);
+		}
 	}
 
 	public void SetTime(float t)
@@ -124,15 +145,26 @@ public class ChickenSong : MonoBehaviour {
 			case ControllerButton.Y: return Color.yellow;
 			default: throw new System.NotImplementedException();
 		}
-
 	}
 
 	public static ControllerButton[] ButtonIndexes = new [] {
 		ControllerButton.A,
-		ControllerButton.X,
 		ControllerButton.B,
+		ControllerButton.X,
 		ControllerButton.Y
 	};
+
+	string SquawkSoundForNote(ControllerButton button)
+	{
+		switch (button)
+		{
+			case ControllerButton.A: return squawkA;
+			case ControllerButton.B: return squawkB;
+			case ControllerButton.X: return squawkX;
+			case ControllerButton.Y: return squawkY;
+			default: throw new System.NotImplementedException();
+		}
+	}
 
 	static int IndexForButton(ControllerButton button)
 	{
@@ -173,7 +205,9 @@ public class ChickenSong : MonoBehaviour {
 		for (var i = 0; i < numNotes; ++i)
 		{
 			var button = (ControllerButton)Random.Range(0, 4);
-			song.notes.Add(new Note{time = (float)i/(float)numNotes, button=button});
+			var time = (float)i/(float)numNotes;
+			time += 1.0f/numNotes/2.0f;
+			song.notes.Add(new Note{time = time, button=button});
 		}
 
 		return song;

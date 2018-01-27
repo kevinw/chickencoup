@@ -7,6 +7,7 @@ using FMOD.Studio;
 namespace ChickenCoup
 {
     public class CoreChicken : MonoBehaviour {
+        public GameObject songPrefab;
 
         public GameObject BlueSquak;
         public GameObject YellowSquak;
@@ -40,6 +41,8 @@ namespace ChickenCoup
             //sub to buttons 
             Events.Input.ButtonPressed += OnButtonPressed;
 
+            Events.Recruitment.BeginRecruitment += StartSong;
+
             //link sounds
             walkingSound = FMODUnity.RuntimeManager.CreateInstance(WalkingSoundEvent);
             FMODUnity.RuntimeManager.AttachInstanceToGameObject(walkingSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
@@ -68,8 +71,26 @@ namespace ChickenCoup
             }
             if(TouchingChicken)
             {
-                if(Events.Recruitment.TryBeginRecruitment != null){Events.Recruitment.TryBeginRecruitment(b);}                
+                if (Events.Recruitment.TryBeginRecruitment != null){Events.Recruitment.TryBeginRecruitment(b);}
             }
+        }
+
+        public void StartSong(Recruitable recruitable)
+        {
+            var songObj = Instantiate(songPrefab, Vector3.zero + new Vector3(0, 1, 0), Quaternion.identity);
+            var song = songObj.GetComponent<ChickenSong>();
+            song.GenerateAndPlaySong(recruitable);
+            Events.Recruitment.RecruitmentResult += (r, res) => {
+                LeanTween.scale(songObj, Vector3.zero, 0.5f).setEase(LeanTweenType.easeInOutQuint).setOnComplete(() => {
+                    Destroy(songObj);
+                });
+            };
+        }
+
+        void PlaySoundHere(string soundID)
+        {
+            if (!string.IsNullOrEmpty(soundID))
+                FMODUnity.RuntimeManager.PlayOneShot(soundID, transform.position);
         }
 
         void Squak(SquakType t)
@@ -78,15 +99,15 @@ namespace ChickenCoup
             {
                 case SquakType.Blue:
                     BlueSquak.SetActive(true);
-                    FMODUnity.RuntimeManager.PlayOneShot(BlueSquakSound, transform.position);
+                    PlaySoundHere(BlueSquakSound);
                     break;
                 case SquakType.Yellow:
                     YellowSquak.SetActive(true);
-                    FMODUnity.RuntimeManager.PlayOneShot(YellowSquakSound, transform.position);
+				    PlaySoundHere(YellowSquakSound);
                     break;
                 case SquakType.Red:
                     RedSquak.SetActive(true);
-                    FMODUnity.RuntimeManager.PlayOneShot(RedSquakSound, transform.position);
+                    PlaySoundHere(RedSquakSound);
                     break;
             }
         }

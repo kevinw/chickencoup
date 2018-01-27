@@ -18,6 +18,8 @@ namespace ChickenCoup
         {
             public static Action<GameObject, Visibility> ToggleRecruitmentPrompt;
             public static Action<ControllerButton> TryBeginRecruitment;
+            public static Action<Recruitable> BeginRecruitment;
+            public static Action<Recruitable, bool> RecruitmentResult;
         }
     }
 }

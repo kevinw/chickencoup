@@ -7,17 +7,17 @@ namespace  ChickenCoup
 {
     public class CameraLook : MonoBehaviour {
 
-        Camera camera;
+        Camera cam;
         public GameObject target;
 
         void Start()
         {
-            camera = Camera.main;
-            Assert.IsNotNull(camera);
+            cam = Camera.main;
+            Assert.IsNotNull(cam);
         }
 
         void Update () {
-            camera.transform.LookAt(target.transform);
+            cam.transform.LookAt(target.transform);
         }
     }
 }

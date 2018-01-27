@@ -46,7 +46,7 @@ namespace ChickenCoup
 				var forward = delta * ((float)i + 1f);
 				var p = startPos + forward;
 
-				var right = Vector3.Cross(forward, Vector3.up);
+				//var right = Vector3.Cross(forward, Vector3.up);
 
 				//var random = Mathf.PerlinNoise((int)(Time.time * 2.0f + i * 1.0f/(float)numChickens), i);
 				//randomVec = right.normalized * random;
