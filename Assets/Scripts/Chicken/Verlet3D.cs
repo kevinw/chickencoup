@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class VerletMovement : MonoBehaviour
+public class Verlet3D : MonoBehaviour
 {
     //accleration per update from player movement
     public float accleration = 200.0f;
@@ -21,7 +21,7 @@ public class VerletMovement : MonoBehaviour
     void Start()
     {
         //we start out with no movement
-        velocityVector = Vector2.zero;
+        velocityVector = Vector3.zero;
 
         //we start out where we started
         lastPosition = transform.position;
@@ -30,42 +30,47 @@ public class VerletMovement : MonoBehaviour
     void Update()
     {
         //init any movement from the player
-        movementVector = Vector2.zero;
+        movementVector = Vector3.zero;
         lastPosition = transform.position;
 
         // set the movement to the inputed keys
         //grab the first half step vel
-        movementVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        Vector2 accleration = GetAccleration(velocityVector);
-        Vector3 halfStepVel = new Vector3 (velocityVector.x + 0.5f * Time.deltaTime * accleration.x, velocityVector.y + 0.5f * Time.deltaTime * accleration.y, 0);
+        movementVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 accleration = GetAccleration(velocityVector);
+        Vector3 halfStepVel = new Vector3 (velocityVector.x + 0.5f * Time.deltaTime * accleration.x, 
+										   velocityVector.y + 0.5f * Time.deltaTime * accleration.y, 
+										   velocityVector.z + 0.5f * Time.deltaTime * accleration.z);
         transform.position = transform.position + halfStepVel * Time.deltaTime;
 
         //grab the second half-step
-        accleration = GetAccleration(new Vector2 (halfStepVel.x, halfStepVel.y));
+        accleration = GetAccleration(new Vector3 (halfStepVel.x, halfStepVel.y, halfStepVel.z));
         velocityVector.x = halfStepVel.x + 0.5f * Time.deltaTime * accleration.x;
         velocityVector.y = halfStepVel.y + 0.5f * Time.deltaTime * accleration.y;
+        velocityVector.z = halfStepVel.z + 0.5f * Time.deltaTime * accleration.z;
         velocityVector = CutXYZ(velocityVector, stopVelocity);
     }
 
     //get the accleration of an object based on its velocity
-    Vector2 GetAccleration(Vector2 velocity)
+    Vector3 GetAccleration(Vector3 velocity)
     {
         //find the force given
-        Vector2 force = movementVector * accleration;
+        Vector3 force = movementVector * accleration;
 
         //find the new force
-        force = new Vector2(force.x - (friction * mass * velocity.x), force.y - (friction * mass * velocity.y));
-
+        force = new Vector3(force.x - (friction * mass * velocity.x), 
+						    force.y - (friction * mass * velocity.y), 
+							force.z - (friction * mass * velocity.z));
         //divide force by mass to get accleration
-        return CutXYZ(new Vector2(force.x / mass, force.y / mass), 0.01f);
+        return CutXYZ(new Vector3(force.x / mass, force.y / mass, force.z / mass), 0.01f);
     }
 
     //floor a vector2 if it's below a threshold
-    Vector2 CutXYZ(Vector2 input, float threshold)
+    Vector3 CutXYZ(Vector3 input, float threshold)
     {
         float x = Mathf.Abs(input.x) > threshold ? input.x : 0f;
         float y = Mathf.Abs(input.y) > threshold ? input.y : 0f;
-        return new Vector2(x,y);
+        float z = Mathf.Abs(input.z) > threshold ? input.z : 0f;
+        return new Vector3(x,y,z);
     }
 
 }
