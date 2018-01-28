@@ -52,6 +52,8 @@ namespace ChickenCoup
 			chickensFollowingYou.Remove(recruitable);
 		}
 
+		public float FollowDistance = 1.0f;
+
 		void Update()
 		{
 			var playerChicken = GameObject.FindGameObjectWithTag("Player");
@@ -69,8 +71,14 @@ namespace ChickenCoup
 
 			for (var i = 0; i < numChickens; ++i)
 			{
+				/* 
+				// OLD - linear
 				var forward = delta * ((float)i + 1f);
 				var p = startPos + forward;
+				*/
+
+				// NEW: chickens follow you
+				var p = FollowInLine.GetTargetPos(i == 0 ? playerChicken.transform : chickensFollowingYou[i - 1].transform, FollowDistance);
 
 				//var right = Vector3.Cross(forward, Vector3.up);
 				//var random = Mathf.PerlinNoise((int)(Time.time * 2.0f + i * 1.0f/(float)numChickens), i);
