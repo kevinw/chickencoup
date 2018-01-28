@@ -1,64 +1,73 @@
 fileFormatVersion: 2
-guid: 460e4ee215edd45638f6697c5bb5650a
+guid: 74987cec6f0ea438caf670fb75733f19
+timeCreated: 1517114953
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pHelix1
-    100004: pHelix10
-    100006: pHelix11
-    100008: pHelix12
-    100010: pHelix13
-    100012: pHelix14
-    100014: pHelix2
-    100016: pHelix20
-    100018: pHelix5
-    100020: pHelix6
-    100022: pHelix8
-    100024: pHelix9
-    100026: transform1
-    100028: transform10
-    100030: transform11
-    100032: transform2
-    100034: transform3
-    100036: transform4
-    100038: transform5
-    100040: transform6
-    100042: transform7
-    100044: transform8
-    100046: transform9
+    100002: chicken_Chest
+    100004: chicken_Head
+    100006: chicken_Neck
+    100008: chicken_Neck2
+    100010: chicken_Neck3
+    100012: chicken_Neck4
+    100014: CHICKEN_RastaHair
+    100016: chickenButt
+    100018: Chocken2
+    100020: Farmer_Hat
+    100022: L_chickenFinger
+    100024: L_chickenFoot
+    100026: L_chickenLeg
+    100028: L_chickenWing
+    100030: Normal_ChickenHair
+    100032: R_chickenFinger
+    100034: R_chickenFoot
+    100036: R_chickenReg
+    100038: R_chickenWing
+    100040: WeirdChicken_Hair
     400000: //RootNode
-    400002: pHelix1
-    400004: pHelix10
-    400006: pHelix11
-    400008: pHelix12
-    400010: pHelix13
-    400012: pHelix14
-    400014: pHelix2
-    400016: pHelix20
-    400018: pHelix5
-    400020: pHelix6
-    400022: pHelix8
-    400024: pHelix9
-    400026: transform1
-    400028: transform10
-    400030: transform11
-    400032: transform2
-    400034: transform3
-    400036: transform4
-    400038: transform5
-    400040: transform6
-    400042: transform7
-    400044: transform8
-    400046: transform9
+    400002: chicken_Chest
+    400004: chicken_Head
+    400006: chicken_Neck
+    400008: chicken_Neck2
+    400010: chicken_Neck3
+    400012: chicken_Neck4
+    400014: CHICKEN_RastaHair
+    400016: chickenButt
+    400018: Chocken2
+    400020: Farmer_Hat
+    400022: L_chickenFinger
+    400024: L_chickenFoot
+    400026: L_chickenLeg
+    400028: L_chickenWing
+    400030: Normal_ChickenHair
+    400032: R_chickenFinger
+    400034: R_chickenFoot
+    400036: R_chickenReg
+    400038: R_chickenWing
+    400040: WeirdChicken_Hair
     2100000: lambert1
-    2300000: pHelix20
-    3300000: pHelix20
-    4300000: pHelix20
+    2100002: lambert3
+    2100004: lambert4
+    2100006: lambert5
+    2100008: lambert6
+    2100010: lambert7
+    2100012: lambert8
+    4300000: Chocken2
+    4300002: CHICKEN_RastaHair
+    4300004: Farmer_Hat
+    4300006: Normal_ChickenHair
+    4300008: WeirdChicken_Hair
     9500000: //RootNode
+    13700000: CHICKEN_RastaHair
+    13700002: Chocken2
+    13700004: Farmer_Hat
+    13700006: Normal_ChickenHair
+    13700008: WeirdChicken_Hair
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -86,7 +95,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 25
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
