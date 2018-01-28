@@ -9,12 +9,14 @@ namespace ChickenCoup
 	public class SavedChickenCounter : MonoBehaviour {
         public Text SavedText;
         public Text SavedCount;
+        int savedChickens = 0;
         void Start()
         {
+            savedChickens = 0;
             SavedText.enabled = false;
             SavedCount.enabled = false;
             Events.Noise.NoiseLimitReached += OnLimitReached;
-            // Events.Recruitment.Nirvana += OnNirvanaReached;
+            Events.Recruitment.Nirvana += OnNirvanaReached;
         }
 
         void OnLimitReached()
@@ -25,12 +27,9 @@ namespace ChickenCoup
 
         void OnNirvanaReached()
         {
+            savedChickens++;
+            SavedCount.text = savedChickens.ToString();
             //increase number of saved chickens
-        }
-
-        void Update()
-        {
-            // Counter.text = line.chickensFollowingYou.Count.ToString();
         }
     }
 }

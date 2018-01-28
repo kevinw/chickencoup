@@ -16,6 +16,7 @@ public class Nirvana : MonoBehaviour {
 				var b = obj.GetComponent<Rigidbody>();
 				b.useGravity = false;
 			}
+			if(Events.Recruitment.Nirvana != null){Events.Recruitment.Nirvana();}
 		}
 	}
 
