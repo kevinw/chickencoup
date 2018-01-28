@@ -7,8 +7,8 @@ using UnityEngine.UI;
 namespace ChickenCoup
 {
 	public class GlobalState : MonoBehaviour {
-		public int TotalNoise { get; private set;}
-		public int NoiseLimit;
+		public static int TotalNoise { get; private set;}
+		public static int NoiseLimit { get; private set;}
 		public Slider NoiseMeter;
 
 		bool FiredNoiseLimit;
@@ -17,6 +17,7 @@ namespace ChickenCoup
 			Assert.IsNotNull(NoiseMeter);
 			TotalNoise = 0;
 			Events.Noise.IncreaseNoise += OnNoiseIncreased;
+			NoiseLimit = 20;
 		}
 		
 		void OnNoiseIncreased(int amount)
