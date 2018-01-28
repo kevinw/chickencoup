@@ -286,23 +286,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8ba448ea7d3d433b8c9d9ac58bf2ebc, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &320858493 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1912726561252100, guid: b4f5722bac85148aa9f748dfb571329a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1964203882}
---- !u!114 &320858497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 320858493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9a9a808e0224874a7d44b6060554c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Seconds: 0.3
 --- !u!1001 &667202884
 Prefab:
   m_ObjectHideFlags: 0
@@ -428,23 +411,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f0a8d31b09814578b8873578bad7201, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &984700455 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1317879486405518, guid: b4f5722bac85148aa9f748dfb571329a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1964203882}
---- !u!114 &984700459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 984700455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9a9a808e0224874a7d44b6060554c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Seconds: 0.3
 --- !u!1001 &1060790711
 Prefab:
   m_ObjectHideFlags: 0
@@ -544,11 +510,11 @@ Prefab:
       objectReference: {fileID: 34696268}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.27910385
+      value: 0.27910367
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.002390589
+      value: -0.0023906033
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.w
@@ -556,11 +522,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.27910385
+      value: 0.27910367
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.002390589
+      value: -0.0023906033
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.w
@@ -568,11 +534,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.00822453
+      value: 0.008224585
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.00822453
+      value: 0.008224585
+      objectReference: {fileID: 0}
+    - target: {fileID: 20798803281064806, guid: d6cf1f907aed99e4e8e5cc063f918d4a,
+        type: 2}
+      propertyPath: field of view
+      value: 52.414703
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
@@ -866,23 +837,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a552dcb6938646268185b226163925b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1952497248 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1777292089461554, guid: b4f5722bac85148aa9f748dfb571329a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1964203882}
---- !u!114 &1952497252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1952497248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9a9a808e0224874a7d44b6060554c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Seconds: 0.3
 --- !u!1001 &1955064174
 Prefab:
   m_ObjectHideFlags: 0
@@ -974,39 +928,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 65135632428082902, guid: b4f5722bac85148aa9f748dfb571329a,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
-        type: 2}
-      propertyPath: WalkingSoundEvent
-      value: event:/SFX/PLAYER_CHICKEN/Footsteps
-      objectReference: {fileID: 0}
-    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
-        type: 2}
-      propertyPath: RedSquakSound
-      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_02
-      objectReference: {fileID: 0}
-    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
-        type: 2}
-      propertyPath: BlueSquakSound
-      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_03
-      objectReference: {fileID: 0}
-    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
-        type: 2}
-      propertyPath: YellowSquakSound
-      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_04
-      objectReference: {fileID: 0}
-    - target: {fileID: 114642154118351376, guid: b4f5722bac85148aa9f748dfb571329a,
-        type: 2}
-      propertyPath: GreenSquakSound
-      value: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_01
-      objectReference: {fileID: 0}
     - target: {fileID: 1366557476518208, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}
-      propertyPath: m_TagString
-      value: Player
+      propertyPath: m_Name
+      value: Player Chicken
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4f5722bac85148aa9f748dfb571329a, type: 2}

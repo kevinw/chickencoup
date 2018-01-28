@@ -104,6 +104,12 @@ namespace ChickenCoup
 											velocityVector.z + 0.5f * Time.deltaTime * accleration.z);
 			transform.position = transform.position + halfStepVel * Time.deltaTime;
 
+			var forward = Vector3.ProjectOnPlane(halfStepVel.normalized, Vector3.up);
+			if (forward.sqrMagnitude > 0f)
+			{
+				transform.forward = Vector3.Lerp(transform.forward, forward, Time.deltaTime * ForwardFaceSpeed);
+			}
+
 			//grab the second half-step
 			accleration = GetAccleration(new Vector3 (halfStepVel.x, halfStepVel.y, halfStepVel.z));
 			velocityVector.x = halfStepVel.x + 0.5f * Time.deltaTime * accleration.x;
@@ -112,6 +118,8 @@ namespace ChickenCoup
 			velocityVector = CutXYZ(velocityVector, stopVelocity);
 			jumping = false;
 		}
+
+		public float ForwardFaceSpeed = 14f;
 
 		//get the accleration of an object based on its velocity
 		Vector3 GetAccleration(Vector3 velocity)
