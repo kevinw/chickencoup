@@ -22,7 +22,7 @@ namespace ChickenCoup
 
 		public static int TotalPointsWon;
 		public static int ChickensSaved;
-
+		static int DEFAULT_NOISE_LIMIT = 65;
 
 		void Start () {
 			DontDestroyOnLoad(this);
@@ -30,7 +30,7 @@ namespace ChickenCoup
 			Assert.IsNotNull(NoiseMeter);
 			TotalNoise = 0;
 			Events.Noise.IncreaseNoise += OnNoiseIncreased;
-			NoiseLimit = 20;
+			NoiseLimit = DEFAULT_NOISE_LIMIT;
 			Events.Noise.NoiseLimitReached += OnNoiseLimitReached;
 
 			recruitingSound = FMODUnity.RuntimeManager.CreateInstance(RecruitingSoundEvent);

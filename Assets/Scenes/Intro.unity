@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -470,7 +470,7 @@ MonoBehaviour:
   - We strike at dawn...
   delayTime: 0.05
   pauseTime: 0.5
-  nextSceneName: Main
+  nextSceneName: instructions
   typeSound: event:/SFX/UI/Text
 --- !u!114 &2119891660
 MonoBehaviour:
