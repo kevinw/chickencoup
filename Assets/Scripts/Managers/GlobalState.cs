@@ -13,18 +13,36 @@ namespace ChickenCoup
 
 		static bool FiredNoiseLimit;
 
+		[FMODUnity.EventRef]
+        public string RecruitingSoundEvent;
+        FMOD.Studio.EventInstance recruitingSound;
+		[FMODUnity.EventRef]
+        public string EscapeSoundEvent;
+        FMOD.Studio.EventInstance escapeSound;
+
 		void Start () {
 			FiredNoiseLimit = false;
 			Assert.IsNotNull(NoiseMeter);
 			TotalNoise = 0;
 			Events.Noise.IncreaseNoise += OnNoiseIncreased;
 			NoiseLimit = 20;
+			Events.Noise.NoiseLimitReached += OnNoiseLimitReached;
+
+			recruitingSound = FMODUnity.RuntimeManager.CreateInstance(RecruitingSoundEvent);
+
+			escapeSound = FMODUnity.RuntimeManager.CreateInstance(EscapeSoundEvent);
+			recruitingSound.start();
 		}
 
 		public static bool NoiseLimitWasReached {
 			get {
 				return FiredNoiseLimit;
 			}
+		}
+
+		void OnNoiseLimitReached() {
+			recruitingSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);	
+			escapeSound.start();
 		}
 
 		bool _noiseLimitWasReached = false;
