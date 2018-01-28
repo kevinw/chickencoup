@@ -1657,6 +1657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   featherExplosion: {fileID: 1152449833985196, guid: 7a3a79180a818eb4895f6ae30256b684,
     type: 2}
+  FollowDistance: 1
 --- !u!114 &114012320761458384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1823,8 +1824,7 @@ MonoBehaviour:
   YellowSquakSound: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_04
   GreenSquakSound: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_01
   WalkingSoundEvent: event:/SFX/PLAYER_CHICKEN/Footsteps
-  AllStartFollowingCheat: 0
-  songPosition: {x: -1.2, y: 0, z: 3.07}
+  songPosition: {x: -1.41, y: -0.35, z: 4.1}
 --- !u!137 &137192684065455732
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
