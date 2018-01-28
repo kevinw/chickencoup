@@ -130,19 +130,14 @@ public class ChickenSong : MonoBehaviour {
 			if (!practice && nextNoteIndex - 1 >= 0)
 			{
 				var lastNote = song.notes[nextNoteIndex - 1];
-				Debug.Log("last note: " + lastNote.state);
 				if (lastNote.state == NoteState.None)
 				{
 					var delta = Mathf.Abs(currentTimeNormalized - lastNote.time);
-					Debug.Log(delta + " " + missTimeNormalized);
 					if (delta > missTimeNormalized)
 					{
-						Debug.Log("MISS HERE");
 						lastNote.state = NoteState.Missed;
 						EggHit(nextNoteIndex - 1, lastNote, false);
 					}
-					else
-						Debug.Log("not yet");
 				}
 
 			}

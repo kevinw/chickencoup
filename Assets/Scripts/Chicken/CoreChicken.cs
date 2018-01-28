@@ -114,9 +114,12 @@ namespace ChickenCoup
             }
         }
 
+        public Vector3 songPosition = new Vector3(-1.2f, 0, 3.07f);
+
         public void StartSong(Recruitable recruitable)
         {
-            songObj = Instantiate(songPrefab, Vector3.zero + new Vector3(0, 1, 0), Quaternion.identity);
+            songObj = Instantiate(songPrefab, songPosition, Quaternion.identity);
+            songObj.transform.SetParent(Camera.main.transform, false);
             songObj.GetComponent<ChickenSong>().GenerateAndPlaySong(recruitable);
         }
 
