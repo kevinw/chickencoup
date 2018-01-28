@@ -31,21 +31,23 @@ namespace ChickenCoup
 
 		public void AddFollowingChicken(Recruitable recruitable)
 		{
+			recruitable.GetComponent<Rigidbody>().isKinematic = false;
 			chickensFollowingYou.Add(recruitable);
+			Debug.Log("recruited chicken " + chickensFollowingYou.Count + " " + recruitable);
 		}
 
 		void Update()
 		{
 			var playerChicken = GameObject.FindGameObjectWithTag("Player");
-			var lastChicken = chickensFollowingYou.Count > 0 ? chickensFollowingYou[chickensFollowingYou.Count - 1] : null;
-			if (!lastChicken)
+			if (chickensFollowingYou.Count == 0)
 				return;
+
+			var lastChicken = chickensFollowingYou[chickensFollowingYou.Count - 1];
 			
 			startPos = playerChicken.transform.position;
 			endPos = lastChicken.transform.position;
 
 			var toLastChicken = endPos - startPos;
-
 			var numChickens = chickensFollowingYou.Count;
 			var delta = toLastChicken / ((float)numChickens + 1.0f);
 
@@ -55,7 +57,6 @@ namespace ChickenCoup
 				var p = startPos + forward;
 
 				//var right = Vector3.Cross(forward, Vector3.up);
-
 				//var random = Mathf.PerlinNoise((int)(Time.time * 2.0f + i * 1.0f/(float)numChickens), i);
 				//var randomVec = right.normalized * random;
 				//p += randomVec;
@@ -63,7 +64,10 @@ namespace ChickenCoup
 				var otherChicken = chickensFollowingYou[i];
 				var follow = otherChicken.GetComponent<VerletFollow>();
 				if (!follow)
+				{
+					Debug.Log("Adding follow " + otherChicken);
 					follow = otherChicken.gameObject.AddComponent<VerletFollow>();
+				}
 
 				var v = otherChicken.GetComponent<Verlet3D>();
 
