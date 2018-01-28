@@ -5,8 +5,8 @@ using UnityEngine;
 namespace ChickenCoup {
 public class RaiseToSky : MonoBehaviour {
 
-	public float RandomSpeedMin = 4.0f;
-	public float RandomSpeedMax = 9.0f;
+	public float RandomSpeedMin = 3.0f;
+	public float RandomSpeedMax = 6.0f;
 
 	float Speed;
 

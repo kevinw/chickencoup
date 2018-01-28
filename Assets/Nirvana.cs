@@ -11,7 +11,7 @@ public class Nirvana : MonoBehaviour {
 		if (!enlightenment)
 		{
 			obj.AddComponent<RaiseToSky>();
-			if (obj.tag != "Player")
+			//if (obj.tag != "Player")
 			{
 				var b = obj.GetComponent<Rigidbody>();
 				b.useGravity = false;
