@@ -38,10 +38,6 @@ namespace ChickenCoup
 				Recruitable chicken = other.GetComponent<Recruitable>();
 				if(Events.Recruitment.KillChicken != null){Events.Recruitment.KillChicken(chicken);}
 			}
-			else if(other.GetComponent<CoreChicken>() != null)
-			{
-				Debug.Log("LOST!!!!!!");
-			}
 		}
 	}
 }
