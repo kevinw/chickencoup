@@ -40,6 +40,7 @@ public class ChickenSong : MonoBehaviour {
 	public GameObject chickPrefab;
 	public Transform eggParent;
 	public LineRenderer timeline;
+	public UnityEngine.UI.Text text;
 
 	Recruitable recruitable;
 
@@ -77,6 +78,14 @@ public class ChickenSong : MonoBehaviour {
 	{
 		InSong = true;
 		var player = GameObject.FindGameObjectWithTag("Player");
+
+		if (!practice)
+		{
+			if (text)
+			{
+				text.text = "Sing!";
+			}
+		}
 
 		var currentTime = 0f;
 		var nextNoteIndex = 0;
