@@ -16,7 +16,8 @@ public class Cheats : MonoBehaviour {
 		var player = GameObject.FindGameObjectWithTag("Player");
 		var line = player.GetComponent<ChickenLine>();
 		var xz = Random.insideUnitCircle * Random.value * 3f;
-		line.AddFollowingChicken(SpawnChicken(player.transform.position + new Vector3(xz.x, 0, xz.y)));
+		var r = SpawnChicken(player.transform.position + new Vector3(xz.x, 0, xz.y));
+		Events.Recruitment.RecruitmentResult.Invoke(r, true);
 	}
 
 	void KillRandomFollower()

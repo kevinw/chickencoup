@@ -39,8 +39,6 @@ namespace ChickenCoup
             Yellow
         }
 
-        public bool AllStartFollowingCheat = false;
-
         IEnumerator Start()
         {
             Assert.IsNotNull(BlueSquak);
@@ -62,12 +60,6 @@ namespace ChickenCoup
 
             yield return null;
 
-            if (AllStartFollowingCheat)
-            {
-                foreach (var r in FindObjectsOfType<Recruitable>())
-                    GetComponent<ChickenLine>().AddFollowingChicken(r);
-
-            }
         }
 
         void Update()
