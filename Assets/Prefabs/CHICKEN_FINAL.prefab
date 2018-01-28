@@ -815,7 +815,11 @@ MonoBehaviour:
   wingJoints:
   - {fileID: 1458955247543912}
   - {fileID: 1278449970154352}
+  legJoints:
+  - {fileID: 1042193527587302}
+  - {fileID: 1758093846299876}
   rootJoint: {fileID: 1000768781068530}
+  renderer: {fileID: 137447601659063326}
   springSettings:
     stiffness: 0.1
     mass: 1
@@ -854,6 +858,14 @@ MonoBehaviour:
     sitOffset: 0.1
     flyingBlend: 0
     flyOffset: 0.1
+  shadingSettings:
+    colorSwatches:
+    - {r: 1, g: 1, b: 1, a: 1}
+    - {r: 0.89705884, g: 0.7123702, b: 0.43533736, a: 1}
+    - {r: 0.5441177, g: 0.42409173, b: 0.2440528, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
+    - {r: 1, g: 1, b: 1, a: 1}
   velocity: {x: 0, y: 0, z: 0}
 --- !u!137 &137447601659063326
 SkinnedMeshRenderer:
