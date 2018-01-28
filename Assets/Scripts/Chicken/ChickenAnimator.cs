@@ -16,6 +16,10 @@ public class AnimationSettings {
 	[Range(0.0f,1.0f)]
 	public float flyingBlend;
 	public float flyOffset;
+	[Range(0.0f,1.0f)]
+	public float headBend;
+	[Range(-1.0f,1.0f)]
+	public float headTurn;
 
 	public AnimationSettings () {
 		moveY = new AnimationCurve();
@@ -27,6 +31,8 @@ public class AnimationSettings {
 		sittingBlend = 0.0f;
 		sitOffset = 0.3f;
 		flyingBlend = 0.0f;
+		headBend = 0.0f;
+		headTurn = 0.0f;
 	}
 }
 
@@ -70,6 +76,9 @@ public class ChickenAnimator : MonoBehaviour {
 
 	public Renderer renderer;
 
+	public GameObject hatMesh;
+	public List<GameObject> accessories = new List<GameObject>();
+
 	public SpringSettings springSettings;
 	public AnimationSettings animationSettings;
 	public ShadingSettings shadingSettings;
@@ -85,6 +94,8 @@ public class ChickenAnimator : MonoBehaviour {
 
 	private Vector3 chaosPoint = Vector3.zero;
 
+	public bool isFarmer = false;
+
 	private Vector3 lastPosition;
 	[HideInInspector]
 	public Vector3 velocity;
@@ -95,30 +106,40 @@ public class ChickenAnimator : MonoBehaviour {
 
 	void Start(){
 		
-		// Create procedural offsets
-		float seed = Random.Range(0,100);
+		if (isFarmer) {
+			hatMesh.SetActive(true);
+			for (int i = 0; i < accessories.Count; i++) {
+				accessories[i].SetActive(false);
+			}
+		} else {
+			hatMesh.SetActive(false);
 
-		Color color = Color.white;
-		if (shadingSettings.colorSwatches.Length > 0)
-		{
-			var one = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length-1)];
-			var two = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length-1)];
-			color = Color.Lerp(one, two, Random.value);
-		}
+			// Create procedural offsets
+			float seed = Random.Range(0,100);
 
-		// Generate Color
-		/* 
-		float colorID = seed / 100.0f * (shadingSettings.colorSwatches.Length - 1);
-		int topColorId = Mathf.CeilToInt(colorID);
-		int lowerColorId = Mathf.FloorToInt(colorID);
-		Color color = Color.Lerp(shadingSettings.colorSwatches[lowerColorId], shadingSettings.colorSwatches[topColorId], colorID - lowerColorId);
-		*/
-		renderer.material.SetColor("_Color", color);
+			Color color = Color.white;
+			if (shadingSettings.colorSwatches.Length > 0)
+			{
+				var one = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length-1)];
+				var two = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length-1)];
+				color = Color.Lerp(one, two, Random.value);
+			}
 
-		// Create neck length
-		float neckOffset = (0.25f - (seed/100)) * 0.2f;
-		foreach (GameObject joint in headJoints) {
-			joint.transform.localPosition = new Vector3 (joint.transform.localPosition.x + neckOffset, joint.transform.localPosition.y, joint.transform.localPosition.z);
+			// Pick hat
+			int hatIndex = Random.Range(0,accessories.Count);
+			for (int i = 0; i < accessories.Count; i++) {
+				if (i != hatIndex) {
+					accessories[i].SetActive(false);
+				}
+			}
+
+			renderer.material.SetColor("_Color", color);
+
+			// Create neck length
+			float neckOffset = (0.25f - (seed/100)) * 0.2f;
+			foreach (GameObject joint in headJoints) {
+				joint.transform.localPosition = new Vector3 (joint.transform.localPosition.x + neckOffset, joint.transform.localPosition.y, joint.transform.localPosition.z);
+			}
 		}
 
 		rootJointStartRotation = rootJoint.transform.localRotation;
@@ -146,6 +167,7 @@ public class ChickenAnimator : MonoBehaviour {
 		
 		// Create new position at bind pose
 		Vector3 rootJointPosition = new Vector3();
+		Vector3 rootJointScale = new Vector3(1,1,1);
 		Quaternion rootJointRotation = rootJointStartRotation;
 		List<Quaternion> neckJointRotations = new List<Quaternion>(neckJointStartRotations);
 		List<Quaternion> wingJointRotations = new List<Quaternion>(wingJointStartRotations);
@@ -163,6 +185,42 @@ public class ChickenAnimator : MonoBehaviour {
 		);
 		chaosPoint *= animationSettings.chaos;
 
+		// Sitting Offset
+		rootJointPosition += new Vector3(0, -1 * Easing.Elastic.InOut(animationSettings.sittingBlend) * 0.25f,0);
+		float scaleValue = Mathf.Max(0.0f, Easing.Elastic.InOut(animationSettings.sittingBlend) - 1.0f) * 1.5f;
+		rootJointScale += new Vector3(scaleValue, scaleValue, scaleValue);
+		for (int i = 0; i < legJoints.Count; i++) {
+			float legRotZ = Mathf.Lerp(0.0f, -90.0f, animationSettings.sittingBlend);
+			Vector3 newLegAngles = new Vector3(0.0f,0.0f,legRotZ);
+			Quaternion localLegRotate = Quaternion.Inverse(legJointStartRotations[i]) * Quaternion.Euler(newLegAngles) * legJointStartRotations[i];
+			legJointRotations[i] *= localLegRotate;
+		}
+
+		// Head Bend
+
+		for (int i = 0; i < headJoints.Count; i++) {
+			float headRotZ = Mathf.Lerp(0.0f, -25.0f, animationSettings.headBend);
+			float headRotX = Mathf.Lerp(-25.0f, 25.0f, animationSettings.headTurn/2 + 0.5f);
+			Vector3 newHeadAngles = new Vector3(headRotX,0.0f,headRotZ);
+			Quaternion localLegRotate = Quaternion.Inverse(neckJointStartRotations[i]) * Quaternion.Euler(newHeadAngles) * neckJointStartRotations[i];
+			neckJointRotations[i] *= localLegRotate;
+		}
+		
+		// Wing Flap
+		float heightBlend =  -Mathf.Clamp((transform.position.y), 0.0f, 3.0f)/3.0f;
+		for (int i = 0; i < wingJoints.Count; i++) {
+			float wingRotY = Mathf.Sin(Time.time * 20.0f) * 30.0f * heightBlend;
+			Vector3 newHeadAngles = new Vector3(0.0f,0.0f,wingRotY);
+			Quaternion localLegRotate = Quaternion.Inverse(neckJointStartRotations[i]) * Quaternion.Euler(newHeadAngles) * neckJointStartRotations[i];
+			wingJointRotations[i] *= localLegRotate;
+		}
+		 
+
+		// Flying offset
+		//float blend = -0.5f - transform.position.y;
+		//rootJointPosition += new Vector3(0, (Easing.Elastic.In(blend) * animationSettings.flyOffset),0);
+		//scaleValue = (1.0f - Mathf.Min(1.0f, Easing.Elastic.In(blend) + 1.0f)) * 1.5f;
+		//rootJointScale += new Vector3(scaleValue, scaleValue, scaleValue);
 
 		// Apply hop
 		frame += Time.deltaTime * animationSettings.hopRate;
@@ -171,7 +229,8 @@ public class ChickenAnimator : MonoBehaviour {
 			frame = 0.0f;
 			hopHeight = Mathf.Clamp01(velocity2D.magnitude / animationSettings.maxVelocity) ;
 		}
-		rootJointPosition += animationSettings.moveY.Evaluate(frame) * hopHeight * animationSettings.hopHeight * Vector3.up;
+		rootJointPosition += animationSettings.moveY.Evaluate(frame) * hopHeight * animationSettings.hopHeight * Vector3.up * (1 + heightBlend);
+		rootJointPosition += Mathf.Sin(frame * 6.2f) * animationSettings.hopHeight * 0.2f * Vector3.up * (heightBlend);
 
 		// Rotate legs
 		for (int i = 0; i < legJoints.Count; i++) {
@@ -179,6 +238,7 @@ public class ChickenAnimator : MonoBehaviour {
 			legRotZ = Mathf.Lerp(0.0f, legRotZ, Mathf.Clamp01(velocity2D.magnitude / animationSettings.maxVelocity));
 			Vector3 newLegAngles = new Vector3(legRotZ,0.0f,0.0f);
 			newLegAngles *= 90;
+			newLegAngles *= 1 + heightBlend;
 			Quaternion localLegRotate = Quaternion.Inverse(legJointStartRotations[i]) * Quaternion.Euler(newLegAngles) * legJointStartRotations[i];
 			legJointRotations[i] *= localLegRotate;
 		}
@@ -197,7 +257,7 @@ public class ChickenAnimator : MonoBehaviour {
 		float rotX = (rootSpring.position.z - rootJoint.transform.position.z);
 		float rotZ = (rootSpring.position.x - rootJoint.transform.position.x);
 		Vector3 newAngles = new Vector3(rotX,0.0f,rotZ);
-		newAngles *= 15;
+		newAngles *= 15.0f;
 		Quaternion localRotate = Quaternion.Inverse(rootJointStartRotation) * Quaternion.Euler(newAngles) * rootJointStartRotation;
 		rootJointRotation *= localRotate;
 		
@@ -224,6 +284,7 @@ public class ChickenAnimator : MonoBehaviour {
 		// Apply new orientations
 		rootJoint.transform.localPosition = rootJointPosition;
 		rootJoint.transform.localRotation = rootJointRotation;
+		rootJoint.transform.localScale = rootJointScale;
 		
 		for (int i = 0; i < neckJointRotations.Count; i++) {
 			headJoints[i].transform.localRotation = neckJointRotations[i];
