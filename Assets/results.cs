@@ -22,7 +22,7 @@ namespace ChickenCoup
 		void Awake () {
 			int score = 0;
 			int index = 0;
-			chickenCount = chickenProperties.Count ;
+			// chickenCount = chickenProperties.Count ;
 			float baseLength = Mathf.Clamp(chickenCount, 0.0f, 10.0f);
 			float leftPosition = (-1 * baseLength / 2.0f * chickenWidth) + (-1 * baseLength/2.0f * spacing);
 			foreach (ChickenProperties properties in chickenProperties) {
@@ -40,7 +40,9 @@ namespace ChickenCoup
 				chicken.AddComponent<moveAlongWave>();
 				index ++;
 			}
-			scoreText.text = score.ToString();
+			// scoreText.text = score.ToString();
+			scoreText.text = GlobalState.TotalPointsWon.ToString();
+			savedText.text = GlobalState.ChickensSaved.ToString();
 
 			resultsMusic = FMODUnity.RuntimeManager.CreateInstance(ResultsMusicEvent);
 			resultsMusic.start();

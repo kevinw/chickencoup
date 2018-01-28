@@ -20,7 +20,12 @@ namespace ChickenCoup
         public string EscapeSoundEvent;
         FMOD.Studio.EventInstance escapeSound;
 
+		public static int TotalPointsWon;
+		public static int ChickensSaved;
+
+
 		void Start () {
+			DontDestroyOnLoad(this);
 			FiredNoiseLimit = false;
 			Assert.IsNotNull(NoiseMeter);
 			TotalNoise = 0;

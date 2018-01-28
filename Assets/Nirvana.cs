@@ -6,11 +6,13 @@ namespace ChickenCoup {
 
 public class Nirvana : MonoBehaviour {
 	static float AfterTriggerEndGameSeconds = 5.0f;
+	static List<Recruitable> saved;
 	public static void ReachNirvana(GameObject obj)
 	{
 		var enlightenment = obj.GetComponent<RaiseToSky>();
 		if (!enlightenment)
 		{
+			saved.Add(obj.GetComponent<Recruitable>());
 			obj.AddComponent<RaiseToSky>();
 			{
 				var b = obj.GetComponent<Rigidbody>();
@@ -22,8 +24,20 @@ public class Nirvana : MonoBehaviour {
 
 	static bool endGameTriggered;
 
+	void Start()
+	{
+		saved = new List<Recruitable>();
+	}
+
 	void EndGame()
 	{
+		int totPoints = 0;
+		foreach (Recruitable item in saved)
+		{
+			totPoints = totPoints + item.GetComponent<ChickenProperties>().Points;			
+		}
+		GlobalState.TotalPointsWon = totPoints;
+		GlobalState.ChickensSaved = saved.Count;
 		UnityEngine.SceneManagement.SceneManager.LoadScene("results");
 
 	}
