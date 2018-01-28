@@ -22,7 +22,10 @@ namespace ChickenCoup
             if (cookedChickenRenderer)
                 cookedChickenRenderer.enabled = true;
             if (chickenAnimator)
+            {
+                if(Events.Recruitment.LostChicken != null){Events.Recruitment.LostChicken(this);}
                 chickenAnimator.gameObject.SetActive(false);
+            }
         }
 
         public void Squawk()

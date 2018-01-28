@@ -14,6 +14,7 @@ namespace ChickenCoup
             Counter = GetComponent<Text>();
             totalChickens = 0;
             Events.Recruitment.RecruitmentResult += OnRecruitmentResult;
+            Events.Recruitment.LostChicken += OnChickenLost;
         }
 
         void OnRecruitmentResult(Recruitable r, bool result)
@@ -23,6 +24,12 @@ namespace ChickenCoup
                 totalChickens++;
                 Counter.text = totalChickens.ToString();
             }
+        }
+
+        void OnChickenLost(Recruitable r)
+        {
+            totalChickens = totalChickens = 1;
+            Counter.text = totalChickens.ToString();
         }
     }
 }

@@ -20,6 +20,7 @@ namespace ChickenCoup
             public static Action<ControllerButton> TryBeginRecruitment;
             public static Action<Recruitable> BeginRecruitment;
             public static Action<Recruitable, bool> RecruitmentResult;
+            public static Action<Recruitable> LostChicken;
         }
         public class Noise
         {
