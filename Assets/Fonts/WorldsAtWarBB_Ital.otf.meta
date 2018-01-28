@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: e8479161939ec49e9bf2bc7801af0af8
+timeCreated: 1517161618
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: WorldsAtWar BB
+  fontNames:
+  - WorldsAtWar BB
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d28e7a10f781b49599fc297003e534df, type: 3}
+  - {fileID: 12800000, guid: 2772d0b16c85a4941bee7898b2e7a229, type: 3}
+  - {fileID: 12800000, guid: be4118253077449c6aceebed010f6cb2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

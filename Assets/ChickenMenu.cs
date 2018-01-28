@@ -21,7 +21,6 @@ public class ChickenMenu : MonoBehaviour {
 		rand2 = Random.value;
 		randRot = Random.Range(-135.0f,-225.0f);
 		transform.localEulerAngles = new Vector3(0.0f,randRot,0.0f);
-
 	}
 	
 	// Update is called once per frame
