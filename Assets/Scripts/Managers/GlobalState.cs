@@ -51,8 +51,9 @@ namespace ChickenCoup
 
 		void OnNir(Recruitable r)
 		{
-			// ChickensSaved++;
-			// TotalPointsWon +=  r.GetComponent<ChickenProperties>().Points;
+			ChickensSaved++;
+			TotalPointsWon +=  r.GetComponent<ChickenProperties>().Points;
+			Debug.Log("chickens: " + ChickensSaved + "  points total:" + TotalPointsWon);
 		}
 
 		void OnNoiseLimitReached() {

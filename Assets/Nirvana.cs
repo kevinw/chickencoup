@@ -7,18 +7,21 @@ namespace ChickenCoup {
 public class Nirvana : MonoBehaviour {
 	static float AfterTriggerEndGameSeconds = 5.0f;
 	static List<Recruitable> saved;
-	public static void ReachNirvana(GameObject obj)
+	void ReachNirvana(GameObject obj)
 	{
 		var enlightenment = obj.GetComponent<RaiseToSky>();
 		if (!enlightenment)
 		{
-			saved.Add(obj.GetComponent<Recruitable>());
+			if(obj.GetComponent<Recruitable>() != null)
+			{
+				saved.Add(obj.GetComponent<Recruitable>());
+				if(Events.Recruitment.Nirvana != null){Events.Recruitment.Nirvana(obj.GetComponent<Recruitable>());}
+			}
 			obj.AddComponent<RaiseToSky>();
 			{
 				var b = obj.GetComponent<Rigidbody>();
 				b.useGravity = false;
 			}
-			if(Events.Recruitment.Nirvana != null){Events.Recruitment.Nirvana(obj.GetComponent<Recruitable>());}
 		}
 	}
 

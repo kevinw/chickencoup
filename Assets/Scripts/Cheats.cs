@@ -46,15 +46,15 @@ public class Cheats : MonoBehaviour {
 		}
 		if (Input.GetKeyDown(KeyCode.Alpha9))
 			KillRandomFollower();
-		if (Input.GetKeyDown(KeyCode.Alpha1))
-		{
-			var player = GameObject.FindGameObjectWithTag("Player");
-			var line = player.GetComponent<ChickenLine>();
-			var following = line.chickensFollowingYou;
-			foreach (var f in following)
-				Nirvana.ReachNirvana(f.gameObject);
+		// if (Input.GetKeyDown(KeyCode.Alpha1))
+		// {
+		// 	var player = GameObject.FindGameObjectWithTag("Player");
+		// 	var line = player.GetComponent<ChickenLine>();
+		// 	var following = line.chickensFollowingYou;
+		// 	foreach (var f in following)
+		// 		Nirvana.ReachNirvana(f.gameObject);
 
-		}
+		// }
 	}
 }
 }
