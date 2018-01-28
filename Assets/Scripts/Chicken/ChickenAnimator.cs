@@ -98,11 +98,17 @@ public class ChickenAnimator : MonoBehaviour {
 		// Create procedural offsets
 		float seed = Random.Range(0,100);
 
+		var one = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length)];
+		var two = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length)];
+		Color color = Color.Lerp(one, two, Random.value);
+
 		// Generate Color
+		/* 
 		float colorID = seed / 100.0f * (shadingSettings.colorSwatches.Length - 1);
 		int topColorId = Mathf.CeilToInt(colorID);
 		int lowerColorId = Mathf.FloorToInt(colorID);
 		Color color = Color.Lerp(shadingSettings.colorSwatches[lowerColorId], shadingSettings.colorSwatches[topColorId], colorID - lowerColorId);
+		*/
 		renderer.material.SetColor("_Color", color);
 
 		// Create neck length
