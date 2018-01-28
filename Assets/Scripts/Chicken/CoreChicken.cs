@@ -100,7 +100,7 @@ namespace ChickenCoup
                         break;
                 }
             }
-            if(TouchingChicken)
+            if(TouchingChicken && !ChickenSong.InSong)
             {
                 if (Events.Recruitment.TryBeginRecruitment != null){Events.Recruitment.TryBeginRecruitment(b);}
             }
