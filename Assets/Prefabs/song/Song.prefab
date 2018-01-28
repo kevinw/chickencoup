@@ -296,10 +296,14 @@ MonoBehaviour:
   - {fileID: 120517871802384142}
   - {fileID: 120340757657230946}
   eggprefab: {fileID: 1306297252368750, guid: f6a5bc7f576d1934196cbe9a5e628fd7, type: 2}
+  friedEggPrefab: {fileID: 1150447044964514, guid: e8084330e36f2b64182dc5af1b2cd81c,
+    type: 2}
+  chickPrefab: {fileID: 1150447044964514, guid: b764ed38c0bfcfc4ab30f492d7d6c622,
+    type: 2}
   eggParent: {fileID: 4922057526165286}
   timeline: {fileID: 120528944058790946}
-  opponent: {fileID: 0}
   DEBUG_TIME: 0
+  MissTime: 0.1
   squawkA: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_01
   squawkB: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_02
   squawkX: event:/SFX/PLAYER_CHICKEN/Voice_Player_Chicken_Communication_Button_03

@@ -67,22 +67,45 @@ namespace ChickenCoup
 			return axes;
 		}
 
+		public static bool AnyButtonPressed(out ControllerButton button)
+		{
+			if (PressedThisFrame(ControllerButton.A)) { button = ControllerButton.A; return true; }
+			if (PressedThisFrame(ControllerButton.B)) { button = ControllerButton.B; return true; }
+			if (PressedThisFrame(ControllerButton.X)) { button = ControllerButton.X; return true; }
+			if (PressedThisFrame(ControllerButton.Y)) { button = ControllerButton.Y; return true; }
+			button = ControllerButton.A;
+			return false;
+		}
+
+		public static bool PressedThisFrame(ControllerButton button)
+		{
+			switch (button)
+			{
+				case ControllerButton.A: return Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.Space);
+				case ControllerButton.B: return Input.GetKeyDown(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.H);
+				case ControllerButton.X: return Input.GetKeyDown(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.F);
+				case ControllerButton.Y: return Input.GetKeyDown(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.G);
+
+				default: throw new System.NotImplementedException();
+			}
+		}
+
 		// Update is called once per frame
 		void Update () {
 			//may need to update these for different plats, these are osx bindings for xbox
-			if(Input.GetKeyDown(KeyCode.JoystickButton1) || Input.GetKeyDown(KeyCode.Space))
+			if (PressedThisFrame(ControllerButton.A))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.A);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton2) || Input.GetKeyDown(KeyCode.H))
+			if(PressedThisFrame(ControllerButton.B))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.B);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton3) || Input.GetKeyDown(KeyCode.F))
+			if(PressedThisFrame(ControllerButton.X))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.X);}
 			}
-			if(Input.GetKey(KeyCode.JoystickButton4) || Input.GetKeyDown(KeyCode.G))
+			if(PressedThisFrame(ControllerButton.Y))
 			{
 				if(Events.Input.ButtonPressed != null){Events.Input.ButtonPressed(ControllerButton.Y);}
 			}

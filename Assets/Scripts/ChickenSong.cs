@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace ChickenCoup {
 
+public enum NoteState { None, Hit, Missed };
 
 [System.Serializable]
 public class Note
 {
 	public float time;
 	public ControllerButton button;
+
+	public NoteState state = NoteState.None;
+	public float missAmount = 0f;
 }
 
 [System.Serializable]
 public class Song
 {
 	public List<Note> notes = new List<Note>();
-	public float seconds = 1f;
+	public float seconds = 3f;
 }
 
 [ExecuteInEditMode]
@@ -26,6 +30,8 @@ public class ChickenSong : MonoBehaviour {
 
 	public LineRenderer[] lines;
 	public GameObject eggprefab;
+	public GameObject friedEggPrefab;
+	public GameObject chickPrefab;
 	public Transform eggParent;
 	public LineRenderer timeline;
 
@@ -51,11 +57,16 @@ public class ChickenSong : MonoBehaviour {
 
 	public float DEBUG_TIME;
 
+	public float MissTime = 0.2f;
+
 	IEnumerator PlaySong(Song song, bool practice=true)
 	{
+		var player = GameObject.FindGameObjectWithTag("Player");
+
 		var currentTime = 0f;
-		var lastNote = 0;
-		var nextNote = song.notes[lastNote];
+		var nextNoteIndex = 0;
+		var nextNote = song.notes[nextNoteIndex];
+		var missTimeNormalized = MissTime / song.seconds;
 		yield return null;
 		bool finished = false;
 		float currentTimeNormalized = 0f;
@@ -65,7 +76,35 @@ public class ChickenSong : MonoBehaviour {
 			currentTimeNormalized = currentTime / song.seconds;
 			DEBUG_TIME = currentTimeNormalized;
 			SetTime(currentTimeNormalized);
-			if (currentTimeNormalized > nextNote.time)
+
+			if (!finished)
+			{
+				ControllerButton button;
+				if (!practice && ControllerInput.AnyButtonPressed(out button))
+				{
+					var prevNote = nextNoteIndex > 0 ? song.notes[nextNoteIndex - 1] : null;
+					int testIndex = nextNoteIndex;
+
+					Note note = nextNote;
+					if (prevNote != null && prevNote.state == NoteState.None &&
+						(nextNote == null ||
+							(Mathf.Abs(nextNote.time - currentTimeNormalized) > Mathf.Abs(prevNote.time - currentTimeNormalized))))
+					{
+						note = prevNote;
+						testIndex = nextNoteIndex - 1;
+					}
+
+					if (note != null && note.state == NoteState.None)
+					{
+						var delta = currentTimeNormalized - note.time;
+						bool hit = Mathf.Abs(delta) < missTimeNormalized && button == note.button;
+						note.state = hit ? NoteState.Hit : NoteState.Missed;
+						EggHit(testIndex, note, hit);
+					}
+				}
+			}
+
+			if (nextNote != null && currentTimeNormalized > nextNote.time)
 			{
 				if (!finished)
 				{
@@ -73,23 +112,39 @@ public class ChickenSong : MonoBehaviour {
 					FMODUnity.RuntimeManager.PlayOneShot(SquawkSoundForNote(nextNote.button), pos);
 					if (recruitable)
 						recruitable.Squawk();
-					if (practice)
-						PulseEgg(lastNote);
-					else
-					{
+					PulseEgg(nextNoteIndex);
+					nextNoteIndex++;
 
-					}
-					lastNote++;
 				}
 
-				if (lastNote < song.notes.Count)
+				if (nextNoteIndex < song.notes.Count)
 				{
-					nextNote = song.notes[lastNote];
+					nextNote = song.notes[nextNoteIndex];
 				}
 				else
 				{
-					finished = true;
+					nextNote = null;
 				}
+			}
+
+			if (!practice && nextNoteIndex - 1 >= 0)
+			{
+				var lastNote = song.notes[nextNoteIndex - 1];
+				Debug.Log("last note: " + lastNote.state);
+				if (lastNote.state == NoteState.None)
+				{
+					var delta = Mathf.Abs(currentTimeNormalized - lastNote.time);
+					Debug.Log(delta + " " + missTimeNormalized);
+					if (delta > missTimeNormalized)
+					{
+						Debug.Log("MISS HERE");
+						lastNote.state = NoteState.Missed;
+						EggHit(nextNoteIndex - 1, lastNote, false);
+					}
+					else
+						Debug.Log("not yet");
+				}
+
 			}
 
 			yield return null;
@@ -113,6 +168,21 @@ public class ChickenSong : MonoBehaviour {
 	[FMODUnity.EventRef] public string squawkB;
 	[FMODUnity.EventRef] public string squawkX;
 	[FMODUnity.EventRef] public string squawkY;
+
+	public void EggHit(int noteIndex, Note note, bool hit)
+	{
+		if (eggParent && noteIndex < eggParent.childCount)
+		{
+			var egg = eggParent.GetChild(noteIndex);
+			Destroy(egg.gameObject);
+			var obj = InstantiateNote(hit ? chickPrefab : friedEggPrefab, note);
+			obj.transform.SetParent(transform, false);
+			if (hit)
+				Debug.Log("hit " + noteIndex);
+			else
+				Debug.Log("miss " + noteIndex);
+		}
+	}
 
 	public void PulseEgg(int noteIndex)
 	{
@@ -174,13 +244,22 @@ public class ChickenSong : MonoBehaviour {
 		var notes = song.notes;
 		foreach (var note in notes)
 		{
-			var index = IndexForButton(note.button);
-			var pos = new Vector3(note.time * StaffLength, index * StaffLineSpace, -0.1f);
-			var eggObj = Instantiate(eggprefab, pos, Quaternion.identity);
+			var eggObj = InstantiateNote(eggprefab, note, true);
 			eggObj.transform.SetParent(eggParent, false);
+		}
+	}
+
+	GameObject InstantiateNote(GameObject prefab, Note note, bool color=false)
+	{
+		var index = IndexForButton(note.button);
+		var pos = new Vector3(note.time * StaffLength, index * StaffLineSpace, -0.1f);
+		var eggObj = Instantiate(prefab, pos, Quaternion.identity);
+		if (color)
+		{
 			var eggSprite = eggObj.GetComponent<SpriteRenderer>();
 			eggSprite.color = ColorForButton(note.button);
 		}
+		return eggObj;
 	}
 
 	void Update () {

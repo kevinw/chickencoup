@@ -35,13 +35,28 @@ namespace ChickenCoup
             Activated = false;
             // RecruitmentPrompt.Setup(beginrecruitmentButton);
 
+        }
+
+        void OnEnable()
+        {
             Events.Recruitment.ToggleRecruitmentPrompt += ToggleRecruitmentPrompt;
             Events.Recruitment.TryBeginRecruitment += OnRecruitmentAttempted;
+        }
+
+        void OnDisable()
+        {
+            Events.Recruitment.ToggleRecruitmentPrompt -= ToggleRecruitmentPrompt;
+            Events.Recruitment.TryBeginRecruitment -= OnRecruitmentAttempted;
         }
 
         void ToggleRecruitmentPrompt(GameObject g, Visibility state)
         {
             if(g != this.gameObject){return;}
+            if (attempted)
+            {
+                spawnedPrompt.Deactivate();
+                Activated = false;
+            }
             switch (state)
             {
                 case Visibility.Visible:
@@ -55,13 +70,20 @@ namespace ChickenCoup
             }
         }
 
+        bool attempted = false;
+
         void OnRecruitmentAttempted(ControllerButton b)
         {
+            if (attempted)
+                return;
+
             if (Activated && beginrecruitmentButton == b)
             {
                 if (Events.Recruitment.BeginRecruitment != null)
+                {
                     Events.Recruitment.BeginRecruitment.Invoke(this);
-                //GameObject.FindWithTag("Player").GetComponent<CoreChicken>().StartSong(this);
+                    attempted = true;
+                }
             }
         }
     }
