@@ -107,12 +107,14 @@ public class ChickenAnimator : MonoBehaviour {
 	void Start(){
 		
 		if (isFarmer) {
-			hatMesh.SetActive(true);
+			if (hatMesh)
+				hatMesh.SetActive(true);
 			for (int i = 0; i < accessories.Count; i++) {
 				accessories[i].SetActive(false);
 			}
 		} else {
-			hatMesh.SetActive(false);
+			if (hatMesh)
+				hatMesh.SetActive(false);
 
 			// Create procedural offsets
 			float seed = Random.Range(0,100);
