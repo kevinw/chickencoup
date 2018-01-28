@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 114018028730320022}
   - component: {fileID: 54205928288659586}
   - component: {fileID: 65227295459132530}
+  - component: {fileID: 114995180343688864}
   m_Layer: 0
   m_Name: RecruitableChicken
   m_TagString: Untagged
@@ -921,6 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5ec26fd54ee4864879dab57558a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
   headJoints:
   - {fileID: 1221647869551484}
   - {fileID: 1092444386742600}
@@ -935,6 +937,8 @@ MonoBehaviour:
   - {fileID: 1134380742858666}
   rootJoint: {fileID: 1900928537955462}
   renderer: {fileID: 137069232246631352}
+  hatMesh: {fileID: 0}
+  accessories: []
   springSettings:
     stiffness: 0.1
     mass: 1
@@ -973,6 +977,8 @@ MonoBehaviour:
     sitOffset: 0.1
     flyingBlend: 0
     flyOffset: 0.1
+    headBend: 0
+    headTurn: 0
   shadingSettings:
     colorSwatches:
     - {r: 1, g: 1, b: 1, a: 1}
@@ -991,6 +997,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f8cc3d47a5944bb19b44a16fa9d5e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114995180343688864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276133908514276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b00fc05cb7d5448b8f103f1537f733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!137 &137069232246631352
