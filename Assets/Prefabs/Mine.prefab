@@ -28,6 +28,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1330537054645248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4246820456590244}
+  - component: {fileID: 135239662697544672}
+  - component: {fileID: 114111086150827452}
+  m_Layer: 0
+  m_Name: MineExplosionRadius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1471630616524318
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +79,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4246820456590244
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330537054645248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4697402446512974}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4672629573531948
 Transform:
   m_ObjectHideFlags: 1
@@ -87,6 +117,7 @@ Transform:
   m_Children:
   - {fileID: 4672629573531948}
   - {fileID: 4798501666320574}
+  - {fileID: 4246820456590244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -185,6 +216,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194177616431288}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114111086150827452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330537054645248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63af76bf1cb14b6a8ba42fb39c190cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosiveForce: 100
+  ExplosionRadius: 2
+  ExplosionUpwards: 3
 --- !u!114 &114814421062127904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,9 +242,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplodeSound: event:/SFX/ENVIRONMENT/Mine_Explosion
-  ExplosiveForce: 100
-  ExplosionRadius: 2
-  ExplosionUpwards: 3
+  CountdownSound: event:/SFX/ENVIRONMENT/Mine_Armed
+  ExplosionRadiusObject: {fileID: 1330537054645248}
+--- !u!135 &135239662697544672
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330537054645248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.7454565
+  m_Center: {x: 0.40684533, y: -0.7717688, z: -0.06285691}
 --- !u!135 &135965554548719266
 SphereCollider:
   m_ObjectHideFlags: 1

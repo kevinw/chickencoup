@@ -4,35 +4,43 @@ using UnityEngine;
 using FMOD.Studio;
 
 namespace ChickenCoup {
+	public class Mine : MonoBehaviour {
+		[FMODUnity.EventRef] public string ExplodeSound;
+		[FMODUnity.EventRef] public string CountdownSound;		
+		public GameObject ExplosionRadiusObject;
+		bool explosionStarted;
 
-public class Mine : MonoBehaviour {
-	[FMODUnity.EventRef] public string ExplodeSound;
-	public float ExplosiveForce = 100f;
-	public float ExplosionRadius = 2f;
-	public float ExplosionUpwards = 3f;
-    void OnTriggerEnter(Collider other) {
-		var rb = other.GetComponent<Rigidbody>();
-
-		if (!string.IsNullOrEmpty(ExplodeSound))
-			FMODUnity.RuntimeManager.PlayOneShot(ExplodeSound, transform.position);
-
-		if (rb)
-			rb.AddExplosionForce(ExplosiveForce, transform.position, ExplosionRadius, ExplosionUpwards);
-
-		var rec = other.GetComponent<Recruitable>();
-		if (rec)
-			FindObjectOfType<ChickenLine>().KillChicken(rec);
-
-		Destroy(gameObject);
-    }
-
-	IEnumerator ExplodeWithDelay()
-	{
-		yield return new WaitForSeconds(1.0f);
-		//check if our big collider is colliding
-		//grab a random chicken from that collider
-		//kill da chicken
+		void Start()
+		{
+			ExplosionRadiusObject.GetComponent<MineExplosionRadius>().SetParentMine(this);
+			explosionStarted = false;
+		}
+		void OnTriggerEnter(Collider other) {
+			// var rb = other.GetComponent<Rigidbody>();
+			if(!explosionStarted)
+			{
+				ExplosionRadiusObject.GetComponent<MineExplosionRadius>().Explode();
+				explosionStarted = true;
+			}
+		}
+		public void PlayExplosionSound()
+		{
+			if (!string.IsNullOrEmpty(ExplodeSound))
+			{
+				FMODUnity.RuntimeManager.PlayOneShot(ExplodeSound, transform.position);
+			}
+		}
+		public void PlayCountdownSound()
+		{
+			if (!string.IsNullOrEmpty(ExplodeSound))
+			{
+				FMODUnity.RuntimeManager.PlayOneShot(CountdownSound, transform.position);
+			}
+		}
+		
+		public void DestroyMine()
+		{
+			Destroy(gameObject);
+		}
 	}
-}
-
 }

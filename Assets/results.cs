@@ -7,6 +7,10 @@ namespace ChickenCoup
 {
 	public class results : MonoBehaviour {
 
+		[FMODUnity.EventRef]
+        public string ResultsMusicEvent;
+        FMOD.Studio.EventInstance resultsMusic;
+
 		public List<ChickenProperties> chickenProperties = new List<ChickenProperties>();
 		public Text scoreText;
 		public Text savedText;
@@ -37,6 +41,9 @@ namespace ChickenCoup
 				index ++;
 			}
 			scoreText.text = score.ToString();
+
+			resultsMusic = FMODUnity.RuntimeManager.CreateInstance(ResultsMusicEvent);
+			resultsMusic.start();
 		}
 	}
 }
