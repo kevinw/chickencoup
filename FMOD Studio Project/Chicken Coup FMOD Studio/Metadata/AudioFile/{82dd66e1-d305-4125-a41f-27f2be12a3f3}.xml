@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.01.10.00">
-    <object class="AudioFile" id="{8082a81e-8e29-4c96-b7a3-dd612000018c}">
+    <object class="AudioFile" id="{82dd66e1-d305-4125-a41f-27f2be12a3f3}">
         <property name="assetPath">
-            <value>Voice_Enemy_Chicken_03.wav</value>
+            <value>Jump_Medium_Chicken_01_03.wav</value>
         </property>
         <property name="frequencyInKHz">
             <value>48</value>
@@ -11,7 +11,7 @@
             <value>2</value>
         </property>
         <property name="length">
-            <value>1.4043958333333333</value>
+            <value>0.125</value>
         </property>
         <relationship name="masterAssetFolder">
             <destination>{d7dceae4-6327-4b1e-9600-76c13fdad18d}</destination>
