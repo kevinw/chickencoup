@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{93b157c6-9038-490a-8028-292d76acb6bb}">
+        <property name="assetPath">
+            <value>Hover_Flap_01.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.22622916666666668</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d7dceae4-6327-4b1e-9600-76c13fdad18d}</destination>
+        </relationship>
+    </object>
+</objects>
