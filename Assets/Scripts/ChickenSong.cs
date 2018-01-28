@@ -13,6 +13,11 @@ public class Note
 
 	public NoteState state = NoteState.None;
 	public float missAmount = 0f;
+
+	public override string ToString()
+	{
+		return "<Note t:" + time + " b:" + button + " s:" + state + ">";
+	}
 }
 
 [System.Serializable]
@@ -40,7 +45,7 @@ public class ChickenSong : MonoBehaviour {
 	public void GenerateAndPlaySong(Recruitable recruitable)
 	{
 		int numberOfNotes = Random.Range(1, 6);
-		float seconds = Random.Range(2, 7);
+		float seconds = Random.Range(2, 5);
 		float restChance = Random.Range(0.05f, 0.15f);
 
 		this.recruitable = recruitable;
@@ -102,14 +107,19 @@ public class ChickenSong : MonoBehaviour {
 								(Mathf.Abs(nextNote.time - currentTimeNormalized) > Mathf.Abs(prevNote.time - currentTimeNormalized))))
 						{
 							note = prevNote;
+							Debug.Log("not practice: prev note " + note);
 							testIndex = nextNoteIndex - 1;
 						}
+						else
+							Debug.Log("not practice: note " + note);
+
 
 						if (note != null && note.state == NoteState.None)
 						{
 							var delta = currentTimeNormalized - note.time;
 							bool hit = Mathf.Abs(delta) < missTimeNormalized && button == note.button;
 							note.state = hit ? NoteState.Hit : NoteState.Missed;
+							Debug.Log("EggHit " + hit + " " + note + " at index " + testIndex);
 							EggHit(testIndex, note, hit);
 						}
 					}
@@ -193,17 +203,26 @@ public class ChickenSong : MonoBehaviour {
 
 	public void EggHit(int noteIndex, Note note, bool hit)
 	{
-		if (eggParent && noteIndex < eggParent.childCount)
+		if (!eggParent)
 		{
-			var egg = eggParent.GetChild(noteIndex);
-			Destroy(egg.gameObject);
-			var obj = InstantiateNote(hit ? chickPrefab : friedEggPrefab, note);
-			obj.transform.SetParent(transform, false);
-			if (hit)
-				Debug.Log("hit " + noteIndex);
-			else
-				Debug.Log("miss " + noteIndex);
+			Debug.LogWarning("no egg parent");
+			return;
 		}
+
+		if (noteIndex >= eggParent.childCount)
+		{
+			Debug.LogWarning("invalid index " + noteIndex);
+			return;
+		}
+
+		var egg = eggParent.GetChild(noteIndex);
+		egg.GetComponent<SpriteRenderer>().enabled = false;
+		var obj = InstantiateNote(hit ? chickPrefab : friedEggPrefab, note);
+		obj.transform.SetParent(transform, false);
+		if (hit)
+			Debug.Log("hit " + noteIndex);
+		else
+			Debug.Log("miss " + noteIndex);
 	}
 
 	public void PulseEgg(int noteIndex)

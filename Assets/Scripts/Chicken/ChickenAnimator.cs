@@ -165,7 +165,6 @@ public class ChickenAnimator : MonoBehaviour {
 
 			// Create neck length
 			float neckOffset = (0.25f - (seed/100)) * 0.2f;
-			Debug.Log("neckOffset " + neckOffset);
 			foreach (GameObject joint in headJoints) {
 				joint.transform.localPosition = new Vector3 (joint.transform.localPosition.x + neckOffset, joint.transform.localPosition.y, joint.transform.localPosition.z);
 			}
