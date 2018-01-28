@@ -83,7 +83,7 @@ namespace ChickenCoup
             } 
             else
             {
-                walkingSound.stop(STOP_MODE.IMMEDIATE);
+                walkingSound.stop(STOP_MODE.ALLOWFADEOUT);
             }
         }
 
