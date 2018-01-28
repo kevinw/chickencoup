@@ -98,12 +98,18 @@ public class ChickenAnimator : MonoBehaviour {
 		// Create procedural offsets
 		float seed = Random.Range(0,100);
 
+		// Generate Color
 		float colorID = seed / 100.0f * (shadingSettings.colorSwatches.Length - 1);
 		int topColorId = Mathf.CeilToInt(colorID);
 		int lowerColorId = Mathf.FloorToInt(colorID);
 		Color color = Color.Lerp(shadingSettings.colorSwatches[lowerColorId], shadingSettings.colorSwatches[topColorId], colorID - lowerColorId);
-
 		renderer.material.SetColor("_Color", color);
+
+		// Create neck length
+		float neckOffset = (0.25f - (seed/100)) * 0.2f;
+		foreach (GameObject joint in headJoints) {
+			joint.transform.localPosition = new Vector3 (joint.transform.localPosition.x + neckOffset, joint.transform.localPosition.y, joint.transform.localPosition.z);
+		}
 
 		rootJointStartRotation = rootJoint.transform.localRotation;
 
