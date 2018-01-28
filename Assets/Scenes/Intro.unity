@@ -470,6 +470,7 @@ MonoBehaviour:
   - We strike at dawn...
   delayTime: 0.05
   pauseTime: 0.5
+  nextSceneName: Main
 --- !u!114 &2119891660
 MonoBehaviour:
   m_ObjectHideFlags: 0
