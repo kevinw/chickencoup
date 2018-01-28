@@ -18,7 +18,7 @@ namespace ChickenCoup
 			Assert.IsNotNull(NoiseMeter);
 			TotalNoise = 0;
 			Events.Noise.IncreaseNoise += OnNoiseIncreased;
-			NoiseLimit = 20;
+			NoiseLimit = 10;
 		}
 
 		public static bool NoiseLimitWasReached {

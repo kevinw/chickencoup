@@ -42,10 +42,14 @@ namespace ChickenCoup
             //spawn a new recruitment prefab
             Assert.IsNotNull(RecruitmentPromptPrefab);
             spawnedPrompt = Instantiate(RecruitmentPromptPrefab, this.transform.position, Quaternion.identity, this.transform).GetComponent<RecruitmentPrompt>();
-            //figure out how to smartly being recruitment
-            //otherwise just assign to a button
-            beginrecruitmentButton = ControllerButton.B;
-            spawnedPrompt.Setup(ControllerButton.B);
+            List<ControllerButton> buttons = new List<ControllerButton>()
+            {
+                ControllerButton.B,
+                ControllerButton.X,
+                ControllerButton.Y
+            };
+            beginrecruitmentButton = buttons[Random.Range(0,buttons.Count)];
+            spawnedPrompt.Setup(beginrecruitmentButton);
 
             Activated = false;
             // RecruitmentPrompt.Setup(beginrecruitmentButton);
