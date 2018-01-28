@@ -36,6 +36,17 @@ namespace ChickenCoup
 			Debug.Log("recruited chicken " + chickensFollowingYou.Count + " " + recruitable);
 		}
 
+		public void KillChicken(Recruitable recruitable)
+		{
+			var follow = recruitable.GetComponent<VerletFollow>();
+			if (follow)
+				follow.enabled = false;
+			var v = recruitable.GetComponent<Verlet3D>();
+			if (v) v.enabled = false;
+
+			chickensFollowingYou.Remove(recruitable);
+		}
+
 		void Update()
 		{
 			var playerChicken = GameObject.FindGameObjectWithTag("Player");

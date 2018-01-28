@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4697402446512974}
   - component: {fileID: 135965554548719266}
+  - component: {fileID: 114814421062127904}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -184,6 +185,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194177616431288}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114814421062127904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471630616524318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523c669bbc4c2e34da8bdaf30eca4d56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosiveForce: 100
+  ExplosionRadius: 2
+  ExplosionUpwards: 3
 --- !u!135 &135965554548719266
 SphereCollider:
   m_ObjectHideFlags: 1
