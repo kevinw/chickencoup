@@ -106,6 +106,13 @@ namespace ChickenCoup
 											velocityVector.y + 0.5f * Time.deltaTime * accleration.y, 
 											velocityVector.z + 0.5f * Time.deltaTime * accleration.z);
 			transform.position = transform.position + halfStepVel * Time.deltaTime;
+			if (transform.position.y < 0)
+			{
+				velocityVector.y = 0;
+				var pos = transform.position;
+				pos.y = 0;
+				transform.position = pos;
+			}
 
 			var forward = Vector3.ProjectOnPlane(halfStepVel.normalized, Vector3.up);
 			if (forward.sqrMagnitude > 0f)
