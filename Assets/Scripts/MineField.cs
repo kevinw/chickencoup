@@ -12,6 +12,12 @@ public class MineField : MonoBehaviour {
 	{
 		bool first = true;
 		Bounds bounds = new Bounds();
+		if (Ground == null)
+		{
+			var planeObj = GameObject.Find("Plane");
+			if (planeObj)
+				Ground = planeObj.transform;
+		}
 
 		foreach (var t in mineSpawnAreas)
 		{
