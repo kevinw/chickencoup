@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: 84cdd2f56fb589b47ae34a90b705277f
+timeCreated: 1517123442
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: chicken_Chest
+    100004: chicken_Head
+    100006: chicken_Neck
+    100008: chicken_Neck2
+    100010: chicken_Neck3
+    100012: chicken_Neck4
+    100014: CHICKEN_RastaHair
+    100016: chickenButt
+    100018: Chocken2
+    100020: Farmer_Hat
+    100022: L_chickenFinger
+    100024: L_chickenFoot
+    100026: L_chickenLeg
+    100028: L_chickenWing
+    100030: Normal_ChickenHair
+    100032: R_chickenFinger
+    100034: R_chickenFoot
+    100036: R_chickenReg
+    100038: R_chickenWing
+    100040: WeirdChicken_Hair
+    400000: //RootNode
+    400002: chicken_Chest
+    400004: chicken_Head
+    400006: chicken_Neck
+    400008: chicken_Neck2
+    400010: chicken_Neck3
+    400012: chicken_Neck4
+    400014: CHICKEN_RastaHair
+    400016: chickenButt
+    400018: Chocken2
+    400020: Farmer_Hat
+    400022: L_chickenFinger
+    400024: L_chickenFoot
+    400026: L_chickenLeg
+    400028: L_chickenWing
+    400030: Normal_ChickenHair
+    400032: R_chickenFinger
+    400034: R_chickenFoot
+    400036: R_chickenReg
+    400038: R_chickenWing
+    400040: WeirdChicken_Hair
+    2100000: lambert1
+    2100002: lambert3
+    2100004: lambert4
+    2100006: lambert5
+    2100008: lambert6
+    2100010: lambert7
+    2100012: lambert8
+    4300000: Chocken2
+    4300002: CHICKEN_RastaHair
+    4300004: Farmer_Hat
+    4300006: Normal_ChickenHair
+    4300008: WeirdChicken_Hair
+    9500000: //RootNode
+    13700000: CHICKEN_RastaHair
+    13700002: Chocken2
+    13700004: Farmer_Hat
+    13700006: Normal_ChickenHair
+    13700008: WeirdChicken_Hair
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
