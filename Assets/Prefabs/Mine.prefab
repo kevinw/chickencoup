@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523c669bbc4c2e34da8bdaf30eca4d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplodeSound: event:/SFX/ENVIRONMENT/Mine_Explosion
   ExplosiveForce: 100
   ExplosionRadius: 2
   ExplosionUpwards: 3
