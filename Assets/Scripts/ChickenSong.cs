@@ -79,13 +79,10 @@ public class ChickenSong : MonoBehaviour {
 		InSong = true;
 		var player = GameObject.FindGameObjectWithTag("Player");
 
-		if (!practice)
-		{
-			if (text)
-			{
-				text.text = "Sing!";
-			}
-		}
+		if (text)
+			text.text = practice ? "practice" : "sing!";
+
+		yield return new WaitForSeconds(1.0f);
 
 		var currentTime = 0f;
 		var nextNoteIndex = 0;
@@ -126,6 +123,8 @@ public class ChickenSong : MonoBehaviour {
 							var delta = currentTimeNormalized - note.time;
 							bool hit = Mathf.Abs(delta) < missTimeNormalized && button == note.button;
 							note.state = hit ? NoteState.Hit : NoteState.Missed;
+							if (!hit)
+								if (text) text.text = "oops!";
 							EggHit(testIndex, note, hit);
 						}
 					}
@@ -177,6 +176,7 @@ public class ChickenSong : MonoBehaviour {
 					if (delta > missTimeNormalized)
 					{
 						lastNote.state = NoteState.Missed;
+						if (text) text.text = "oops!";
 						EggHit(nextNoteIndex - 1, lastNote, false);
 					}
 				}
