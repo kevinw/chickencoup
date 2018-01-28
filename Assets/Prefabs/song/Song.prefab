@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4126090670972054}
   - component: {fileID: 120618522812954452}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: line4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4501498599912966}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4180379284132778}
   - component: {fileID: 114053775203965740}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Song
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873158577980726}
   - component: {fileID: 120528944058790946}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Timeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4151468137521204}
   - component: {fileID: 120517871802384142}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: line2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4082597141455134}
   - component: {fileID: 120340757657230946}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: line1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4749059160066260}
   - component: {fileID: 120616360794465214}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: line3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4454374949784310}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Lines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4922057526165286}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Notes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
