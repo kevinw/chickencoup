@@ -8,8 +8,12 @@ public class ExtendDolly : MonoBehaviour {
 
 	public Vector3 ExtraPoint;
 
-	void Start () {
+	void OnEnable () {
 		Events.Noise.NoiseLimitReached += OnNoiseLimit;
+	}
+
+	void OnDisable () {
+		Events.Noise.NoiseLimitReached -= OnNoiseLimit;
 	}
 
 	void OnNoiseLimit()
