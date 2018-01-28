@@ -25,6 +25,7 @@ public class Cheats : MonoBehaviour {
 		for (int i = 0; i < numberOfFollowers; ++i)
 		{
 			var r = SpawnChickenNextToPlayer();
+			r.SetRecruited();
 			Events.Recruitment.RecruitmentResult.Invoke(r, true);
 		}
 	}

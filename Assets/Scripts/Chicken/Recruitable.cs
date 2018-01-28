@@ -13,12 +13,17 @@ namespace ChickenCoup
         //assigned recruitment prompt
         GameObject recruitPrompt;
         ChickenAnimator chickenAnimator;
-        public bool Recruited { get; private set;}
+        public bool Recruited { get { return _recruited; } }
+        bool _recruited;
 
         public MeshRenderer cookedChickenRenderer;
+        bool didDie;
 
         public void DidDie()
         {
+            if (didDie)
+                return;
+            didDie = true;
             if (cookedChickenRenderer)
                 cookedChickenRenderer.enabled = true;
             if (chickenAnimator)
@@ -36,7 +41,6 @@ namespace ChickenCoup
 
         void Start()
         {
-            Recruited = false;
             chickenAnimator = GetComponentInChildren<ChickenAnimator>();
 
             //spawn a new recruitment prefab
@@ -67,7 +71,7 @@ namespace ChickenCoup
         void ToggleRecruitmentPrompt(GameObject g, Visibility state)
         {
             if(g != this.gameObject){return;}
-            if (attempted)
+            if (attempted || Recruited || didDie)
             {
                 spawnedPrompt.Deactivate();
                 Activated = false;
@@ -108,7 +112,7 @@ namespace ChickenCoup
 
         public void SetRecruited()
         {
-            Recruited = true;
+            _recruited = true;
         }
 
 

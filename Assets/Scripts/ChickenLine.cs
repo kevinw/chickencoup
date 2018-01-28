@@ -104,6 +104,10 @@ namespace ChickenCoup
 
 				var v = otherChicken.GetComponent<Verlet3D>();
 
+				var r = otherChicken.GetComponent<Recruitable>();
+				if (r)
+					r.SetRecruited();
+
 				if (i == numChickens - 1)
 				{
 					follow.Follow = false;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using FMODUnity;
 namespace ChickenCoup {
 
 public enum NoteState { None, Hit, Missed };
@@ -30,6 +31,9 @@ public class Song
 
 [ExecuteInEditMode]
 public class ChickenSong : MonoBehaviour {
+	string failFX = "event:/SFX/UI/Communication_Fail";
+	string successFX1 = "event:/SFX/CHICKEN_RECRUITABLE/Voice_Chicken_Recruit";
+	string successFX2 = "event:/SFX/UI/Chicken_Recruit";
 
 	public float StaffLength = 2.0f;
 	public float StaffLineSpace = 0.3f;
@@ -194,6 +198,10 @@ public class ChickenSong : MonoBehaviour {
 			if (Events.Recruitment.RecruitmentResult != null)
 			{
 				var success = song.notes.All(n => n.state == NoteState.Hit);
+				if (success) {
+					FMODUnity.RuntimeManager.PlayOneShot(successFX1);
+					FMODUnity.RuntimeManager.PlayOneShot(successFX2);
+				}
 				Events.Recruitment.RecruitmentResult.Invoke(recruitable, success);
 				var cheats = FindObjectOfType<Cheats>();
 				if (cheats)
@@ -228,6 +236,12 @@ public class ChickenSong : MonoBehaviour {
 		egg.GetComponent<SpriteRenderer>().enabled = false;
 		var obj = InstantiateNote(hit ? chickPrefab : friedEggPrefab, note);
 		obj.transform.SetParent(transform, false);
+
+		if (!hit)
+		{
+			FMODUnity.RuntimeManager.PlayOneShot(failFX);
+
+		}
 	}
 
 	public void PulseEgg(int noteIndex)
@@ -324,6 +338,7 @@ public class ChickenSong : MonoBehaviour {
 
 	Song GenerateSong(int numNotes, float seconds = 3.0f, float restChance = 0.1f)
 	{
+		Debug.Log("generate song with " + numNotes);
 		var song = new Song();
 		song.seconds = seconds;
 
@@ -332,7 +347,7 @@ public class ChickenSong : MonoBehaviour {
 			var button = (ControllerButton)Random.Range(0, 4);
 			var time = (float)i/(float)numNotes;
 			time += 1.0f/numNotes/2.0f;
-			if (Random.value > restChance)
+			if (Random.value > restChance || song.notes.Count == 0)
 				song.notes.Add(new Note{time = time, button=button});
 		}
 
