@@ -25,6 +25,14 @@ public class Mine : MonoBehaviour {
 
 		Destroy(gameObject);
     }
+
+	IEnumerator ExplodeWithDelay()
+	{
+		yield return new WaitForSeconds(1.0f);
+		//check if our big collider is colliding
+		//grab a random chicken from that collider
+		//kill da chicken
+	}
 }
 
 }
