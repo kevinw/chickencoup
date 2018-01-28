@@ -141,17 +141,17 @@ public class ChickenAnimator : MonoBehaviour {
 
 	void Start(){
 
-		rootJointStartRotation = rootJoint.transform.rotation;
+		rootJointStartRotation = rootJoint.transform.localRotation;
 
 		// Create the springs
 		rootSpring = new Spring(springSettings, rootJoint.transform.position);
 		foreach (GameObject joint in headJoints) {
 			headSprings.Add(new Spring(springSettings, joint.transform.position));
-			neckJointStartRotations.Add(joint.transform.rotation);
+			neckJointStartRotations.Add(joint.transform.localRotation);
 		}
 		foreach (GameObject joint in wingJoints) {
 			wingSprings.Add(new Spring(springSettings, joint.transform.position));
-			wingJointStartRotations.Add(joint.transform.rotation);
+			wingJointStartRotations.Add(joint.transform.localRotation);
 		}
 
 		lastPosition = transform.position;
@@ -208,10 +208,10 @@ public class ChickenAnimator : MonoBehaviour {
 		rootJointRotation *= localRotate;
 		
 		for (int i = 0; i < headSprings.Count; i++) {
-			float neckRotX = (headSprings[i].position.z - headJoints[i].transform.position.z);
-			float neckRotZ = (headSprings[i].position.x - headJoints[i].transform.position.x);
-			Vector3 newNeckAngles = new Vector3(neckRotX,0.0f,neckRotZ);
-			newNeckAngles *= 90f;
+			float neckRotY = (headSprings[i].position.x - headJoints[i].transform.position.x);
+			float neckRotZ = (headSprings[i].position.z - headJoints[i].transform.position.z);
+			Vector3 newNeckAngles = new Vector3(0.0f,neckRotY,neckRotZ);
+			newNeckAngles *= 45f;
 			//headJoints[i].transform.localEulerAngles = newAngles;
 			Quaternion localNeckRotate = Quaternion.Inverse(neckJointStartRotations[i]) * Quaternion.Euler(newNeckAngles) * neckJointStartRotations[i];
 			neckJointRotations[i] *= localNeckRotate;
@@ -220,23 +220,23 @@ public class ChickenAnimator : MonoBehaviour {
 		
 		// Rotate wings based on spring
 		for (int i = 0; i < wingSprings.Count; i++) {
-			float rotWingZ = (wingSprings[i].position.y - wingJoints[i].transform.position.y);
 			float rotWingY = (wingSprings[i].position.z - wingJoints[i].transform.position.z);
+			float rotWingZ = (wingSprings[i].position.y - wingJoints[i].transform.position.y);
 			Vector3 newWingAngles = new Vector3(0,rotWingY,rotWingZ);
-			newWingAngles *= 90f;
+			newWingAngles *= 45f;
 			Quaternion localWingRotate = Quaternion.Inverse(wingJointStartRotations[i]) * Quaternion.Euler(newWingAngles) * wingJointStartRotations[i];
 			wingJointRotations[i] *= localWingRotate;
 		}
 
 		// Apply new orientations
 		rootJoint.transform.localPosition = rootJointPosition;
-		rootJoint.transform.rotation = rootJointRotation;
+		rootJoint.transform.localRotation = rootJointRotation;
 		
 		for (int i = 0; i < neckJointRotations.Count; i++) {
-			headJoints[i].transform.rotation = neckJointRotations[i];
+			headJoints[i].transform.localRotation = neckJointRotations[i];
 		}
 		for (int i = 0; i < wingJointRotations.Count; i++) {
-			wingJoints[i].transform.rotation = wingJointRotations[i];
+			wingJoints[i].transform.localRotation = wingJointRotations[i];
 		} 
 		
 	}
