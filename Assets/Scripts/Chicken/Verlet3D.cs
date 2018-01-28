@@ -55,10 +55,8 @@ namespace ChickenCoup
 
 		public void OnButtonPressed(ControllerButton b)
 		{
-			if(IsPlayerControlled && b == ControllerButton.A)
-			{
+			if (IsPlayerControlled && b == ControllerButton.A && !ChickenSong.InSong)
 				jumping = true;
-			}
 		}
 
 		public bool PlayerControlled = true;
