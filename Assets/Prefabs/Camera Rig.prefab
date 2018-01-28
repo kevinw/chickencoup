@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4077546316340480}
   - component: {fileID: 114954884911138240}
+  - component: {fileID: 114494343695054800}
   m_Layer: 0
   m_Name: DollyTrack1
   m_TagString: Untagged
@@ -145,8 +146,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995392056313184}
-  m_LocalRotation: {x: 0.27910367, y: 0.0082245255, z: -0.002390586, w: 0.9602228}
-  m_LocalPosition: {x: -27.230013, y: 6.460001, z: 15.22}
+  m_LocalRotation: {x: 0.23372754, y: 0.28363696, z: -0.071494296, w: 0.9272595}
+  m_LocalPosition: {x: -32.00673, y: 6.460001, z: 15.429595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4006072511369070}
@@ -158,8 +159,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474166080739804}
-  m_LocalRotation: {x: 0.27910367, y: 0.0082245255, z: -0.002390586, w: 0.9602228}
-  m_LocalPosition: {x: -27.230013, y: 6.460001, z: 15.22}
+  m_LocalRotation: {x: 0.23372754, y: 0.28363696, z: -0.071494296, w: 0.9272595}
+  m_LocalPosition: {x: -32.00673, y: 6.460001, z: 15.429595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4155259219935570}
@@ -184,7 +185,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 52.414703
+  field of view: 46.860664
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -288,6 +289,18 @@ MonoBehaviour:
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
+--- !u!114 &114494343695054800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1192567663524294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d05231392c2e41909266437f9b7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExtraPoint: {x: 1, y: 0, z: 83}
 --- !u!114 &114578283888425132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -348,7 +361,7 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: 1, y: 0, z: 0}
     roll: 0
-  - position: {x: 1.329628, y: 0, z: 20}
+  - position: {x: 1, y: 0, z: 8}
     roll: 0
 --- !u!114 &114994081694079084
 MonoBehaviour:
@@ -362,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 114954884911138240}
-  m_PathPosition: 0.63354164
+  m_PathPosition: 1
   m_PositionUnits: 0
   m_PathOffset: {x: -6.4295964, y: -12.879999, z: -0.0067279465}
   m_XDamping: 0
