@@ -89,26 +89,41 @@ public class ChickenSong : MonoBehaviour {
 			if (!finished)
 			{
 				ControllerButton button;
-				if (!practice && ControllerInput.AnyButtonPressed(out button))
+				if (ControllerInput.AnyButtonPressed(out button))
 				{
-					var prevNote = nextNoteIndex > 0 ? song.notes[nextNoteIndex - 1] : null;
-					int testIndex = nextNoteIndex;
-
-					Note note = nextNote;
-					if (prevNote != null && prevNote.state == NoteState.None &&
-						(nextNote == null ||
-							(Mathf.Abs(nextNote.time - currentTimeNormalized) > Mathf.Abs(prevNote.time - currentTimeNormalized))))
+					if (!practice)
 					{
-						note = prevNote;
-						testIndex = nextNoteIndex - 1;
+						var prevNote = nextNoteIndex > 0 ? song.notes[nextNoteIndex - 1] : null;
+						int testIndex = nextNoteIndex;
+
+						Note note = nextNote;
+						if (prevNote != null && prevNote.state == NoteState.None &&
+							(nextNote == null ||
+								(Mathf.Abs(nextNote.time - currentTimeNormalized) > Mathf.Abs(prevNote.time - currentTimeNormalized))))
+						{
+							note = prevNote;
+							testIndex = nextNoteIndex - 1;
+						}
+
+						if (note != null && note.state == NoteState.None)
+						{
+							var delta = currentTimeNormalized - note.time;
+							bool hit = Mathf.Abs(delta) < missTimeNormalized && button == note.button;
+							note.state = hit ? NoteState.Hit : NoteState.Missed;
+							EggHit(testIndex, note, hit);
+						}
 					}
-
-					if (note != null && note.state == NoteState.None)
+					else
 					{
-						var delta = currentTimeNormalized - note.time;
-						bool hit = Mathf.Abs(delta) < missTimeNormalized && button == note.button;
-						note.state = hit ? NoteState.Hit : NoteState.Missed;
-						EggHit(testIndex, note, hit);
+						var fakeNote = new Note();
+						fakeNote.time = currentTimeNormalized;
+						fakeNote.button = button;
+						var fakeEgg = InstantiateNote(eggprefab, fakeNote, true);
+						fakeEgg.transform.SetParent(transform, false);
+						LeanTween.scale(fakeEgg, Vector3.zero, 0.5f).setDelay(0.3f).setOnComplete(() => {
+							Destroy(fakeEgg);
+						});
+
 					}
 				}
 			}
@@ -121,7 +136,8 @@ public class ChickenSong : MonoBehaviour {
 					FMODUnity.RuntimeManager.PlayOneShot(SquawkSoundForNote(nextNote.button), pos);
 					if (recruitable)
 						recruitable.Squawk();
-					PulseEgg(nextNoteIndex);
+					if (practice)
+						PulseEgg(nextNoteIndex);
 					nextNoteIndex++;
 
 				}

@@ -81,7 +81,7 @@ namespace ChickenCoup
 
         public void OnButtonPressed(ControllerButton b)
         {
-            if(!TouchingChicken)
+            //if(!TouchingChicken)
             {
                 //let people squak all the time
                 switch (b)
