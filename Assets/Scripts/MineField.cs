@@ -25,18 +25,20 @@ public class MineField : MonoBehaviour {
 				bounds.Encapsulate(box.bounds);
 		}
 
+		if (!MinePrefab)
+			return;
+
 		for (int i = 0; i < NumberOfMines; ++i)
 		{
-			var pt = bounds.center + new Vector3(
-				bounds.extents.x * (Random.value - 0.5f * 2.0f),
-				0,
-				bounds.extents.z * (Random.value - 0.5f * 2.0f));
-			if (MinePrefab)
-			{
-				var mine = Instantiate(MinePrefab, pt, Quaternion.identity);
-				mine.transform.parent = transform;
-			}
+			var pt = bounds.center + new Vector3(bounds.size.x * Random.value - bounds.extents.x, 0, bounds.size.z * Random.value - bounds.extents.z);
 
+			var mine = Instantiate(MinePrefab);
+			mine.transform.SetParent(transform, false);
+
+			var minPos = mine.transform.position;
+			minPos.x = pt.x;
+			minPos.z = pt.z;
+			mine.transform.position = minPos;
 		}
 	}
 }
