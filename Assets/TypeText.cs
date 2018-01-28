@@ -18,6 +18,9 @@ public class TypeText : MonoBehaviour {
 	private string baseText = string.Empty;
 	private int lineIndex = 0;
 
+	[FMODUnity.EventRef]
+	public string typeSound;
+
 	// Use this for initialization
 	void Start () {
 		paragraph = gameObject.GetComponent<Text>();
@@ -120,7 +123,7 @@ public class TypeText : MonoBehaviour {
 			}
 
 			paragraph.text += string.Format("{0}{1}{2}", startTag, c, endTag);
-
+			FMODUnity.RuntimeManager.PlayOneShot(typeSound, transform.position);
 			yield return new WaitForSeconds(delayTime);
 		}
 
