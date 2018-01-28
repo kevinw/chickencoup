@@ -68,6 +68,8 @@ public class ShadingSettings {
 }
 
 public class ChickenAnimator : MonoBehaviour {
+	public ChickenMode mode = ChickenMode.Random;
+
 
 	public List<GameObject> headJoints = new List<GameObject>();
 	public List<GameObject> wingJoints = new List<GameObject>();
@@ -94,7 +96,12 @@ public class ChickenAnimator : MonoBehaviour {
 
 	private Vector3 chaosPoint = Vector3.zero;
 
-	public bool isFarmer = false;
+	public enum ChickenMode
+	{
+		Random,
+		Player,
+		Farmer
+	}
 
 	private Vector3 lastPosition;
 	[HideInInspector]
@@ -106,11 +113,30 @@ public class ChickenAnimator : MonoBehaviour {
 
 	void Start(){
 		
-		if (isFarmer) {
+		if (mode == ChickenMode.Farmer) {
 			if (hatMesh)
 				hatMesh.SetActive(true);
 			for (int i = 0; i < accessories.Count; i++) {
 				accessories[i].SetActive(false);
+			}
+		} else if (mode == ChickenMode.Player) {
+			if (hatMesh)
+				hatMesh.SetActive(false);
+			for (int i = 0; i < accessories.Count; i++) {
+				accessories[i].SetActive(false);
+			}
+
+			Color color = Color.white;
+			if (shadingSettings.colorSwatches.Length > 0)
+			{
+				var one = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length-1)];
+				var two = shadingSettings.colorSwatches[Random.Range(0, shadingSettings.colorSwatches.Length-1)];
+				color = Color.Lerp(one, two, Random.value);
+			}
+
+			float neckOffset = -0.088f;
+			foreach (GameObject joint in headJoints) {
+				joint.transform.localPosition = new Vector3 (joint.transform.localPosition.x + neckOffset, joint.transform.localPosition.y, joint.transform.localPosition.z);
 			}
 		} else {
 			if (hatMesh)
@@ -139,6 +165,7 @@ public class ChickenAnimator : MonoBehaviour {
 
 			// Create neck length
 			float neckOffset = (0.25f - (seed/100)) * 0.2f;
+			Debug.Log("neckOffset " + neckOffset);
 			foreach (GameObject joint in headJoints) {
 				joint.transform.localPosition = new Vector3 (joint.transform.localPosition.x + neckOffset, joint.transform.localPosition.y, joint.transform.localPosition.z);
 			}

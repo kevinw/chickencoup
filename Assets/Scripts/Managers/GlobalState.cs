@@ -10,6 +10,9 @@ namespace ChickenCoup
 		public static int TotalNoise { get; private set;}
 		public static int NoiseLimit { get; private set;}
 		public Slider NoiseMeter;
+
+		bool FiredNoiseLimit;
+
 		void Start () {
 			Assert.IsNotNull(NoiseMeter);
 			TotalNoise = 0;
@@ -21,8 +24,9 @@ namespace ChickenCoup
 		{
 			TotalNoise += amount;
 			NoiseMeter.value = (float)TotalNoise / (float)NoiseLimit;
-			if(TotalNoise >= NoiseLimit)
+			if(!FiredNoiseLimit && TotalNoise >= NoiseLimit)
 			{
+				FiredNoiseLimit = true;
 				if(Events.Noise.NoiseLimitReached != null){Events.Noise.NoiseLimitReached();}
 				Debug.Log("noise limit reached");
 			}

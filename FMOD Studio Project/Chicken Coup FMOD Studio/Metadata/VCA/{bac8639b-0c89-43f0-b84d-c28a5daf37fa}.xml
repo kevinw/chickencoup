@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.01.10.00">
     <object class="MixerVCA" id="{bac8639b-0c89-43f0-b84d-c28a5daf37fa}">
+        <property name="volume">
+            <value>-1.60000002</value>
+        </property>
         <property name="name">
             <value>Music</value>
         </property>

@@ -84,6 +84,9 @@ namespace ChickenCoup
                 if (Events.Recruitment.BeginRecruitment != null)
                 {
                     Events.Recruitment.BeginRecruitment.Invoke(this);
+                    var lookAtPlayer = GetComponent<LookAtPlayer>();
+                    if (lookAtPlayer)
+                        lookAtPlayer.enabled = false;
                     attempted = true;
                 }
             }

@@ -39,8 +39,14 @@ public class ChickenSong : MonoBehaviour {
 
 	public void GenerateAndPlaySong(Recruitable recruitable)
 	{
+		int numberOfNotes = Random.Range(1, 6);
+		float seconds = Random.Range(2, 7);
+		float restChance = Random.Range(0.05f, 0.15f);
+
 		this.recruitable = recruitable;
-		var song = GenerateSong(1);
+
+		var song = GenerateSong(numberOfNotes, seconds, restChance);
+
 		PlaceEggs(song);
 		coro = StartCoroutine(PlaySong(song));
 	}
@@ -271,15 +277,18 @@ public class ChickenSong : MonoBehaviour {
 		}
 	}
 
-	Song GenerateSong(int numNotes)
+	Song GenerateSong(int numNotes, float seconds = 3.0f, float restChance = 0.1f)
 	{
 		var song = new Song();
+		song.seconds = seconds;
+
 		for (var i = 0; i < numNotes; ++i)
 		{
 			var button = (ControllerButton)Random.Range(0, 4);
 			var time = (float)i/(float)numNotes;
 			time += 1.0f/numNotes/2.0f;
-			song.notes.Add(new Note{time = time, button=button});
+			if (Random.value > restChance)
+				song.notes.Add(new Note{time = time, button=button});
 		}
 
 		return song;
