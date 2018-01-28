@@ -10,6 +10,12 @@ public class AnimationSettings {
 	public float maxVelocity;
 	public float chaos;
 	public float chaosSpeed;
+	[Range(0.0f,1.0f)]
+	public float sittingBlend;
+	public float sitOffset;
+	[Range(0.0f,1.0f)]
+	public float flyingBlend;
+	public float flyOffset;
 
 	public AnimationSettings () {
 		moveY = new AnimationCurve();
@@ -18,11 +24,96 @@ public class AnimationSettings {
 		maxVelocity = 0.1f;
 		chaos = 0.0f;
 		chaosSpeed = 1.0f;
+		sittingBlend = 0.0f;
+		sitOffset = 0.3f;
+		flyingBlend = 0.0f;
 	}
 }
 
-public class ChickenAnimator : MonoBehaviour {
+/* 
+public abstract class Pose {
+	protected AnimationSettings settings;
+	protected ChickenAnimator animator;
+	protected Quaternion startRotation;
+	public Vector3 rootPosition {
+		get {
+			return Vector3.zero;
+		}
+	}
+	public Vector3 rootScale {
+		get {
+			return new Vector3(1,1,1);
+		}
+	}
+	public Vector3 neckRotation {
+		get {
+			return Vector3.zero;
+		}
+	}
+	public Pose (ChickenAnimator _animator, AnimationSettings _settings, Quaternion _startRotation) {
+		settings = _settings;
+		animator = animator;
+		startRotation = startRotation;
+	}
+}
+public class SittingPose : Pose {
+	public Vector3 rootPosition {
+		get {
+			return new Vector3(0, -1 * Easing.Elastic.InOut(settings.sittingBlend) * settings.sitOffset,0);
+		}
+	}
+	public Vector3 rootScale {
+		get {
+			float scaleValue = Mathf.Max(0.0f, Easing.Elastic.InOut(settings.sittingBlend) - 1.0f);
+			return new Vector3(1.0f + scaleValue, 1.0f - scaleValue, 1.0f + scaleValue);
+		}
+	}
+	public SittingPose(ChickenAnimator _animator, AnimationSettings _settings) : base(_animator, _settings) {}
+}
+public class FlyingPose : Pose {
+	public Vector3 rootPosition {
+		get {
+			return new Vector3(0, (Easing.Elastic.In(settings.flyingBlend) * settings.flyOffset),0);
+		}
+	}
+	public FlyingPose(ChickenAnimator _animator, AnimationSettings _settings, Quaternion _startRotation) : base(_animator, _settings, _st) {}
+}
+public class MovingPose : Pose {
 
+	private float frame = 0.0f;
+	private float hopHeight = 0.0f;
+
+	public Vector3 rootPosition {
+		get {
+			// Apply hop
+			if (animator != null) {
+				frame += Time.deltaTime * settings.hopRate;
+				Vector3 velocity2D = new Vector3(animator.velocity.x, 0, animator.velocity.z);
+				if (frame >= 1.0f){
+					frame = 0.0f;
+					hopHeight = Mathf.Clamp01(velocity2D.magnitude / settings.maxVelocity) * -1;
+				}
+				return new Vector3 (
+					0,
+					settings.moveY.Evaluate(frame) * hopHeight * settings.hopHeight,
+					0
+				);
+			} else {
+				return Vector3.zero;
+			}
+			
+		}
+	}
+	public MovingPose(ChickenAnimator _animator, AnimationSettings _settings) : base(_animator, _settings) {}
+}
+public class SpringPose : Pose {
+
+	public SpringPose(ChickenAnimator _animator, AnimationSettings _settings) : base(_animator, _settings) {}
+}
+*/
+
+
+public class ChickenAnimator : MonoBehaviour {
 
 	public List<GameObject> headJoints = new List<GameObject>();
 	public List<GameObject> wingJoints = new List<GameObject>();
@@ -35,23 +126,32 @@ public class ChickenAnimator : MonoBehaviour {
 	private List<Spring> wingSprings = new List<Spring>();
 	private Spring rootSpring;
 
+	private Quaternion rootJointStartRotation;
+	private List<Quaternion> neckJointStartRotations = new List<Quaternion>();
+	private List<Quaternion> wingJointStartRotations = new List<Quaternion>();
+
 	private Vector3 chaosPoint = Vector3.zero;
 
 	private Vector3 lastPosition;
-	private Vector3 velocity;
-
+	[HideInInspector]
+	public Vector3 velocity;
+	
 	private float frame = 0.0f;
 	private float hopHeight = 0.0f;
 
 	void Start(){
 
+		rootJointStartRotation = rootJoint.transform.rotation;
+
 		// Create the springs
 		rootSpring = new Spring(springSettings, rootJoint.transform.position);
 		foreach (GameObject joint in headJoints) {
 			headSprings.Add(new Spring(springSettings, joint.transform.position));
+			neckJointStartRotations.Add(joint.transform.rotation);
 		}
 		foreach (GameObject joint in wingJoints) {
 			wingSprings.Add(new Spring(springSettings, joint.transform.position));
+			wingJointStartRotations.Add(joint.transform.rotation);
 		}
 
 		lastPosition = transform.position;
@@ -61,6 +161,12 @@ public class ChickenAnimator : MonoBehaviour {
 
 	void Update(){
 		
+		// Create new position at bind pose
+		Vector3 rootJointPosition = new Vector3();
+		Quaternion rootJointRotation = rootJointStartRotation;
+		List<Quaternion> neckJointRotations = new List<Quaternion>(neckJointStartRotations);
+		List<Quaternion> wingJointRotations = new List<Quaternion>(wingJointStartRotations);
+
 		// Update velocity
 		velocity = transform.position - lastPosition;
 		lastPosition = transform.position;
@@ -73,58 +179,72 @@ public class ChickenAnimator : MonoBehaviour {
 		);
 		chaosPoint *= animationSettings.chaos;
 
-		// Update springs
-		rootSpring.Update(transform.position + chaosPoint);
-		//Vector3 target = rootSpring.position;
-		for (int i = 0; i < headSprings.Count; i++) {
-			headSprings[i].Update(headJoints[i].transform.position + chaosPoint);
-		}
 
-		// Rotate head joints based on spring
-		rotateToSpring(rootJoint, rootSpring, 15.0f);
-		for (int i = 0; i < headSprings.Count; i++) {
-			rotateToSpring(headJoints[i], headSprings[i]);
-		}
-
-		// Rotate wings based on spring
-		for (int i = 0; i < wingSprings.Count; i++) {
-			float rotZ = (wingSprings[i].position.y - wingJoints[i].transform.position.y);
-			Vector3 newAngles = new Vector3(0,0,(rotZ * 45.0f) + 90);
-			wingJoints[i].transform.localEulerAngles = newAngles;
-			wingSprings[i].Update(wingJoints[i].transform.position);
-		}
-		
 		// Apply hop
 		frame += Time.deltaTime * animationSettings.hopRate;
 		Vector3 velocity2D = new Vector3(velocity.x, 0, velocity.z);
 		if (frame >= 1.0f){
 			frame = 0.0f;
-			hopHeight = Mathf.Clamp01(velocity2D.magnitude / animationSettings.maxVelocity) * -1;
+			hopHeight = Mathf.Clamp01(velocity2D.magnitude / animationSettings.maxVelocity) ;
 		}
-		rootJoint.transform.localPosition = new Vector3 (
-			animationSettings.moveY.Evaluate(frame) * hopHeight * animationSettings.hopHeight,
-			rootJoint.transform.localPosition.y,
-			rootJoint.transform.localPosition.z
-		);	
+		rootJointPosition += animationSettings.moveY.Evaluate(frame) * hopHeight * animationSettings.hopHeight * Vector3.up;
 
+
+		// Update springs
+		rootSpring.Update(transform.position + chaosPoint);
+		for (int i = 0; i < headSprings.Count; i++) {
+			headSprings[i].Update(headJoints[i].transform.position + chaosPoint);
+		}
+		for (int i = 0; i < wingSprings.Count; i++) {
+			wingSprings[i].Update(wingJoints[i].transform.position + chaosPoint);
+		}
+		
+		// Rotate head joints based on spring
+		float rotX = (rootSpring.position.z - rootJoint.transform.position.z);
+		float rotZ = (rootSpring.position.x - rootJoint.transform.position.x);
+		Vector3 newAngles = new Vector3(rotX,0.0f,rotZ);
+		newAngles *= 15;
+		Quaternion localRotate = Quaternion.Inverse(rootJointStartRotation) * Quaternion.Euler(newAngles) * rootJointStartRotation;
+		rootJointRotation *= localRotate;
+		
+		for (int i = 0; i < headSprings.Count; i++) {
+			float neckRotX = (headSprings[i].position.z - headJoints[i].transform.position.z);
+			float neckRotZ = (headSprings[i].position.x - headJoints[i].transform.position.x);
+			Vector3 newNeckAngles = new Vector3(neckRotX,0.0f,neckRotZ);
+			newNeckAngles *= 90f;
+			//headJoints[i].transform.localEulerAngles = newAngles;
+			Quaternion localNeckRotate = Quaternion.Inverse(neckJointStartRotations[i]) * Quaternion.Euler(newNeckAngles) * neckJointStartRotations[i];
+			neckJointRotations[i] *= localNeckRotate;
+		}
+
+		
+		// Rotate wings based on spring
+		for (int i = 0; i < wingSprings.Count; i++) {
+			float rotWingZ = (wingSprings[i].position.y - wingJoints[i].transform.position.y);
+			float rotWingY = (wingSprings[i].position.z - wingJoints[i].transform.position.z);
+			Vector3 newWingAngles = new Vector3(0,rotWingY,rotWingZ);
+			newWingAngles *= 90f;
+			Quaternion localWingRotate = Quaternion.Inverse(wingJointStartRotations[i]) * Quaternion.Euler(newWingAngles) * wingJointStartRotations[i];
+			wingJointRotations[i] *= localWingRotate;
+		}
+
+		// Apply new orientations
+		rootJoint.transform.localPosition = rootJointPosition;
+		rootJoint.transform.rotation = rootJointRotation;
+		
+		for (int i = 0; i < neckJointRotations.Count; i++) {
+			headJoints[i].transform.rotation = neckJointRotations[i];
+		}
+		for (int i = 0; i < wingJointRotations.Count; i++) {
+			wingJoints[i].transform.rotation = wingJointRotations[i];
+		} 
+		
 	}
 
 	public void Squawk(){
 		if (animationSettings.chaos != 0.0f) {
 			headSprings[0].AddForce(chaosPoint / animationSettings.chaos);
 		}
-	}
-
-	void rotateToSpring(GameObject target, Spring spring, float amplitude=45.0f, float maxRotation=45.0f) {
-
-		float rotX = (spring.position.z - target.transform.position.z);
-		float rotZ = (spring.position.x - target.transform.position.x);
-
-		Vector3 newAngles = new Vector3(0,rotX,rotZ);
-		newAngles *= amplitude;
-
-		target.transform.localEulerAngles = newAngles;
-
 	}
 
 	void OnDrawGizmos()
