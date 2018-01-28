@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: 65d7124d535cd422392108c99b965907
+timeCreated: 1517166022
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bush:pCylinder1
+    100002: Bush:pCylinder10
+    100004: Bush:pCylinder11
+    100006: Bush:pCylinder12
+    100008: Bush:pCylinder13
+    100010: Bush:pCylinder14
+    100012: Bush:pCylinder15
+    100014: Bush:pCylinder16
+    100016: Bush:pCylinder17
+    100018: Bush:pCylinder18
+    100020: Bush:pCylinder19
+    100022: Bush:pCylinder2
+    100024: Bush:pCylinder20
+    100026: Bush:pCylinder21
+    100028: Bush:pCylinder22
+    100030: Bush:pCylinder23
+    100032: Bush:pCylinder24
+    100034: Bush:pCylinder25
+    100036: Bush:pCylinder26
+    100038: Bush:pCylinder27
+    100040: Bush:pCylinder28
+    100042: Bush:pCylinder29
+    100044: Bush:pCylinder3
+    100046: Bush:pCylinder30
+    100048: Bush:pCylinder31
+    100050: Bush:pCylinder32
+    100052: Bush:pCylinder33
+    100054: Bush:pCylinder4
+    100056: Bush:pCylinder5
+    100058: Bush:pCylinder6
+    100060: Bush:pCylinder7
+    100062: Bush:pCylinder8
+    100064: Bush:pCylinder9
+    100066: Bush:pPlane1
+    100068: Bush:transform1
+    100070: Bush:transform10
+    100072: Bush:transform11
+    100074: Bush:transform12
+    100076: Bush:transform13
+    100078: Bush:transform14
+    100080: Bush:transform15
+    100082: Bush:transform16
+    100084: Bush:transform17
+    100086: Bush:transform18
+    100088: Bush:transform19
+    100090: Bush:transform2
+    100092: Bush:transform20
+    100094: Bush:transform21
+    100096: Bush:transform22
+    100098: Bush:transform23
+    100100: Bush:transform24
+    100102: Bush:transform25
+    100104: Bush:transform26
+    100106: Bush:transform27
+    100108: Bush:transform28
+    100110: Bush:transform29
+    100112: Bush:transform3
+    100114: Bush:transform30
+    100116: Bush:transform31
+    100118: Bush:transform32
+    100120: Bush:transform33
+    100122: Bush:transform4
+    100124: Bush:transform5
+    100126: Bush:transform6
+    100128: Bush:transform7
+    100130: Bush:transform8
+    100132: Bush:transform9
+    100134: //RootNode
+    400000: Bush:pCylinder1
+    400002: Bush:pCylinder10
+    400004: Bush:pCylinder11
+    400006: Bush:pCylinder12
+    400008: Bush:pCylinder13
+    400010: Bush:pCylinder14
+    400012: Bush:pCylinder15
+    400014: Bush:pCylinder16
+    400016: Bush:pCylinder17
+    400018: Bush:pCylinder18
+    400020: Bush:pCylinder19
+    400022: Bush:pCylinder2
+    400024: Bush:pCylinder20
+    400026: Bush:pCylinder21
+    400028: Bush:pCylinder22
+    400030: Bush:pCylinder23
+    400032: Bush:pCylinder24
+    400034: Bush:pCylinder25
+    400036: Bush:pCylinder26
+    400038: Bush:pCylinder27
+    400040: Bush:pCylinder28
+    400042: Bush:pCylinder29
+    400044: Bush:pCylinder3
+    400046: Bush:pCylinder30
+    400048: Bush:pCylinder31
+    400050: Bush:pCylinder32
+    400052: Bush:pCylinder33
+    400054: Bush:pCylinder4
+    400056: Bush:pCylinder5
+    400058: Bush:pCylinder6
+    400060: Bush:pCylinder7
+    400062: Bush:pCylinder8
+    400064: Bush:pCylinder9
+    400066: Bush:pPlane1
+    400068: Bush:transform1
+    400070: Bush:transform10
+    400072: Bush:transform11
+    400074: Bush:transform12
+    400076: Bush:transform13
+    400078: Bush:transform14
+    400080: Bush:transform15
+    400082: Bush:transform16
+    400084: Bush:transform17
+    400086: Bush:transform18
+    400088: Bush:transform19
+    400090: Bush:transform2
+    400092: Bush:transform20
+    400094: Bush:transform21
+    400096: Bush:transform22
+    400098: Bush:transform23
+    400100: Bush:transform24
+    400102: Bush:transform25
+    400104: Bush:transform26
+    400106: Bush:transform27
+    400108: Bush:transform28
+    400110: Bush:transform29
+    400112: Bush:transform3
+    400114: Bush:transform30
+    400116: Bush:transform31
+    400118: Bush:transform32
+    400120: Bush:transform33
+    400122: Bush:transform4
+    400124: Bush:transform5
+    400126: Bush:transform6
+    400128: Bush:transform7
+    400130: Bush:transform8
+    400132: Bush:transform9
+    400134: //RootNode
+    2100000: lambert1
+    2100002: Bush_lambert2
+    2300000: Bush:pCylinder33
+    3300000: Bush:pCylinder33
+    4300000: Bush:pCylinder33
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
