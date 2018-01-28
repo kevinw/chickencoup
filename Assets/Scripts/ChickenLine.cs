@@ -27,7 +27,7 @@ namespace ChickenCoup
 		Vector3 endPos;
 
 		[System.NonSerialized]
-		internal List<Recruitable> chickensFollowingYou = new List<Recruitable>();
+		public List<Recruitable> chickensFollowingYou = new List<Recruitable>();
 
 		public void AddFollowingChicken(Recruitable recruitable)
 		{
@@ -40,17 +40,23 @@ namespace ChickenCoup
 
 		public void KillChicken(Recruitable recruitable)
 		{
+			recruitable.DidDie();
+
 			var follow = recruitable.GetComponent<VerletFollow>();
 			if (follow)
 				follow.enabled = false;
 			var v = recruitable.GetComponent<Verlet3D>();
-			if (v) v.enabled = false;
+			if (v) {
+				v.enabled = false;
+			}
 
 			if (featherExplosion)
 				Instantiate(featherExplosion, recruitable.transform.position, Quaternion.identity);
 
 			chickensFollowingYou.Remove(recruitable);
 		}
+
+		public float FollowDistance = 1.0f;
 
 		void Update()
 		{
@@ -69,8 +75,14 @@ namespace ChickenCoup
 
 			for (var i = 0; i < numChickens; ++i)
 			{
+				/* 
+				// OLD - linear
 				var forward = delta * ((float)i + 1f);
 				var p = startPos + forward;
+				*/
+
+				// NEW: chickens follow you
+				var p = FollowInLine.GetTargetPos(i == 0 ? playerChicken.transform : chickensFollowingYou[i - 1].transform, FollowDistance);
 
 				//var right = Vector3.Cross(forward, Vector3.up);
 				//var random = Mathf.PerlinNoise((int)(Time.time * 2.0f + i * 1.0f/(float)numChickens), i);

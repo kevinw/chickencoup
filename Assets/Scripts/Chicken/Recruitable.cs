@@ -15,6 +15,16 @@ namespace ChickenCoup
         ChickenAnimator chickenAnimator;
         public bool Recruited { get; private set;}
 
+        public MeshRenderer cookedChickenRenderer;
+
+        public void DidDie()
+        {
+            if (cookedChickenRenderer)
+                cookedChickenRenderer.enabled = true;
+            if (chickenAnimator)
+                chickenAnimator.gameObject.SetActive(false);
+        }
+
         public void Squawk()
         {
             if (chickenAnimator)

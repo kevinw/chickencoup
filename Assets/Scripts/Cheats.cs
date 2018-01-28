@@ -15,9 +15,17 @@ public class Cheats : MonoBehaviour {
 	{
 		var player = GameObject.FindGameObjectWithTag("Player");
 		var line = player.GetComponent<ChickenLine>();
-
 		var xz = Random.insideUnitCircle * Random.value * 3f;
 		line.AddFollowingChicken(SpawnChicken(player.transform.position + new Vector3(xz.x, 0, xz.y)));
+	}
+
+	void KillRandomFollower()
+	{
+		var player = GameObject.FindGameObjectWithTag("Player");
+		var line = player.GetComponent<ChickenLine>();
+		var following = line.chickensFollowingYou;
+		if (following.Count	> 0)
+			line.KillChicken(following[Random.Range(0, following.Count)]);
 	}
 
 	void Update () {
@@ -25,6 +33,8 @@ public class Cheats : MonoBehaviour {
 		{
 			SpawnFollowers(5);
 		}
+		if (Input.GetKeyDown(KeyCode.Alpha9))
+			KillRandomFollower();
 	}
 }
 }

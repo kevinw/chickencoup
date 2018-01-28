@@ -24,7 +24,7 @@ namespace ChickenCoup
 			//Gizmos.DrawSphere(targetPos, 0.2f);
 		}
 
-		Vector3 GetTargetPos()
+		public static Vector3 GetTargetPos(Transform following, float FollowDistance)
 		{
 			var forward = following.forward;
 			var looking = following.GetComponent<LookingDirection>();
@@ -39,7 +39,7 @@ namespace ChickenCoup
 			if (!following)
 				return;
 			
-			targetPos = GetTargetPos();
+			targetPos = GetTargetPos(following, FollowDistance);
 
 			var delta = (targetPos - transform.position);
 			var distance = delta.magnitude;
