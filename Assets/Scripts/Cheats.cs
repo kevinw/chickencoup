@@ -11,13 +11,16 @@ public class Cheats : MonoBehaviour {
 		return Instantiate(followerPrefab, pos, Quaternion.identity).GetComponent<Recruitable>();
 	}
 
-	void SpawnFollowers(int numberOfFollowers)
+	public void SpawnFollowers(int numberOfFollowers)
 	{
-		var player = GameObject.FindGameObjectWithTag("Player");
-		var line = player.GetComponent<ChickenLine>();
-		var xz = Random.insideUnitCircle * Random.value * 3f;
-		var r = SpawnChicken(player.transform.position + new Vector3(xz.x, 0, xz.y));
-		Events.Recruitment.RecruitmentResult.Invoke(r, true);
+		for (int i = 0; i < numberOfFollowers; ++i)
+		{
+			var player = GameObject.FindGameObjectWithTag("Player");
+			var line = player.GetComponent<ChickenLine>();
+			var xz = Random.insideUnitCircle * Random.value * 3f;
+			var r = SpawnChicken(player.transform.position + new Vector3(xz.x, 0, xz.y));
+			Events.Recruitment.RecruitmentResult.Invoke(r, true);
+		}
 	}
 
 	void KillRandomFollower()
