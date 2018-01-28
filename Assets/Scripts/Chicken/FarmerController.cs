@@ -30,5 +30,18 @@ namespace ChickenCoup
 				transform.position = Vector3.MoveTowards(transform.position, PlayerChicken.transform.position, maxDelta);
 			}
 		}
+
+		void OnTriggerEnter(Collider other) 
+		{
+			if(other.GetComponent<Recruitable>() != null) //it's a recruit
+			{
+				Recruitable chicken = other.GetComponent<Recruitable>();
+				if(Events.Recruitment.KillChicken != null){Events.Recruitment.KillChicken(chicken);}
+			}
+			else if(other.GetComponent<CoreChicken>() != null)
+			{
+				Debug.Log("LOST!!!!!!");
+			}
+		}
 	}
 }

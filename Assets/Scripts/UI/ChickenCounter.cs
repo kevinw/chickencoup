@@ -8,28 +8,20 @@ namespace ChickenCoup
 {
 	public class ChickenCounter : MonoBehaviour {
         Text Counter;
+        public GameObject Player;
         int totalChickens;
+        ChickenLine line;
         void Start()
         {
+            line = Player.GetComponent<ChickenLine>();
+            Assert.IsNotNull(Player);
             Counter = GetComponent<Text>();
             totalChickens = 0;
-            Events.Recruitment.RecruitmentResult += OnRecruitmentResult;
-            Events.Recruitment.LostChicken += OnChickenLost;
         }
 
-        void OnRecruitmentResult(Recruitable r, bool result)
+        void Update()
         {
-            if(result)
-            {
-                totalChickens++;
-                Counter.text = totalChickens.ToString();
-            }
-        }
-
-        void OnChickenLost(Recruitable r)
-        {
-            totalChickens = totalChickens = 1;
-            Counter.text = totalChickens.ToString();
+            Counter.text = line.chickensFollowingYou.Count.ToString();
         }
     }
 }

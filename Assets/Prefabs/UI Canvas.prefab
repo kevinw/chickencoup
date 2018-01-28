@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 224068958167722134}
   - component: {fileID: 222515344987100488}
   - component: {fileID: 114383149468517092}
-  - component: {fileID: 114388400058877544}
   m_Layer: 5
   m_Name: Total Chickens
   m_TagString: Untagged
@@ -326,17 +325,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Total Chickens
---- !u!114 &114388400058877544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1035323214643742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc787df99d34d5db8ac7b500213dba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114508095373780818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cc787df99d34d5db8ac7b500213dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!114 &114550437411774462
 MonoBehaviour:
   m_ObjectHideFlags: 1
