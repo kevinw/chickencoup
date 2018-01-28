@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class AnimationSettings {
@@ -20,6 +21,7 @@ public class AnimationSettings {
 	public float headBend;
 	[Range(-1.0f,1.0f)]
 	public float headTurn;
+
 
 	public AnimationSettings () {
 		moveY = new AnimationCurve();
@@ -96,6 +98,15 @@ public class ChickenAnimator : MonoBehaviour {
 
 	private Vector3 chaosPoint = Vector3.zero;
 
+	[FMODUnity.EventRef]
+	public string HoverSoundEvent;
+	FMOD.Studio.EventInstance hoverSound;
+
+	[FMODUnity.EventRef]
+	public string JumpSound;
+	[FMODUnity.EventRef]
+	public string LandSound;
+
 	public enum ChickenMode
 	{
 		Random,
@@ -110,6 +121,8 @@ public class ChickenAnimator : MonoBehaviour {
 	private float frame = 0.0f;
 	private float hopHeight = 0.0f;
 	private float legSpread = 0.0f;
+
+	private bool hovering = false;
 
 	void Start(){
 		
@@ -187,7 +200,10 @@ public class ChickenAnimator : MonoBehaviour {
 		}
 
 		lastPosition = transform.position;
-		velocity = Vector3.zero;		
+		velocity = Vector3.zero;	
+
+		hoverSound = FMODUnity.RuntimeManager.CreateInstance(HoverSoundEvent);
+		FMODUnity.RuntimeManager.AttachInstanceToGameObject(hoverSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
 
 	}
 
@@ -323,7 +339,26 @@ public class ChickenAnimator : MonoBehaviour {
 		for (int i = 0; i < legJointRotations.Count; i++) {
 			legJoints[i].transform.localRotation = legJointRotations[i];
 		} 
-		
+
+		/*
+		if (SceneManager.GetActiveScene().buildIndex == 2) {
+			if (hovering) {
+				if (heightBlend <= 1.0f) {
+					FMODUnity.RuntimeManager.PlayOneShot(LandSound, transform.position);
+					hoverSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+					
+					hovering = false;
+				}
+			} else {
+				if (heightBlend >= 1.0f) {
+					FMODUnity.RuntimeManager.PlayOneShot(JumpSound, transform.position);
+					hoverSound.start();
+					hovering = true;
+				}
+			}
+		} */
+
+
 	}
 
 	public void Squawk(){

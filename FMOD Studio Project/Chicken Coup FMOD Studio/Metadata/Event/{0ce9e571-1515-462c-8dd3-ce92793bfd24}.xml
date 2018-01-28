@@ -92,6 +92,9 @@
         <property name="length">
             <value>0.125</value>
         </property>
+        <property name="maxVoices">
+            <value>1</value>
+        </property>
         <relationship name="modulators">
             <destination>{908e7a97-d1e5-4e51-8f58-eb04e95bcab3}</destination>
         </relationship>
@@ -129,9 +132,6 @@
     <object class="RandomizerModulator" id="{908e7a97-d1e5-4e51-8f58-eb04e95bcab3}">
         <property name="nameOfPropertyBeingModulated">
             <value>pitch</value>
-        </property>
-        <property name="amount">
-            <value>4.5</value>
         </property>
     </object>
     <object class="SingleSound" id="{0a8d5906-cbb6-4f75-aca5-22eee7f8211c}">
