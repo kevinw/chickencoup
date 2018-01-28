@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4688108751961290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_chickenWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4899371749212116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: l_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4710031115994746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chickenButt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541319698445798}
   - component: {fileID: 137477103504706080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: l_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4800137793681360}
   - component: {fileID: 137192684065455732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: l_wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4287189656708178}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4950652631429096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4622468277452658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: r_leg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4871230951217530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4667389942780988}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_chickenFinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4088854895150012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: r_wing 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4486897393313528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chicken_Neck3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4526403340221756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4474730786069182}
   - component: {fileID: 137482667921733952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: r_wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4607102729100212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chicken_Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4445675996851874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 212491278377676476}
   - component: {fileID: 95148234544108880}
   - component: {fileID: 114417739877323952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: squak-blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4842467095725158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: squaks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4655904086695970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_chickenFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4654159288161542}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_chickenFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4386786614973098}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4864091290304954}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chicken_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 114409866250487136}
   - component: {fileID: 114642154118351376}
   - component: {fileID: 114006506733678280}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: tempChicken
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4564866282263702}
   - component: {fileID: 108760771615135154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4172825702487204}
   - component: {fileID: 137346226429269296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: r_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4606776246215174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: neck04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4351766563272454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4778460441251306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: l_wing 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469924858096896}
   - component: {fileID: 114012320761458384}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CHICKEN_FINAL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4734779521575748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4103367669924186}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4685670859220656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4681121941092696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chicken_Neck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4682402640715646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4497725169042030}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_chickenLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4030599462003452}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4476610217294996}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_chickenReg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4339295287306224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4799364619039816}
   - component: {fileID: 137558194796356012}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -621,7 +621,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4009419483698096}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chicken_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4612806875307364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: l_leg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4953806122842726}
   - component: {fileID: 137320886012572302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chocken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +667,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4530794178329132}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 212969387645653704}
   - component: {fileID: 95220451605335820}
   - component: {fileID: 114484490951529764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: squak-yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4582439057593112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: chicken_Neck4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4687367849297632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4937531361993988}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: R_chickenFinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 212394186029078696}
   - component: {fileID: 95380379410807116}
   - component: {fileID: 114452293340085308}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: squak-red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4441885542542500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4338538884908316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: r_foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +793,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4433994162966160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: L_chickenWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,8 +1140,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366557476518208}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.06, y: 1.02, z: 25.85}
+  m_LocalRotation: {x: -0, y: -0.5271247, z: -0, w: 0.84978795}
+  m_LocalPosition: {x: -27.85, y: 1.02, z: 25.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4351766563272454}
@@ -1151,7 +1151,7 @@ Transform:
   - {fileID: 4469924858096896}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -63.623005, z: 0}
 --- !u!4 &4606776246215174
 Transform:
   m_ObjectHideFlags: 1
@@ -1734,6 +1734,9 @@ MonoBehaviour:
     - {r: 0, g: 0, b: 0, a: 1}
     - {r: 0, g: 0, b: 0, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}
+  HoverSoundEvent: event:/SFX/PLAYER_CHICKEN/Hover
+  JumpSound: event:/SFX/PLAYER_CHICKEN/Jump_Player_Chicken
+  LandSound: event:/SFX/PLAYER_CHICKEN/Land_Player_Chicken
   velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114409866250487136
 MonoBehaviour:
