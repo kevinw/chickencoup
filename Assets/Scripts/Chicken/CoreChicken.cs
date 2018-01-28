@@ -154,17 +154,21 @@ namespace ChickenCoup
                 case SquakType.Blue:
                     BlueSquak.SetActive(true);
                     PlaySoundHere(BlueSquakSound);
+                    if(Events.Noise.IncreaseNoise != null){Events.Noise.IncreaseNoise(2);}
                     break;
                 case SquakType.Yellow:
                     YellowSquak.SetActive(true);
 				    PlaySoundHere(YellowSquakSound);
+                    if(Events.Noise.IncreaseNoise != null){Events.Noise.IncreaseNoise(2);}
                     break;
                 case SquakType.Red:
                     RedSquak.SetActive(true);
                     PlaySoundHere(RedSquakSound);
+                    if(Events.Noise.IncreaseNoise != null){Events.Noise.IncreaseNoise(2);}
                     break;
                 case SquakType.Green:
                     //jumps
+                    if(Events.Noise.IncreaseNoise != null){Events.Noise.IncreaseNoise(1);}
                     FMODUnity.RuntimeManager.PlayOneShot(GreenSquakSound, transform.position);
                     break;
                     

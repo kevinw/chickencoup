@@ -21,5 +21,9 @@ namespace ChickenCoup
             public static Action<Recruitable> BeginRecruitment;
             public static Action<Recruitable, bool> RecruitmentResult;
         }
+        public class Noise
+        {
+            public static Action<int> IncreaseNoise;
+        }
     }
 }
