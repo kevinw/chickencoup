@@ -21,12 +21,10 @@ namespace ChickenCoup
 
 		void OnTriggerEnter(Collider c)
 		{
-			Debug.Log("added collider");
 			collidingObjects.Add(c.gameObject);	
 		}
 		void OnTriggerExit(Collider c)
 		{
-			Debug.Log("removed collider");
 			collidingObjects.Remove(c.gameObject);	
 		}
 
