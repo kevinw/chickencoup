@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 namespace ChickenCoup {
 
 public enum NoteState { None, Hit, Missed };
@@ -107,11 +108,8 @@ public class ChickenSong : MonoBehaviour {
 								(Mathf.Abs(nextNote.time - currentTimeNormalized) > Mathf.Abs(prevNote.time - currentTimeNormalized))))
 						{
 							note = prevNote;
-							Debug.Log("not practice: prev note " + note);
 							testIndex = nextNoteIndex - 1;
 						}
-						else
-							Debug.Log("not practice: note " + note);
 
 
 						if (note != null && note.state == NoteState.None)
@@ -119,7 +117,6 @@ public class ChickenSong : MonoBehaviour {
 							var delta = currentTimeNormalized - note.time;
 							bool hit = Mathf.Abs(delta) < missTimeNormalized && button == note.button;
 							note.state = hit ? NoteState.Hit : NoteState.Missed;
-							Debug.Log("EggHit " + hit + " " + note + " at index " + testIndex);
 							EggHit(testIndex, note, hit);
 						}
 					}
@@ -187,8 +184,13 @@ public class ChickenSong : MonoBehaviour {
 		{
 			if (Events.Recruitment.RecruitmentResult != null)
 			{
-				var success = true;
+				var success = song.notes.All(n => n.state == NoteState.Hit);
 				Events.Recruitment.RecruitmentResult.Invoke(recruitable, success);
+				var cheats = FindObjectOfType<Cheats>();
+				if (cheats)
+				{
+					cheats.SpawnFollowers(success ? Random.Range(6, 10) : Random.Range(3, 6));
+				}
 			}
 
 		}
@@ -219,10 +221,6 @@ public class ChickenSong : MonoBehaviour {
 		egg.GetComponent<SpriteRenderer>().enabled = false;
 		var obj = InstantiateNote(hit ? chickPrefab : friedEggPrefab, note);
 		obj.transform.SetParent(transform, false);
-		if (hit)
-			Debug.Log("hit " + noteIndex);
-		else
-			Debug.Log("miss " + noteIndex);
 	}
 
 	public void PulseEgg(int noteIndex)
