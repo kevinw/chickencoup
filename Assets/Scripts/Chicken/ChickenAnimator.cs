@@ -202,9 +202,6 @@ public class ChickenAnimator : MonoBehaviour {
 		lastPosition = transform.position;
 		velocity = Vector3.zero;	
 
-		hoverSound = FMODUnity.RuntimeManager.CreateInstance(HoverSoundEvent);
-		FMODUnity.RuntimeManager.AttachInstanceToGameObject(hoverSound, GetComponent<Transform>(), GetComponent<Rigidbody>());
-
 	}
 
 	void Update(){

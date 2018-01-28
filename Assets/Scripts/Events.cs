@@ -22,7 +22,7 @@ namespace ChickenCoup
             public static Action<Recruitable, bool> RecruitmentResult;
             public static Action<Recruitable> KillChicken;
             public static Action<Recruitable> LostChicken;
-            public static Action Nirvana;
+            public static Action<Recruitable> Nirvana;
         }
         public class Noise
         {

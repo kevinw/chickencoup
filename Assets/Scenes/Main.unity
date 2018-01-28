@@ -225,6 +225,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114123803882933666, guid: a8ba448ea7d3d433b8c9d9ac58bf2ebc,
+        type: 2}
+      propertyPath: NoiseMeter
+      value: 
+      objectReference: {fileID: 71000023}
+    - target: {fileID: 114044794476658010, guid: a8ba448ea7d3d433b8c9d9ac58bf2ebc,
+        type: 2}
+      propertyPath: NoiseMeter
+      value: 
+      objectReference: {fileID: 71000023}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8ba448ea7d3d433b8c9d9ac58bf2ebc, type: 2}
   m_IsPrefabParent: 0
@@ -672,7 +682,7 @@ Prefab:
       objectReference: {fileID: 34696268}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.18685207
+      value: 0.18685192
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.y
@@ -680,15 +690,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.03584049
+      value: -0.03584046
       objectReference: {fileID: 0}
     - target: {fileID: 4396933035036194, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9641577
+      value: 0.96415776
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.18685207
+      value: 0.18685192
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.y
@@ -696,11 +706,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.03584049
+      value: -0.03584046
       objectReference: {fileID: 0}
     - target: {fileID: 4666034315575096, guid: d6cf1f907aed99e4e8e5cc063f918d4a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.9641577
+      value: 0.96415776
       objectReference: {fileID: 0}
     - target: {fileID: 20798803281064806, guid: d6cf1f907aed99e4e8e5cc063f918d4a,
         type: 2}
@@ -1271,25 +1281,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b67bc562e0c0471f8f96f49ca26f4cf, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1673512159 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1130729440515694, guid: a8ba448ea7d3d433b8c9d9ac58bf2ebc,
-    type: 2}
-  m_PrefabInternal: {fileID: 177090630}
---- !u!114 &1673512160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1673512159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49fe35a9ec2f642929573d6312bb0d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoiseMeter: {fileID: 71000023}
-  RecruitingSoundEvent: 
-  EscapeSoundEvent: 
 --- !u!1 &1710196924
 GameObject:
   m_ObjectHideFlags: 0

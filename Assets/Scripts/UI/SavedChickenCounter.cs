@@ -25,7 +25,7 @@ namespace ChickenCoup
             SavedCount.enabled = true;
         }
 
-        void OnNirvanaReached()
+        void OnNirvanaReached(Recruitable recruitable)
         {
             savedChickens++;
             SavedCount.text = savedChickens.ToString();

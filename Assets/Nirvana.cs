@@ -18,7 +18,7 @@ public class Nirvana : MonoBehaviour {
 				var b = obj.GetComponent<Rigidbody>();
 				b.useGravity = false;
 			}
-			if(Events.Recruitment.Nirvana != null){Events.Recruitment.Nirvana();}
+			if(Events.Recruitment.Nirvana != null){Events.Recruitment.Nirvana(obj.GetComponent<Recruitable>());}
 		}
 	}
 
@@ -31,13 +31,13 @@ public class Nirvana : MonoBehaviour {
 
 	void EndGame()
 	{
-		int totPoints = 0;
-		foreach (Recruitable item in saved)
-		{
-			totPoints = totPoints + item.GetComponent<ChickenProperties>().Points;			
-		}
-		GlobalState.TotalPointsWon = totPoints;
-		GlobalState.ChickensSaved = saved.Count;
+		// int totPoints = 0;
+		// foreach (Recruitable item in saved)
+		// {
+		// 	totPoints = totPoints + item.GetComponent<ChickenProperties>().Points;			
+		// }
+		// GlobalState.TotalPointsWon = totPoints;
+		// GlobalState.ChickensSaved = saved.Count;
 		UnityEngine.SceneManagement.SceneManager.LoadScene("results");
 
 	}
