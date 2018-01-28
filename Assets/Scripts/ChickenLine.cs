@@ -27,7 +27,7 @@ namespace ChickenCoup
 		Vector3 endPos;
 
 		[System.NonSerialized]
-		internal List<Recruitable> chickensFollowingYou = new List<Recruitable>();
+		public List<Recruitable> chickensFollowingYou = new List<Recruitable>();
 
 		public void AddFollowingChicken(Recruitable recruitable)
 		{
@@ -40,11 +40,15 @@ namespace ChickenCoup
 
 		public void KillChicken(Recruitable recruitable)
 		{
+			recruitable.DidDie();
+
 			var follow = recruitable.GetComponent<VerletFollow>();
 			if (follow)
 				follow.enabled = false;
 			var v = recruitable.GetComponent<Verlet3D>();
-			if (v) v.enabled = false;
+			if (v) {
+				v.enabled = false;
+			}
 
 			if (featherExplosion)
 				Instantiate(featherExplosion, recruitable.transform.position, Quaternion.identity);
