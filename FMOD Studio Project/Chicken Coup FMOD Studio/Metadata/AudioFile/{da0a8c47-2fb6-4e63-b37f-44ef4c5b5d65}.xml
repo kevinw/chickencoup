@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{da0a8c47-2fb6-4e63-b37f-44ef4c5b5d65}">
+        <property name="assetPath">
+            <value>Chicken_Coup_Recruit_Phase_Music.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>85.714285714285708</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{d7dceae4-6327-4b1e-9600-76c13fdad18d}</destination>
+        </relationship>
+    </object>
+</objects>
