@@ -21,6 +21,7 @@ namespace ChickenCoup
 		void Start () {
 			// AttachSpringJoints();
 			//SetupFollowing();
+			Events.Recruitment.KillChicken += TryKillChicken;
 		}
 
 		Vector3 startPos;
@@ -34,6 +35,11 @@ namespace ChickenCoup
 			recruitable.GetComponent<Rigidbody>().isKinematic = false;
 			chickensFollowingYou.Add(recruitable);
 			Debug.Log("recruited chicken " + chickensFollowingYou.Count + " " + recruitable);
+		}
+
+		void TryKillChicken(Recruitable r)
+		{
+			KillChicken(r);
 		}
 
 		public GameObject featherExplosion;
