@@ -34,7 +34,6 @@ namespace ChickenCoup
 		{
 			recruitable.GetComponent<Rigidbody>().isKinematic = false;
 			chickensFollowingYou.Add(recruitable);
-			Debug.Log("recruited chicken " + chickensFollowingYou.Count + " " + recruitable);
 		}
 
 		void TryKillChicken(Recruitable r)
