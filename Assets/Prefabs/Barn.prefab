@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4087339022442632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4029407301860460}
   - component: {fileID: 114591136133783714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4904075391617026}
   - component: {fileID: 33221132973128978}
   - component: {fileID: 23959062355053418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 33673817363152710}
   - component: {fileID: 23823472372253964}
   - component: {fileID: 64632365518679972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4582621288257688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: traversal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4018045969738262}
   - component: {fileID: 33390255426551918}
   - component: {fileID: 23102075222472658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 33328254736559720}
   - component: {fileID: 23373982058304432}
   - component: {fileID: 64520857844759838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4202072034082570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590260457052402}
   - component: {fileID: 114155745333016642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4974891124645320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4330061388291148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4227012443371164}
   - component: {fileID: 108470238892864970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4300150997236004}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4146767428183106}
   - component: {fileID: 65692535776122828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Side Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4406764712298030}
   - component: {fileID: 33655980264103492}
   - component: {fileID: 23311795057806672}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4729182643164124}
   - component: {fileID: 108285524673230630}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 4582241559811450}
   - component: {fileID: 33060424128405544}
   - component: {fileID: 23855585395689296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4157090797999098}
   - component: {fileID: 114195516687290602}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4183342610113126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 4911020898995364}
   - component: {fileID: 33174914007064688}
   - component: {fileID: 23058557285723102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4406640450947700}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4135083320458002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4868913454962272}
   - component: {fileID: 108889494451046634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 4123411249100830}
   - component: {fileID: 33730904332734784}
   - component: {fileID: 23625507478059436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4849819590726788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410294370275136}
   - component: {fileID: 114682194898238636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4794111813451176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4175414512552396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4637432520136802}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: traversal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4728138979073434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 4403205977062400}
   - component: {fileID: 33591986045033650}
   - component: {fileID: 23629446584068984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4154183284310030}
   - component: {fileID: 114970571761332476}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 4258227400885146}
   - component: {fileID: 33917614372953840}
   - component: {fileID: 23468637061680732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 4266124812511400}
   - component: {fileID: 33477013082227220}
   - component: {fileID: 23660671167755408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4281534639626658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4139757392659078}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 4946604092439184}
   - component: {fileID: 33245676742693600}
   - component: {fileID: 23681276527673362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4765202410391160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 4350522760859534}
   - component: {fileID: 33794391788448374}
   - component: {fileID: 23801046433573658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4490094735378230}
   - component: {fileID: 108950277839224738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   - component: {fileID: 33004970762946592}
   - component: {fileID: 23950243298053964}
   - component: {fileID: 64659260000032980}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4883444853234146}
   - component: {fileID: 65676057704186316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FloorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 4239791327122766}
   - component: {fileID: 33975878946062778}
   - component: {fileID: 23412329268909096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4997464570392118}
   - component: {fileID: 108707893859287064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 33898427149214570}
   - component: {fileID: 23800430319390552}
   - component: {fileID: 64333821518738022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4261950769293712}
   - component: {fileID: 114654927044404346}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4721194423304224}
   - component: {fileID: 114024643497340456}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 33486302987603936}
   - component: {fileID: 23348530289854862}
   - component: {fileID: 64590522104058610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +794,7 @@ GameObject:
   - component: {fileID: 4083746870341948}
   - component: {fileID: 33461717339552760}
   - component: {fileID: 23448061342563638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4650058287774400}
   - component: {fileID: 108719253176553076}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,7 +825,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636199596230842}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +840,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4818992928803944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482643243320254}
   - component: {fileID: 108944026498758438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 4442391521481198}
   - component: {fileID: 33010590804137998}
   - component: {fileID: 23719573929277202}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4177137093748764}
   - component: {fileID: 108864281694071034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ GameObject:
   - component: {fileID: 4007576983619246}
   - component: {fileID: 33349775851123972}
   - component: {fileID: 23955493463431986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 33047338546857424}
   - component: {fileID: 23805604354910204}
   - component: {fileID: 64414635049299474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4669827292997630}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4293071277820100}
   - component: {fileID: 108511764040765814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 4279640225854472}
   - component: {fileID: 33145606343810728}
   - component: {fileID: 23482443865514484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 33590547735114542}
   - component: {fileID: 23537598785166882}
   - component: {fileID: 64755000576795758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   - component: {fileID: 4653625936043512}
   - component: {fileID: 33951701750722746}
   - component: {fileID: 23014161267211208}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4638383652211706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1037,7 +1037,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4098195128530982}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4839029279988490}
   - component: {fileID: 108515246387101064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 33140821477582592}
   - component: {fileID: 23563074674706824}
   - component: {fileID: 64729572147135272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1086,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4194173467472780}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 4965779859638976}
   - component: {fileID: 33214700088536734}
   - component: {fileID: 23556849750449556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,7 +1118,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4741012448840110}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4152878313756660}
   - component: {fileID: 108383197064092742}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 4867760206252218}
   - component: {fileID: 33825728250972028}
   - component: {fileID: 23413734608276662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4641366520754316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4724188327713780}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1198,7 +1198,7 @@ GameObject:
   - component: {fileID: 4907469230788330}
   - component: {fileID: 65232906447677818}
   - component: {fileID: 114940934820743076}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BarnInvisibleWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1215,7 @@ GameObject:
   - component: {fileID: 4784393689510008}
   - component: {fileID: 33278576693821526}
   - component: {fileID: 23672855357303400}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,7 +1230,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4679991194110734}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4900939058111076}
   - component: {fileID: 114246859296892966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1262,7 +1262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4650168354494822}
   - component: {fileID: 108257457789487788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 4857683449020764}
   - component: {fileID: 33491199938506228}
   - component: {fileID: 23368332155043878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 33725513208193408}
   - component: {fileID: 23413357553708116}
   - component: {fileID: 64692752159447532}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,7 @@ GameObject:
   - component: {fileID: 33062897348419716}
   - component: {fileID: 23446541413395854}
   - component: {fileID: 64340815055724354}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1331,7 +1331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4752974808253148}
   - component: {fileID: 114300629502307236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillar-pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1348,7 @@ GameObject:
   - component: {fileID: 4412573188004294}
   - component: {fileID: 33883949405307730}
   - component: {fileID: 23396046206173068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1364,7 +1364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4285305404712420}
   - component: {fileID: 108009893384372420}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1380,7 +1380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150454406714788}
   - component: {fileID: 114386312450714016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1397,7 @@ GameObject:
   - component: {fileID: 4490699239446382}
   - component: {fileID: 33824885959824080}
   - component: {fileID: 23665786515333042}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1414,7 +1414,7 @@ GameObject:
   - component: {fileID: 4047681243716908}
   - component: {fileID: 33923751109824506}
   - component: {fileID: 23694955532723418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1430,7 +1430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4121528219781266}
   - component: {fileID: 108116878326214864}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573150262618232}
   - component: {fileID: 108896837310920856}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,7 +1462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4036389919122200}
   - component: {fileID: 114441835222368140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1479,7 +1479,7 @@ GameObject:
   - component: {fileID: 4022045255764134}
   - component: {fileID: 33090141031646890}
   - component: {fileID: 23466394945594928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4401353343747348}
   - component: {fileID: 114765230786407880}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1510,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4463118038994204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1528,7 @@ GameObject:
   - component: {fileID: 33050360146919646}
   - component: {fileID: 23298585901387402}
   - component: {fileID: 64251312345547846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,7 +1543,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4606641997167448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1560,7 @@ GameObject:
   - component: {fileID: 4061602255419394}
   - component: {fileID: 33204825848293448}
   - component: {fileID: 23132518083933016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1576,7 +1576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4885551788945282}
   - component: {fileID: 108439957791565824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,7 +1592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4213251307790408}
   - component: {fileID: 108580345557658242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1608,7 +1608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4977066399943976}
   - component: {fileID: 108722787097639064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 4550524096416718}
   - component: {fileID: 33207760835149786}
   - component: {fileID: 23656128514686166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1640,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536740142016874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1656,7 +1656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4895070986255610}
   - component: {fileID: 114481351099868148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1671,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4371815884834148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 4573274119410296}
   - component: {fileID: 33407422535945958}
   - component: {fileID: 23159977614390180}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 4307684450091862}
   - component: {fileID: 33636157759102328}
   - component: {fileID: 23093221885988742}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1721,7 +1721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4030554847281920}
   - component: {fileID: 108739598723497582}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1736,7 +1736,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4374702288596110}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1754,7 +1754,7 @@ GameObject:
   - component: {fileID: 33187164079944558}
   - component: {fileID: 23369667878811074}
   - component: {fileID: 64841546645484900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 4472832795060456}
   - component: {fileID: 33126971548365986}
   - component: {fileID: 23362139356362520}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1786,7 +1786,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4966571571488834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1803,7 +1803,7 @@ GameObject:
   - component: {fileID: 4131248071322412}
   - component: {fileID: 33596227150117928}
   - component: {fileID: 23216799347923450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4804484320111970}
   - component: {fileID: 65627872762013312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1836,7 @@ GameObject:
   - component: {fileID: 4710551454908322}
   - component: {fileID: 33912519615501524}
   - component: {fileID: 23744332846376962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1851,7 +1851,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4690333529963000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1868,7 +1868,7 @@ GameObject:
   - component: {fileID: 4580060753401094}
   - component: {fileID: 33986677932298090}
   - component: {fileID: 23326834948642044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4052747045338260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1898,7 +1898,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4186849358402934}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1913,7 +1913,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4807950922731330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1930,7 +1930,7 @@ GameObject:
   - component: {fileID: 4270320607876488}
   - component: {fileID: 33679043782196716}
   - component: {fileID: 23508999010406950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,7 +1946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4105454377229872}
   - component: {fileID: 108888092321569204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +1961,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4752673792190444}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Traversal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1976,7 +1976,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4811257588964840}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1992,7 +1992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775848807184164}
   - component: {fileID: 108285612526024426}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2007,7 +2007,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4939303369350302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2023,7 +2023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4530126144941306}
   - component: {fileID: 114609668167467796}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pillar-pivot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2038,7 +2038,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4542160649568240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2053,7 +2053,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4945293032183292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4854767726604172}
   - component: {fileID: 108026518400542944}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2084,7 +2084,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4832872409715646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2101,7 +2101,7 @@ GameObject:
   - component: {fileID: 4935711691664834}
   - component: {fileID: 33256014679023676}
   - component: {fileID: 23901777473176282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2118,7 +2118,7 @@ GameObject:
   - component: {fileID: 4896635684420900}
   - component: {fileID: 33225566721532502}
   - component: {fileID: 23157931746075864}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2133,7 +2133,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4520929525836668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2149,7 +2149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4594277380700966}
   - component: {fileID: 108962308878364410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2164,7 +2164,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4730721493853660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2180,7 +2180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4290589699062556}
   - component: {fileID: 108841759603806186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spotlight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2196,7 +2196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4968187344507334}
   - component: {fileID: 65455136768091886}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,7 +2213,7 @@ GameObject:
   - component: {fileID: 4353972977538622}
   - component: {fileID: 33003975291287506}
   - component: {fileID: 23073841273485896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,7 +2230,7 @@ GameObject:
   - component: {fileID: 4897933081982430}
   - component: {fileID: 33529795715127178}
   - component: {fileID: 23404772006135420}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 33957092156187280}
   - component: {fileID: 23974560739758040}
   - component: {fileID: 64233954383957676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2264,7 +2264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064286118472810}
   - component: {fileID: 65501523367318222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CeilingCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2281,7 +2281,7 @@ GameObject:
   - component: {fileID: 4253936333008098}
   - component: {fileID: 33319360634340422}
   - component: {fileID: 23199420285633674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2297,7 +2297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4128324008574574}
   - component: {fileID: 114681642002375860}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2312,7 +2312,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4448971837656662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ExplorePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2327,7 +2327,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4754509084731372}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2342,7 +2342,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4712213232352300}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: traversal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,7 +2358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4204449073147296}
   - component: {fileID: 114345243759898376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChickenSpawner (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2373,7 +2373,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4842911297199710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2388,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4122519549528522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinWall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 4653897948315310}
   - component: {fileID: 33062754152973874}
   - component: {fileID: 23564375155185440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: frame_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2421,7 +2421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4557932586285094}
   - component: {fileID: 65436249013368876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Back Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2439,7 +2439,7 @@ GameObject:
   - component: {fileID: 33698534844472070}
   - component: {fileID: 23272354479181128}
   - component: {fileID: 64694238814363760}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cabinFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
