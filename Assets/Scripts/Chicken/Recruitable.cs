@@ -13,6 +13,7 @@ namespace ChickenCoup
         //assigned recruitment prompt
         GameObject recruitPrompt;
         ChickenAnimator chickenAnimator;
+        public bool Recruited { get; private set;}
 
         public void Squawk()
         {
@@ -22,6 +23,7 @@ namespace ChickenCoup
 
         void Start()
         {
+            Recruited = false;
             chickenAnimator = GetComponentInChildren<ChickenAnimator>();
 
             //spawn a new recruitment prefab
@@ -86,5 +88,12 @@ namespace ChickenCoup
                 }
             }
         }
+
+        public void SetRecruited()
+        {
+            Recruited = true;
+        }
+
+
     }
 }

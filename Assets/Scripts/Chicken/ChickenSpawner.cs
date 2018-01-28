@@ -9,16 +9,17 @@ namespace ChickenCoup
 
         public GameObject ChickenPrefab;
 
-        void Start()
-        {
-            //spawn the chicken in the location
-            Instantiate(ChickenPrefab, transform.position, Quaternion.identity);
-        }
-
         void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawSphere(this.transform.position, .3f);
+        }
+
+        public GameObject SpawnChicken()
+        {
+            //spawn the chicken in the location
+            GameObject spawnedChicken = Instantiate(ChickenPrefab, transform.position, Quaternion.identity);
+            return spawnedChicken;
         }
     }
 }

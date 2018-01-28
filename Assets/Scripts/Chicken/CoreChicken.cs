@@ -137,6 +137,7 @@ namespace ChickenCoup
             if (result)
             {
                 GetComponent<ChickenLine>().AddFollowingChicken(recruitable);
+                recruitable.SetRecruited();
             }
 
         }
