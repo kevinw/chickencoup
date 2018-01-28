@@ -36,6 +36,8 @@ namespace ChickenCoup
 			Debug.Log("recruited chicken " + chickensFollowingYou.Count + " " + recruitable);
 		}
 
+		public GameObject featherExplosion;
+
 		public void KillChicken(Recruitable recruitable)
 		{
 			var follow = recruitable.GetComponent<VerletFollow>();
@@ -43,6 +45,9 @@ namespace ChickenCoup
 				follow.enabled = false;
 			var v = recruitable.GetComponent<Verlet3D>();
 			if (v) v.enabled = false;
+
+			if (featherExplosion)
+				Instantiate(featherExplosion, recruitable.transform.position, Quaternion.identity);
 
 			chickensFollowingYou.Remove(recruitable);
 		}

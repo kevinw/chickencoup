@@ -1655,6 +1655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13b853c43e8e2e4e869d105ff0dd008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  featherExplosion: {fileID: 1152449833985196, guid: 7a3a79180a818eb4895f6ae30256b684,
+    type: 2}
 --- !u!114 &114012320761458384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1680,6 +1682,8 @@ MonoBehaviour:
   - {fileID: 1634132425945744}
   rootJoint: {fileID: 1101751520802406}
   renderer: {fileID: 137320886012572302}
+  hatMesh: {fileID: 0}
+  accessories: []
   springSettings:
     stiffness: 0.1
     mass: 1
@@ -1718,6 +1722,8 @@ MonoBehaviour:
     sitOffset: 0.1
     flyingBlend: 0
     flyOffset: 0.1
+    headBend: 0
+    headTurn: 0
   shadingSettings:
     colorSwatches:
     - {r: 1, g: 1, b: 1, a: 1}
@@ -1726,6 +1732,7 @@ MonoBehaviour:
     - {r: 0, g: 0, b: 0, a: 1}
     - {r: 0, g: 0, b: 0, a: 1}
     - {r: 1, g: 1, b: 1, a: 1}
+  isFarmer: 0
   velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &114409866250487136
 MonoBehaviour:
