@@ -22,6 +22,7 @@ namespace ChickenCoup
 			NoiseMeter.value = (float)TotalNoise / (float)NoiseLimit;
 			if(TotalNoise >= NoiseLimit)
 			{
+				if(Events.Noise.NoiseLimitReached != null){Events.Noise.NoiseLimitReached();}
 				Debug.Log("noise limit reached");
 			}
 		}

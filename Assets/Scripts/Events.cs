@@ -24,6 +24,7 @@ namespace ChickenCoup
         public class Noise
         {
             public static Action<int> IncreaseNoise;
+            public static Action NoiseLimitReached;
         }
     }
 }
