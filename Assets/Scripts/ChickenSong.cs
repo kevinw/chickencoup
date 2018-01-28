@@ -197,9 +197,7 @@ public class ChickenSong : MonoBehaviour {
 				Events.Recruitment.RecruitmentResult.Invoke(recruitable, success);
 				var cheats = FindObjectOfType<Cheats>();
 				if (cheats)
-				{
-					cheats.SpawnFollowers(success ? Random.Range(6, 10) : Random.Range(3, 6));
-				}
+					cheats.SpawnFollowers(success ? Random.Range(6, 12) : Random.Range(1, 4));
 			}
 
 		}
