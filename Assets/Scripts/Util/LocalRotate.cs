@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class LocalRotate : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	public float rotateAmount;
 	
 	// Update is called once per frame
 	void Update () {
-		this.transform.RotateAroundLocal(Vector3.up, .01f);
+		this.transform.RotateAroundLocal(Vector3.up, rotateAmount);
 	}
 }
