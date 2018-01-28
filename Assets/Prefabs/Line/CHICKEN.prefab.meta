@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: e0dfa4620baa0ed42a98f3cf6ed29ca8
 timeCreated: 1517123437
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
+=======
+guid: 9ca0fbea958a845f99e9c6f8bb33bfcf
+timeCreated: 1517104131
+licenseType: Free
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+>>>>>>> Stashed changes
   userData: 
   assetBundleName: 
   assetBundleVariant: 
