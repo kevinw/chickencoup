@@ -100,9 +100,11 @@ namespace ChickenCoup
                         break;
                 }
             }
-            if(TouchingChicken && !ChickenSong.InSong)
+            if(TouchingChicken && !ChickenSong.InSong && !GlobalState.NoiseLimitWasReached)
             {
-                if (Events.Recruitment.TryBeginRecruitment != null){Events.Recruitment.TryBeginRecruitment(b);}
+                if (Events.Recruitment.TryBeginRecruitment != null){
+                    Events.Recruitment.TryBeginRecruitment(b);
+                }
             }
         }
 
@@ -110,6 +112,17 @@ namespace ChickenCoup
 
         public void StartSong(Recruitable recruitable)
         {
+            if (ChickenSong.InSong)
+            {
+                Debug.Log("can't start song, in song");
+                return;
+            }
+            if (songObj)
+            {
+                Debug.Log("can't start song, already one");
+                return;
+            }
+
             songObj = Instantiate(songPrefab, songPosition, Quaternion.identity);
             songObj.transform.SetParent(Camera.main.transform, false);
             songObj.GetComponent<ChickenSong>().GenerateAndPlaySong(recruitable);

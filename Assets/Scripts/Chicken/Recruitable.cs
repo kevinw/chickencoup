@@ -71,6 +71,7 @@ namespace ChickenCoup
             {
                 spawnedPrompt.Deactivate();
                 Activated = false;
+                return;
             }
             switch (state)
             {
@@ -94,13 +95,13 @@ namespace ChickenCoup
 
             if (Activated && beginrecruitmentButton == b)
             {
+                attempted = true;
                 if (Events.Recruitment.BeginRecruitment != null)
                 {
                     Events.Recruitment.BeginRecruitment.Invoke(this);
                     var lookAtPlayer = GetComponent<LookAtPlayer>();
                     if (lookAtPlayer)
                         lookAtPlayer.enabled = false;
-                    attempted = true;
                 }
             }
         }
