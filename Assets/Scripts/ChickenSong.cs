@@ -65,8 +65,11 @@ public class ChickenSong : MonoBehaviour {
 
 	public float MissTime = 0.2f;
 
+	public static bool InSong = false;
+
 	IEnumerator PlaySong(Song song, bool practice=true)
 	{
+		InSong = true;
 		var player = GameObject.FindGameObjectWithTag("Player");
 
 		var currentTime = 0f;
@@ -163,6 +166,8 @@ public class ChickenSong : MonoBehaviour {
 			}
 
 		}
+
+		InSong = false;
 	}
 
 	[FMODUnity.EventRef] public string squawkA;

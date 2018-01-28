@@ -73,6 +73,9 @@ namespace ChickenCoup
 		{
             if (!IsPlayerControlled && !CPUMovement)
 				return;
+			
+			if (ChickenSong.InSong)
+				return;
 
 			//init any movement from the player
 			movementVector = Vector3.zero;
